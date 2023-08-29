@@ -23,23 +23,31 @@
             "selectedAttraction": 0.1,
             "parallax" : 0,
             "friction": 0.6        }'>
-                <div class="img has-hover x md-x lg-x y md-y lg-y" id="image_248144822"> <a class="" href="index.html">
-                        <div class="img-inner dark"> <img data-lazyloaded="1" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOTIwIiBoZWlnaHQ9IjYyOCIgdmlld0JveD0iMCAwIDE5MjAgNjI4Ij48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjY2ZkNGRiIi8+PC9zdmc+" width="1920" height="628" data-src="https://tlclighting.com.vn/wp-content/uploads/2022/03/Cover-Website.png" class="attachment-original size-original" alt="tlc-lighting" data-srcset="https://tlclighting.com.vn/wp-content/uploads/2022/03/Cover-Website.png 1920w, https://tlclighting.com.vn/wp-content/uploads/2022/03/Cover-Website-300x98.png 300w, https://tlclighting.com.vn/wp-content/uploads/2022/03/Cover-Website-800x262.png 800w, https://tlclighting.com.vn/wp-content/uploads/2022/03/Cover-Website-768x251.png 768w, https://tlclighting.com.vn/wp-content/uploads/2022/03/Cover-Website-1536x502.png 1536w, https://tlclighting.com.vn/wp-content/uploads/2022/03/Cover-Website-31x10.png 31w" data-sizes="(max-width: 1920px) 100vw, 1920px" /></div>
-                    </a>
+
+
+
+                @if(isset($banners))
+
+                @foreach($banners as $key =>$value)
+
+                <div class="img has-hover x md-x lg-x y md-y lg-y image-banner" id="image_{{ $key }}">
+                    <div class="img-inner dark"> <img data-lazyloaded="1" src="{{ asset($value->image) }}" class="attachment-original size-original" alt="" data-srcset="" /></div>
                     <style>
-                        #image_248144822 {
+                        .image-banner {
                           width: 100%;
                         }
                     </style>
                 </div>
-                <div class="img has-hover x md-x lg-x y md-y lg-y" id="image_1964351055">
-                    <div class="img-inner dark"> <img data-lazyloaded="1" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NjgwIiBoZWlnaHQ9IjI1MTIiIHZpZXdCb3g9IjAgMCA3NjgwIDI1MTIiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNjZmQ0ZGIiLz48L3N2Zz4=" width="7680" height="2512" data-src="https://tlclighting.com.vn/wp-content/uploads/2023/03/Cover-04-1.png" class="attachment-original size-original" alt="" data-srcset="https://tlclighting.com.vn/wp-content/uploads/2023/03/Cover-04-1.png 7680w, https://tlclighting.com.vn/wp-content/uploads/2023/03/Cover-04-1-300x98.png 300w, https://tlclighting.com.vn/wp-content/uploads/2023/03/Cover-04-1-800x262.png 800w, https://tlclighting.com.vn/wp-content/uploads/2023/03/Cover-04-1-768x251.png 768w, https://tlclighting.com.vn/wp-content/uploads/2023/03/Cover-04-1-1536x502.png 1536w, https://tlclighting.com.vn/wp-content/uploads/2023/03/Cover-04-1-2048x670.png 2048w, https://tlclighting.com.vn/wp-content/uploads/2023/03/Cover-04-1-31x10.png 31w" data-sizes="(max-width: 7680px) 100vw, 7680px" /></div>
-                    <style>
-                        #image_1964351055 {
-                          width: 100%;
-                        }
-                    </style>
-                </div>
+
+               
+               
+                @endforeach
+                @endif
+
+
+                
+
+
             </div>
             <div class="loading-spin dark large centered"></div>
         </div>
@@ -132,6 +140,8 @@
         <div class="container section-title-container">
             <h2 class="section-title section-title-center"><b></b><span class="section-title-main" style="font-size:90%;color:rgb(20, 20, 20);">Nhóm sản phẩm chính</span><b></b></h2>
         </div>
+
+
         <div class="row large-columns-4 medium-columns-3 small-columns-2 row-xsmall has-shadow row-box-shadow-1-hover slider row-slider slider-nav-reveal slider-nav-push" data-flickity-options='{"imagesLoaded": true, "groupCells": "100%", "dragThreshold" : 5, "cellAlign": "left","wrapAround": true,"prevNextButtons": true,"percentPosition": true,"pageDots": false, "rightToLeft": false, "autoPlay" : false}'>
             <div class="product-category col">
                 <div class="col-inner"> <a href="danh-muc/den-led-am-tran/index.html">
@@ -302,7 +312,9 @@
                     </a></div>
             </div>
         </div>
-        <div class="row" id="row-1228308357">
+
+        <!-- tạm thời ẩn -->
+        <!-- <div class="row" id="row-1228308357">
             <div id="col-630667971" class="col medium-4 small-12 large-4">
                 <div class="col-inner">
                     <div class="container section-title-container home0211">
@@ -470,59 +482,40 @@
                   padding: 50px 0px 0px 0px;
                 }
             </style>
-        </div>
+        </div> -->
         <div class="row row-full-width" id="row-1390206086">
             <div id="col-610660523" class="col home032 small-12 large-12">
                 <div class="col-inner">
                     <div class="container section-title-container" style="margin-top:30px;margin-bottom:5px;">
                         <h2 class="section-title section-title-center"><b></b><span class="section-title-main" style="font-size:90%;color:rgb(20, 20, 20);">Giải pháp chiếu sáng</span><b></b></h2>
                     </div>
+
+                    <?php 
+                                                
+                        $post_2 = App\Models\post::where('category', 2)->select('title', 'link', 'image')->get();
+                    ?>    
                     <div class="row home031 large-columns-3 medium-columns-1 small-columns-1 row-small slider row-slider slider-nav-simple slider-nav-light" data-flickity-options='{"imagesLoaded": true, "groupCells": "100%", "dragThreshold" : 5, "cellAlign": "left","wrapAround": true,"prevNextButtons": true,"percentPosition": true,"pageDots": false, "rightToLeft": false, "autoPlay" : 6000}'>
+                        @if(!empty($post_2)  && $post_2->count()>0)
+                        @foreach($post_2 as $value)
                         <div class="col post-item">
-                            <div class="col-inner"> <a href="giai-phap-chieu-sang-benh-vien/index.html" class="plain">
+                            <div class="col-inner"> 
+                                <a href="{{ route('details', $value->link) }}" class="plain">
                                     <div class="box box-none box-text-bottom box-blog-post has-hover">
                                         <div class="box-image">
-                                            <div class="image-cover" style="padding-top:75%;"> <img data-lazyloaded="1" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMjI1IiB2aWV3Qm94PSIwIDAgMzAwIDIyNSI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2NmZDRkYiIvPjwvc3ZnPg==" width="300" height="225" data-src="https://tlclighting.com.vn/wp-content/uploads/2020/09/Chieu-sang-benh-vien-300x225.jpg" class="attachment-medium size-medium wp-post-image" alt="" data-srcset="https://tlclighting.com.vn/wp-content/uploads/2020/09/Chieu-sang-benh-vien-300x225.jpg 300w, https://tlclighting.com.vn/wp-content/uploads/2020/09/Chieu-sang-benh-vien-800x600.jpg 800w, https://tlclighting.com.vn/wp-content/uploads/2020/09/Chieu-sang-benh-vien-768x576.jpg 768w, https://tlclighting.com.vn/wp-content/uploads/2020/09/Chieu-sang-benh-vien-31x23.jpg 31w, https://tlclighting.com.vn/wp-content/uploads/2020/09/Chieu-sang-benh-vien.jpg 1442w" data-sizes="(max-width: 300px) 100vw, 300px" /></div>
+                                            <div class="image-cover" style="padding-top:75%;"> <img data-lazyloaded="1" src="{{ asset($value->image)  }}" width="300" height="225" data-src="{{ asset($value->image)  }}" /></div>
                                         </div>
                                         <div class="box-text text-center is-small dark" style="background-color:rgb(0, 81, 134);">
                                             <div class="box-text-inner blog-post-inner">
-                                                <h3 class="post-title is-large ">Giải pháp chiếu sáng bệnh viện</h3>
+                                                <h3 class="post-title is-large ">{{ $value->title  }}</h3>
                                                 <div class="is-divider"></div>
                                             </div>
                                         </div>
                                     </div>
-                                </a></div>
+                                </a>
+                            </div>
                         </div>
-                        <div class="col post-item">
-                            <div class="col-inner"> <a href="giai-phap-chieu-sang-nha-o/index.html" class="plain">
-                                    <div class="box box-none box-text-bottom box-blog-post has-hover">
-                                        <div class="box-image">
-                                            <div class="image-cover" style="padding-top:75%;"> <img data-lazyloaded="1" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMjI1IiB2aWV3Qm94PSIwIDAgMzAwIDIyNSI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2NmZDRkYiIvPjwvc3ZnPg==" width="300" height="225" data-src="https://tlclighting.com.vn/wp-content/uploads/2020/09/Chieu-sang-nha-o-300x225.jpg" class="attachment-medium size-medium wp-post-image" alt="" data-srcset="https://tlclighting.com.vn/wp-content/uploads/2020/09/Chieu-sang-nha-o-300x225.jpg 300w, https://tlclighting.com.vn/wp-content/uploads/2020/09/Chieu-sang-nha-o-800x600.jpg 800w, https://tlclighting.com.vn/wp-content/uploads/2020/09/Chieu-sang-nha-o-768x576.jpg 768w, https://tlclighting.com.vn/wp-content/uploads/2020/09/Chieu-sang-nha-o-31x23.jpg 31w, https://tlclighting.com.vn/wp-content/uploads/2020/09/Chieu-sang-nha-o.jpg 1442w" data-sizes="(max-width: 300px) 100vw, 300px" /></div>
-                                        </div>
-                                        <div class="box-text text-center is-small dark" style="background-color:rgb(0, 81, 134);">
-                                            <div class="box-text-inner blog-post-inner">
-                                                <h3 class="post-title is-large ">Giải pháp chiếu sáng nhà ở</h3>
-                                                <div class="is-divider"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a></div>
-                        </div>
-                        <div class="col post-item">
-                            <div class="col-inner"> <a href="giai-phap-chieu-sang-van-phong/index.html" class="plain">
-                                    <div class="box box-none box-text-bottom box-blog-post has-hover">
-                                        <div class="box-image">
-                                            <div class="image-cover" style="padding-top:75%;"> <img data-lazyloaded="1" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMjI1IiB2aWV3Qm94PSIwIDAgMzAwIDIyNSI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2NmZDRkYiIvPjwvc3ZnPg==" width="300" height="225" data-src="https://tlclighting.com.vn/wp-content/uploads/2020/09/Chieu-sang-van-phong-300x225.jpg" class="attachment-medium size-medium wp-post-image" alt="" data-srcset="https://tlclighting.com.vn/wp-content/uploads/2020/09/Chieu-sang-van-phong-300x225.jpg 300w, https://tlclighting.com.vn/wp-content/uploads/2020/09/Chieu-sang-van-phong-800x600.jpg 800w, https://tlclighting.com.vn/wp-content/uploads/2020/09/Chieu-sang-van-phong-768x576.jpg 768w, https://tlclighting.com.vn/wp-content/uploads/2020/09/Chieu-sang-van-phong-31x23.jpg 31w, https://tlclighting.com.vn/wp-content/uploads/2020/09/Chieu-sang-van-phong.jpg 1442w" data-sizes="(max-width: 300px) 100vw, 300px" /></div>
-                                        </div>
-                                        <div class="box-text text-center is-small dark" style="background-color:rgb(0, 81, 134);">
-                                            <div class="box-text-inner blog-post-inner">
-                                                <h3 class="post-title is-large ">Giải pháp chiếu sáng văn phòng</h3>
-                                                <div class="is-divider"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a></div>
-                        </div>
+                        @endforeach
+                        @endif
                     </div>
                 </div>
             </div>
@@ -533,158 +526,20 @@
                 }
             </style>
         </div>
+
+
         <div class="row row-full-width" id="row-65360936">
             <div id="col-405892553" class="col home032 small-12 large-12">
                 <div class="col-inner">
                     <div class="container section-title-container" style="margin-top:30px;margin-bottom:5px;">
                         <h2 class="section-title section-title-center"><b></b><span class="section-title-main" style="font-size:90%;color:rgb(20, 20, 20);">Dự án đã triển khai</span><b></b></h2>
                     </div>
-                    <div class="row home031 large-columns-4 medium-columns-1 small-columns-1 row-xsmall slider row-slider slider-nav-reveal slider-nav-push" data-flickity-options='{"imagesLoaded": true, "groupCells": "100%", "dragThreshold" : 5, "cellAlign": "left","wrapAround": true,"prevNextButtons": true,"percentPosition": true,"pageDots": false, "rightToLeft": false, "autoPlay" : 5000}'>
-                        <div class="col post-item">
-                            <div class="col-inner"> <a href="https-tlclighting-com-vn-https-tlclighting-com-vn-tlc-lighting-cun-garden-phu-quoc/index.html" class="plain">
-                                    <div class="box box-normal box-text-bottom box-blog-post has-hover">
-                                        <div class="box-image">
-                                            <div class="image-cover" style="padding-top:75%;"> <img data-lazyloaded="1" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMTY5IiB2aWV3Qm94PSIwIDAgMzAwIDE2OSI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2NmZDRkYiIvPjwvc3ZnPg==" width="300" height="169" data-src="https://tlclighting.com.vn/wp-content/uploads/2021/05/Du-an-Wyndiham-300x169.jpg" class="attachment-medium size-medium wp-post-image" alt="Wyndham-Garden-Phú-Quốc" data-srcset="https://tlclighting.com.vn/wp-content/uploads/2021/05/Du-an-Wyndiham-300x169.jpg 300w, https://tlclighting.com.vn/wp-content/uploads/2021/05/Du-an-Wyndiham-800x450.jpg 800w, https://tlclighting.com.vn/wp-content/uploads/2021/05/Du-an-Wyndiham-768x432.jpg 768w, https://tlclighting.com.vn/wp-content/uploads/2021/05/Du-an-Wyndiham-1536x864.jpg 1536w, https://tlclighting.com.vn/wp-content/uploads/2021/05/Du-an-Wyndiham-31x17.jpg 31w, https://tlclighting.com.vn/wp-content/uploads/2021/05/Du-an-Wyndiham.jpg 1920w" data-sizes="(max-width: 300px) 100vw, 300px" /></div>
-                                        </div>
-                                        <div class="box-text text-center is-small" style="background-color:rgb(212, 212, 212);">
-                                            <div class="box-text-inner blog-post-inner">
-                                                <h3 class="post-title is-large ">TLC LIGHTING cung cấp đèn LED chiếu sáng cho dự án Wyndham Garden Phú Quốc</h3>
-                                                <div class="is-divider"></div>
-                                            </div>
-                                        </div>
-                                        <div class="badge absolute top post-date badge-outline">
-                                            <div class="badge-inner"> <span class="post-date-day">25</span><br> <span class="post-date-month is-xsmall">Th5</span></div>
-                                        </div>
-                                    </div>
-                                </a></div>
-                        </div>
-                        <div class="col post-item">
-                            <div class="col-inner"> <a href="tlc-lighting-cung-cap-den-led-chieu-sang-khach-san-muong-thanh-xa-la/index.html" class="plain">
-                                    <div class="box box-normal box-text-bottom box-blog-post has-hover">
-                                        <div class="box-image">
-                                            <div class="image-cover" style="padding-top:75%;"> <img data-lazyloaded="1" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMTc1IiB2aWV3Qm94PSIwIDAgMzAwIDE3NSI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2NmZDRkYiIvPjwvc3ZnPg==" width="300" height="175" data-src="https://tlclighting.com.vn/wp-content/uploads/2017/11/tlc-lighting-cung-cap-den-led-chieu-sang-khach-san-muong-thanh-xa-la-1-300x175.png" class="attachment-medium size-medium wp-post-image" alt="" data-srcset="https://tlclighting.com.vn/wp-content/uploads/2017/11/tlc-lighting-cung-cap-den-led-chieu-sang-khach-san-muong-thanh-xa-la-1-300x175.png 300w, https://tlclighting.com.vn/wp-content/uploads/2017/11/tlc-lighting-cung-cap-den-led-chieu-sang-khach-san-muong-thanh-xa-la-1-500x292.png 500w, https://tlclighting.com.vn/wp-content/uploads/2017/11/tlc-lighting-cung-cap-den-led-chieu-sang-khach-san-muong-thanh-xa-la-1-768x448.png 768w, https://tlclighting.com.vn/wp-content/uploads/2017/11/tlc-lighting-cung-cap-den-led-chieu-sang-khach-san-muong-thanh-xa-la-1.png 800w" data-sizes="(max-width: 300px) 100vw, 300px" /></div>
-                                        </div>
-                                        <div class="box-text text-center is-small" style="background-color:rgb(212, 212, 212);">
-                                            <div class="box-text-inner blog-post-inner">
-                                                <h3 class="post-title is-large ">TLC LIGHTING cung cấp đèn Led chiếu sáng khách sạn Mường Thanh Xa La</h3>
-                                                <div class="is-divider"></div>
-                                            </div>
-                                        </div>
-                                        <div class="badge absolute top post-date badge-outline">
-                                            <div class="badge-inner"> <span class="post-date-day">27</span><br> <span class="post-date-month is-xsmall">Th11</span></div>
-                                        </div>
-                                    </div>
-                                </a></div>
-                        </div>
-                        <div class="col post-item">
-                            <div class="col-inner"> <a href="tlc-lighting-cung-cap-den-led-chieu-sang-chung-cu-golden-land-nguyen-trai/index.html" class="plain">
-                                    <div class="box box-normal box-text-bottom box-blog-post has-hover">
-                                        <div class="box-image">
-                                            <div class="image-cover" style="padding-top:75%;"> <img data-lazyloaded="1" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMTkyIiB2aWV3Qm94PSIwIDAgMzAwIDE5MiI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2NmZDRkYiIvPjwvc3ZnPg==" width="300" height="192" data-src="https://tlclighting.com.vn/wp-content/uploads/2017/10/tlc-lighting-cung-cap-den-led-chieu-sang-golden-land-300x192.png" class="attachment-medium size-medium wp-post-image" alt="" data-srcset="https://tlclighting.com.vn/wp-content/uploads/2017/10/tlc-lighting-cung-cap-den-led-chieu-sang-golden-land-300x192.png 300w, https://tlclighting.com.vn/wp-content/uploads/2017/10/tlc-lighting-cung-cap-den-led-chieu-sang-golden-land-500x319.png 500w, https://tlclighting.com.vn/wp-content/uploads/2017/10/tlc-lighting-cung-cap-den-led-chieu-sang-golden-land.png 700w" data-sizes="(max-width: 300px) 100vw, 300px" /></div>
-                                        </div>
-                                        <div class="box-text text-center is-small" style="background-color:rgb(212, 212, 212);">
-                                            <div class="box-text-inner blog-post-inner">
-                                                <h3 class="post-title is-large ">TLC LIGHTING cung cấp đèn Led chiếu sáng chung Golden Land Nguyễn Trãi</h3>
-                                                <div class="is-divider"></div>
-                                            </div>
-                                        </div>
-                                        <div class="badge absolute top post-date badge-outline">
-                                            <div class="badge-inner"> <span class="post-date-day">09</span><br> <span class="post-date-month is-xsmall">Th10</span></div>
-                                        </div>
-                                    </div>
-                                </a></div>
-                        </div>
-                        <div class="col post-item">
-                            <div class="col-inner"> <a href="den-led-tlc-lighting-doi-tac-cung-cap-den-led-cho-thong-kfc/index.html" class="plain">
-                                    <div class="box box-normal box-text-bottom box-blog-post has-hover">
-                                        <div class="box-image">
-                                            <div class="image-cover" style="padding-top:75%;"> <img data-lazyloaded="1" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMjA3IiB2aWV3Qm94PSIwIDAgMzAwIDIwNyI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2NmZDRkYiIvPjwvc3ZnPg==" width="300" height="207" data-src="https://tlclighting.com.vn/wp-content/uploads/2017/10/tlc-lighing-cung-cap-den-led-am-tran-KFC-300x207.png" class="attachment-medium size-medium wp-post-image" alt="" data-srcset="https://tlclighting.com.vn/wp-content/uploads/2017/10/tlc-lighing-cung-cap-den-led-am-tran-KFC-300x207.png 300w, https://tlclighting.com.vn/wp-content/uploads/2017/10/tlc-lighing-cung-cap-den-led-am-tran-KFC-500x346.png 500w, https://tlclighting.com.vn/wp-content/uploads/2017/10/tlc-lighing-cung-cap-den-led-am-tran-KFC.png 700w" data-sizes="(max-width: 300px) 100vw, 300px" /></div>
-                                        </div>
-                                        <div class="box-text text-center is-small" style="background-color:rgb(212, 212, 212);">
-                                            <div class="box-text-inner blog-post-inner">
-                                                <h3 class="post-title is-large ">Đèn Led TLC LIGHTING đối tác cung cấp đèn Led cho hệ thống KFC</h3>
-                                                <div class="is-divider"></div>
-                                            </div>
-                                        </div>
-                                        <div class="badge absolute top post-date badge-outline">
-                                            <div class="badge-inner"> <span class="post-date-day">09</span><br> <span class="post-date-month is-xsmall">Th10</span></div>
-                                        </div>
-                                    </div>
-                                </a></div>
-                        </div>
-                        <div class="col post-item">
-                            <div class="col-inner"> <a href="tlc-lighting-cung-cap-den-led-chieu-sang-flc-complex-pham-hung/index.html" class="plain">
-                                    <div class="box box-normal box-text-bottom box-blog-post has-hover">
-                                        <div class="box-image">
-                                            <div class="image-cover" style="padding-top:75%;"> <img data-lazyloaded="1" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMjgyIiB2aWV3Qm94PSIwIDAgMzAwIDI4MiI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2NmZDRkYiIvPjwvc3ZnPg==" width="300" height="282" data-src="https://tlclighting.com.vn/wp-content/uploads/2017/10/tlc-lighting-cung-cap-den-led-FLC-Complex-Pham-Hung-300x282.png" class="attachment-medium size-medium wp-post-image" alt="" data-srcset="https://tlclighting.com.vn/wp-content/uploads/2017/10/tlc-lighting-cung-cap-den-led-FLC-Complex-Pham-Hung-300x282.png 300w, https://tlclighting.com.vn/wp-content/uploads/2017/10/tlc-lighting-cung-cap-den-led-FLC-Complex-Pham-Hung-500x471.png 500w, https://tlclighting.com.vn/wp-content/uploads/2017/10/tlc-lighting-cung-cap-den-led-FLC-Complex-Pham-Hung.png 700w" data-sizes="(max-width: 300px) 100vw, 300px" /></div>
-                                        </div>
-                                        <div class="box-text text-center is-small" style="background-color:rgb(212, 212, 212);">
-                                            <div class="box-text-inner blog-post-inner">
-                                                <h3 class="post-title is-large ">TLC LIGHTING cung cấp đèn Led chiếu sáng cho FLC Complex Phạm Hùng</h3>
-                                                <div class="is-divider"></div>
-                                            </div>
-                                        </div>
-                                        <div class="badge absolute top post-date badge-outline">
-                                            <div class="badge-inner"> <span class="post-date-day">09</span><br> <span class="post-date-month is-xsmall">Th10</span></div>
-                                        </div>
-                                    </div>
-                                </a></div>
-                        </div>
-                        <div class="col post-item">
-                            <div class="col-inner"> <a href="tlc-lighting-cung-cap-den-led-chieu-sang-quan-bar-level-10-57-ly-thuong-kiet/index.html" class="plain">
-                                    <div class="box box-normal box-text-bottom box-blog-post has-hover">
-                                        <div class="box-image">
-                                            <div class="image-cover" style="padding-top:75%;"> <img data-lazyloaded="1" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMTY3IiB2aWV3Qm94PSIwIDAgMzAwIDE2NyI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2NmZDRkYiIvPjwvc3ZnPg==" width="300" height="167" data-src="https://tlclighting.com.vn/wp-content/uploads/2017/10/tlc-lighting-chieu-sang-quan-ba-57-ly-thuong-kiet-300x167.png" class="attachment-medium size-medium wp-post-image" alt="" data-srcset="https://tlclighting.com.vn/wp-content/uploads/2017/10/tlc-lighting-chieu-sang-quan-ba-57-ly-thuong-kiet-300x167.png 300w, https://tlclighting.com.vn/wp-content/uploads/2017/10/tlc-lighting-chieu-sang-quan-ba-57-ly-thuong-kiet-500x279.png 500w, https://tlclighting.com.vn/wp-content/uploads/2017/10/tlc-lighting-chieu-sang-quan-ba-57-ly-thuong-kiet.png 700w" data-sizes="(max-width: 300px) 100vw, 300px" /></div>
-                                        </div>
-                                        <div class="box-text text-center is-small" style="background-color:rgb(212, 212, 212);">
-                                            <div class="box-text-inner blog-post-inner">
-                                                <h3 class="post-title is-large ">TLC LIGHTING cung cấp đèn led chiếu sáng quán Bar Level 10 số 57 Lý Thường Kiệt</h3>
-                                                <div class="is-divider"></div>
-                                            </div>
-                                        </div>
-                                        <div class="badge absolute top post-date badge-outline">
-                                            <div class="badge-inner"> <span class="post-date-day">09</span><br> <span class="post-date-month is-xsmall">Th10</span></div>
-                                        </div>
-                                    </div>
-                                </a></div>
-                        </div>
-                        <div class="col post-item">
-                            <div class="col-inner"> <a href="tlc-lighting-cap-cap-den-led-chieu-sang-khach-san-muong-thanh-buon-ma-thuot/index.html" class="plain">
-                                    <div class="box box-normal box-text-bottom box-blog-post has-hover">
-                                        <div class="box-image">
-                                            <div class="image-cover" style="padding-top:75%;"> <img data-lazyloaded="1" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMjAwIiB2aWV3Qm94PSIwIDAgMzAwIDIwMCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2NmZDRkYiIvPjwvc3ZnPg==" width="300" height="200" data-src="https://tlclighting.com.vn/wp-content/uploads/2017/10/tlc-lighting-chieu-sang-khach-san-muong-thanh-buon-ma-thuot-300x200.png" class="attachment-medium size-medium wp-post-image" alt="" data-srcset="https://tlclighting.com.vn/wp-content/uploads/2017/10/tlc-lighting-chieu-sang-khach-san-muong-thanh-buon-ma-thuot-300x200.png 300w, https://tlclighting.com.vn/wp-content/uploads/2017/10/tlc-lighting-chieu-sang-khach-san-muong-thanh-buon-ma-thuot-500x333.png 500w, https://tlclighting.com.vn/wp-content/uploads/2017/10/tlc-lighting-chieu-sang-khach-san-muong-thanh-buon-ma-thuot.png 750w" data-sizes="(max-width: 300px) 100vw, 300px" /></div>
-                                        </div>
-                                        <div class="box-text text-center is-small" style="background-color:rgb(212, 212, 212);">
-                                            <div class="box-text-inner blog-post-inner">
-                                                <h3 class="post-title is-large ">TLC LIGHTING cấp cấp đèn Led chiếu sáng khách sạn Mường Thanh Buôn Ma Thuột</h3>
-                                                <div class="is-divider"></div>
-                                            </div>
-                                        </div>
-                                        <div class="badge absolute top post-date badge-outline">
-                                            <div class="badge-inner"> <span class="post-date-day">07</span><br> <span class="post-date-month is-xsmall">Th10</span></div>
-                                        </div>
-                                    </div>
-                                </a></div>
-                        </div>
-                        <div class="col post-item">
-                            <div class="col-inner"> <a href="tlc-lighting-cung-cap-den-led-chung-cu-khach-san-5-muong-thanh-ha-nam/index.html" class="plain">
-                                    <div class="box box-normal box-text-bottom box-blog-post has-hover">
-                                        <div class="box-image">
-                                            <div class="image-cover" style="padding-top:75%;"> <img data-lazyloaded="1" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMjAwIiB2aWV3Qm94PSIwIDAgMzAwIDIwMCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2NmZDRkYiIvPjwvc3ZnPg==" width="300" height="200" data-src="https://tlclighting.com.vn/wp-content/uploads/2017/10/tlc-lighting-chieu-sang-can-ho-muong-thanh-ha-nam-300x200.png" class="attachment-medium size-medium wp-post-image" alt="" data-srcset="https://tlclighting.com.vn/wp-content/uploads/2017/10/tlc-lighting-chieu-sang-can-ho-muong-thanh-ha-nam-300x200.png 300w, https://tlclighting.com.vn/wp-content/uploads/2017/10/tlc-lighting-chieu-sang-can-ho-muong-thanh-ha-nam-500x333.png 500w, https://tlclighting.com.vn/wp-content/uploads/2017/10/tlc-lighting-chieu-sang-can-ho-muong-thanh-ha-nam.png 600w" data-sizes="(max-width: 300px) 100vw, 300px" /></div>
-                                        </div>
-                                        <div class="box-text text-center is-small" style="background-color:rgb(212, 212, 212);">
-                                            <div class="box-text-inner blog-post-inner">
-                                                <h3 class="post-title is-large ">TLC LIGHTING cung cấp đèn Led chung cư khách sạn 5* Mường Thanh Hà Nam</h3>
-                                                <div class="is-divider"></div>
-                                            </div>
-                                        </div>
-                                        <div class="badge absolute top post-date badge-outline">
-                                            <div class="badge-inner"> <span class="post-date-day">07</span><br> <span class="post-date-month is-xsmall">Th10</span></div>
-                                        </div>
-                                    </div>
-                                </a></div>
-                        </div>
-                    </div>
+                    <?php 
+
+                        $post_3 = App\Models\post::where('category', 4)->select('title', 'link', 'image')->get();
+                    ?>
+
+                    @include('include.home_slide', ['data'=>$post_3])
                 </div>
             </div>
             <style>
@@ -693,67 +548,26 @@
                 }
             </style>
         </div>
+
+
+
         <div class="row align-center hdxh" id="row-321784340">
             <div id="col-1327078478" class="col small-12 large-12">
                 <div class="col-inner text-center">
                     <h2 style="text-align: center;"><span style="color: #1d4895; font-size: 24px;"><strong>HOẠT ĐỘNG XÃ HỘI</strong></span></h2>
                     <p style="text-align: center;"><span style="color: #666666; font-size: 16px;">Thắp sáng tương lai Việt Nam &#8211; Hỗ trợ hoàn cảnh khó khăn</span></p>
-                    <div class="row hdxh01 large-columns-3 medium-columns-1 small-columns-1 slider row-slider slider-nav-circle slider-nav-outside slider-nav-push" data-flickity-options='{"imagesLoaded": true, "groupCells": "100%", "dragThreshold" : 5, "cellAlign": "left","wrapAround": true,"prevNextButtons": true,"percentPosition": true,"pageDots": false, "rightToLeft": false, "autoPlay" : 3000}'>
-                        <div class="col post-item">
-                            <div class="col-inner"> <a href="thap-sang-duong-que-noi-cua-ngo-vung-tay-bac/index.html" class="plain">
-                                    <div class="box box-normal box-text-bottom box-blog-post has-hover">
-                                        <div class="box-image">
-                                            <div class="image-cover" style="padding-top:56.25%;"> <img data-lazyloaded="1" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMTY5IiB2aWV3Qm94PSIwIDAgMzAwIDE2OSI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2NmZDRkYiIvPjwvc3ZnPg==" width="300" height="169" data-src="https://tlclighting.com.vn/wp-content/uploads/2023/08/001-300x169.jpg" class="attachment-medium size-medium wp-post-image" alt="Hành trình thắp sáng đường quê tại Tây Bắc" data-srcset="https://tlclighting.com.vn/wp-content/uploads/2023/08/001-300x169.jpg 300w, https://tlclighting.com.vn/wp-content/uploads/2023/08/001-31x17.jpg 31w, https://tlclighting.com.vn/wp-content/uploads/2023/08/001.jpg 600w" data-sizes="(max-width: 300px) 100vw, 300px" /></div>
-                                        </div>
-                                        <div class="box-text text-left" style="background-color:rgb(212, 212, 212);">
-                                            <div class="box-text-inner blog-post-inner">
-                                                <h3 class="post-title is-large ">Thắp sáng đường quê nơi cửa ngõ vùng Tây Bắc</h3>
-                                                <div class="is-divider"></div> <button href="thap-sang-duong-que-noi-cua-ngo-vung-tay-bac/index.html" class="button  is-outline is-small mb-0"> &#173; </button>
-                                            </div>
-                                        </div>
-                                        <div class="badge absolute top post-date badge-outline">
-                                            <div class="badge-inner"> <span class="post-date-day">11</span><br> <span class="post-date-month is-xsmall">Th8</span></div>
-                                        </div>
-                                    </div>
-                                </a></div>
-                        </div>
-                        <div class="col post-item">
-                            <div class="col-inner"> <a href="chuyen-hanh-trinh-cua-tlc-viet-nam-thay-doi-duong-que-tai-xom-lon-tinh-hoa-binh/index.html" class="plain">
-                                    <div class="box box-normal box-text-bottom box-blog-post has-hover">
-                                        <div class="box-image">
-                                            <div class="image-cover" style="padding-top:56.25%;"> <img data-lazyloaded="1" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMTY5IiB2aWV3Qm94PSIwIDAgMzAwIDE2OSI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2NmZDRkYiIvPjwvc3ZnPg==" width="300" height="169" data-src="https://tlclighting.com.vn/wp-content/uploads/2023/05/a-da-sua-min-300x169.jpg" class="attachment-medium size-medium wp-post-image" alt="Chuyến hành trình của TLC Việt Nam thay đổi đường quê tại xóm Lòn tỉnh Hòa Bình" data-srcset="https://tlclighting.com.vn/wp-content/uploads/2023/05/a-da-sua-min-300x169.jpg 300w, https://tlclighting.com.vn/wp-content/uploads/2023/05/a-da-sua-min-31x17.jpg 31w, https://tlclighting.com.vn/wp-content/uploads/2023/05/a-da-sua-min.jpg 600w" data-sizes="(max-width: 300px) 100vw, 300px" /></div>
-                                        </div>
-                                        <div class="box-text text-left" style="background-color:rgb(212, 212, 212);">
-                                            <div class="box-text-inner blog-post-inner">
-                                                <h3 class="post-title is-large ">Chuyến hành trình của TLC Việt Nam thay đổi đường quê tại xóm Lòn tỉnh Hòa Bình</h3>
-                                                <div class="is-divider"></div> <button href="chuyen-hanh-trinh-cua-tlc-viet-nam-thay-doi-duong-que-tai-xom-lon-tinh-hoa-binh/index.html" class="button  is-outline is-small mb-0"> &#173; </button>
-                                            </div>
-                                        </div>
-                                        <div class="badge absolute top post-date badge-outline">
-                                            <div class="badge-inner"> <span class="post-date-day">31</span><br> <span class="post-date-month is-xsmall">Th5</span></div>
-                                        </div>
-                                    </div>
-                                </a></div>
-                        </div>
-                        <div class="col post-item">
-                            <div class="col-inner"> <a href="tlc-viet-nam-ban-giao-cong-trinh-thap-sang-duong-que-tai-tinh-phu-tho/index.html" class="plain">
-                                    <div class="box box-normal box-text-bottom box-blog-post has-hover">
-                                        <div class="box-image">
-                                            <div class="image-cover" style="padding-top:56.25%;"> <img data-lazyloaded="1" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMTg4IiB2aWV3Qm94PSIwIDAgMzAwIDE4OCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2NmZDRkYiIvPjwvc3ZnPg==" width="300" height="188" data-src="https://tlclighting.com.vn/wp-content/uploads/2023/04/1-300x188.jpg" class="attachment-medium size-medium wp-post-image" alt="Khánh thành công trình thắp sáng đường quê tại Khu Rét, xã Khả Cửu" data-srcset="https://tlclighting.com.vn/wp-content/uploads/2023/04/1-300x188.jpg 300w, https://tlclighting.com.vn/wp-content/uploads/2023/04/1-800x502.jpg 800w, https://tlclighting.com.vn/wp-content/uploads/2023/04/1-768x482.jpg 768w, https://tlclighting.com.vn/wp-content/uploads/2023/04/1-31x19.jpg 31w, https://tlclighting.com.vn/wp-content/uploads/2023/04/1.jpg 1000w" data-sizes="(max-width: 300px) 100vw, 300px" /></div>
-                                        </div>
-                                        <div class="box-text text-left" style="background-color:rgb(212, 212, 212);">
-                                            <div class="box-text-inner blog-post-inner">
-                                                <h3 class="post-title is-large ">TLC Việt Nam bàn giao công trình “Thắp sáng đường quê” tại tỉnh Phú Thọ</h3>
-                                                <div class="is-divider"></div> <button href="tlc-viet-nam-ban-giao-cong-trinh-thap-sang-duong-que-tai-tinh-phu-tho/index.html" class="button  is-outline is-small mb-0"> &#173; </button>
-                                            </div>
-                                        </div>
-                                        <div class="badge absolute top post-date badge-outline">
-                                            <div class="badge-inner"> <span class="post-date-day">11</span><br> <span class="post-date-month is-xsmall">Th4</span></div>
-                                        </div>
-                                    </div>
-                                </a></div>
-                        </div>
-                    </div> <a href="category/hoat-dong-xa-hoi/index.html" target="_self" class="button primary is-outline lowercase hdxh-bt" style="border-radius:99px;"> <span>Xem thêm</span> <i class="icon-angle-right"></i></a>
+
+                    <?php 
+
+                        $post_4 = App\Models\post::where('category', 5)->select('title', 'link', 'image')->get();
+                    ?>
+
+
+                    @include('include.home_slide', ['data'=>$post_4])
+
+
+
+                    <a href="{{ route('details', 'hoat-dong-xa-hoi') }}" target="_self" class="button primary is-outline lowercase hdxh-bt" style="border-radius:99px;"> <span>Xem thêm</span> <i class="icon-angle-right"></i></a>
                 </div>
                 <style>
                     #col-1327078478 > .col-inner {
@@ -775,62 +589,18 @@
                         <div class="col-inner text-center">
                             <h2 style="text-align: center;"><span style="color: #1d4895; font-size: 24px;"><strong>QUỸ NHÂN ÁI &#8211; THỢ ĐIỆN TLC</strong></span></h2>
                             <p style="text-align: center;"><span style="color: #666666; font-size: 16px;">Đồng hành cùng Thợ điện Việt</span></p>
-                            <div class="row hdxh01 qnh01 large-columns-3 medium-columns-1 small-columns-1 slider row-slider slider-nav-simple slider-nav-outside slider-nav-push" data-flickity-options='{"imagesLoaded": true, "groupCells": "100%", "dragThreshold" : 5, "cellAlign": "left","wrapAround": true,"prevNextButtons": true,"percentPosition": true,"pageDots": false, "rightToLeft": false, "autoPlay" : 4000}'>
-                                <div class="col post-item">
-                                    <div class="col-inner"> <a href="quy-nhan-ai-tlc-dong-vien-va-tham-hoi-tho-dien-nguyen-xuan-truong-tinh-thanh-hoa/index.html" class="plain">
-                                            <div class="box box-normal box-text-bottom box-blog-post has-hover">
-                                                <div class="box-image">
-                                                    <div class="image-cover" style="padding-top:56.25%;"> <img data-lazyloaded="1" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMTY5IiB2aWV3Qm94PSIwIDAgMzAwIDE2OSI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2NmZDRkYiIvPjwvc3ZnPg==" width="300" height="169" data-src="https://tlclighting.com.vn/wp-content/uploads/2023/05/quy-nhan-ai-1-300x169.jpg" class="attachment-medium size-medium wp-post-image" alt="Quỹ nhân ái TLC - Động viên và thăm hỏi thợ điện Nguyễn Xuân Trường tỉnh Thanh Hóa" data-srcset="https://tlclighting.com.vn/wp-content/uploads/2023/05/quy-nhan-ai-1-300x169.jpg 300w, https://tlclighting.com.vn/wp-content/uploads/2023/05/quy-nhan-ai-1-31x17.jpg 31w, https://tlclighting.com.vn/wp-content/uploads/2023/05/quy-nhan-ai-1.jpg 600w" data-sizes="(max-width: 300px) 100vw, 300px" /></div>
-                                                </div>
-                                                <div class="box-text text-left" style="background-color:rgb(255, 255, 255);">
-                                                    <div class="box-text-inner blog-post-inner">
-                                                        <h3 class="post-title is-large ">Quỹ nhân ái TLC &#8211; Động viên và thăm hỏi thợ điện Nguyễn Xuân Trường tỉnh Thanh Hóa</h3>
-                                                        <div class="is-divider"></div> <button href="quy-nhan-ai-tlc-dong-vien-va-tham-hoi-tho-dien-nguyen-xuan-truong-tinh-thanh-hoa/index.html" class="button  is-outline is-small mb-0"> &#173; </button>
-                                                    </div>
-                                                </div>
-                                                <div class="badge absolute top post-date badge-outline">
-                                                    <div class="badge-inner"> <span class="post-date-day">31</span><br> <span class="post-date-month is-xsmall">Th5</span></div>
-                                                </div>
-                                            </div>
-                                        </a></div>
-                                </div>
-                                <div class="col post-item">
-                                    <div class="col-inner"> <a href="nhin-lai-chang-duong-lan-toa-thong-diep-day-tinh-nhan-van-cua-quy-nhan-ai-vi-tho-dien-tlc-sau-mot-nam-thanh-lap/index.html" class="plain">
-                                            <div class="box box-normal box-text-bottom box-blog-post has-hover">
-                                                <div class="box-image">
-                                                    <div class="image-cover" style="padding-top:56.25%;"> <img data-lazyloaded="1" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMTY5IiB2aWV3Qm94PSIwIDAgMzAwIDE2OSI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2NmZDRkYiIvPjwvc3ZnPg==" width="300" height="169" data-src="https://tlclighting.com.vn/wp-content/uploads/2023/05/quy-nhan-ai-300x169.jpg" class="attachment-medium size-medium wp-post-image" alt="Quỹ Nhân Ái vì Thợ điện TLC" data-srcset="https://tlclighting.com.vn/wp-content/uploads/2023/05/quy-nhan-ai-300x169.jpg 300w, https://tlclighting.com.vn/wp-content/uploads/2023/05/quy-nhan-ai-800x450.jpg 800w, https://tlclighting.com.vn/wp-content/uploads/2023/05/quy-nhan-ai-768x432.jpg 768w, https://tlclighting.com.vn/wp-content/uploads/2023/05/quy-nhan-ai-1536x864.jpg 1536w, https://tlclighting.com.vn/wp-content/uploads/2023/05/quy-nhan-ai-31x17.jpg 31w, https://tlclighting.com.vn/wp-content/uploads/2023/05/quy-nhan-ai.jpg 1920w" data-sizes="(max-width: 300px) 100vw, 300px" /></div>
-                                                </div>
-                                                <div class="box-text text-left" style="background-color:rgb(255, 255, 255);">
-                                                    <div class="box-text-inner blog-post-inner">
-                                                        <h3 class="post-title is-large ">Nhìn lại chặng đường hoạt động của Quỹ Nhân Ái vì Thợ điện TLC sau một năm thành lập</h3>
-                                                        <div class="is-divider"></div> <button href="nhin-lai-chang-duong-lan-toa-thong-diep-day-tinh-nhan-van-cua-quy-nhan-ai-vi-tho-dien-tlc-sau-mot-nam-thanh-lap/index.html" class="button  is-outline is-small mb-0"> &#173; </button>
-                                                    </div>
-                                                </div>
-                                                <div class="badge absolute top post-date badge-outline">
-                                                    <div class="badge-inner"> <span class="post-date-day">03</span><br> <span class="post-date-month is-xsmall">Th5</span></div>
-                                                </div>
-                                            </div>
-                                        </a></div>
-                                </div>
-                                <div class="col post-item">
-                                    <div class="col-inner"> <a href="quy-nhan-ai-chia-se-yeu-thuong-de-lan-toa-nhung-viec-tu-te/index.html" class="plain">
-                                            <div class="box box-normal box-text-bottom box-blog-post has-hover">
-                                                <div class="box-image">
-                                                    <div class="image-cover" style="padding-top:56.25%;"> <img data-lazyloaded="1" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMTY5IiB2aWV3Qm94PSIwIDAgMzAwIDE2OSI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2NmZDRkYiIvPjwvc3ZnPg==" width="300" height="169" data-src="https://tlclighting.com.vn/wp-content/uploads/2023/04/IMG_0744-1-300x169.jpg" class="attachment-medium size-medium wp-post-image" alt="" data-srcset="https://tlclighting.com.vn/wp-content/uploads/2023/04/IMG_0744-1-300x169.jpg 300w, https://tlclighting.com.vn/wp-content/uploads/2023/04/IMG_0744-1-800x450.jpg 800w, https://tlclighting.com.vn/wp-content/uploads/2023/04/IMG_0744-1-768x432.jpg 768w, https://tlclighting.com.vn/wp-content/uploads/2023/04/IMG_0744-1-1536x864.jpg 1536w, https://tlclighting.com.vn/wp-content/uploads/2023/04/IMG_0744-1-2048x1152.jpg 2048w, https://tlclighting.com.vn/wp-content/uploads/2023/04/IMG_0744-1-31x17.jpg 31w" data-sizes="(max-width: 300px) 100vw, 300px" /></div>
-                                                </div>
-                                                <div class="box-text text-left" style="background-color:rgb(255, 255, 255);">
-                                                    <div class="box-text-inner blog-post-inner">
-                                                        <h3 class="post-title is-large ">Quỹ nhân ái &#8211; Hỗ trợ thợ điện Đoàn Khắc Khương thuộc xã Cẩm Lĩnh, huyện Quốc Oai, Hà Nội</h3>
-                                                        <div class="is-divider"></div> <button href="quy-nhan-ai-chia-se-yeu-thuong-de-lan-toa-nhung-viec-tu-te/index.html" class="button  is-outline is-small mb-0"> &#173; </button>
-                                                    </div>
-                                                </div>
-                                                <div class="badge absolute top post-date badge-outline">
-                                                    <div class="badge-inner"> <span class="post-date-day">19</span><br> <span class="post-date-month is-xsmall">Th4</span></div>
-                                                </div>
-                                            </div>
-                                        </a></div>
-                                </div>
-                            </div> <a href="quy-nhan-ai-tho-dien-tlc/index.html" target="_self" class="button primary is-outline lowercase hdxh-bt" style="border-radius:99px;"> <span>Xem thêm chính sách Quỹ nhân ái</span> <i class="icon-angle-right"></i></a>
+
+
+                            <?php 
+
+                                $post_5 = App\Models\post::where('category', 6)->select('title', 'link', 'image')->get();
+                            ?>
+
+
+                            @include('include.home_slide', ['data'=>$post_5])
+
+
+                            <a href="{{ route('details', 'quy-nhan-ai') }}" target="_self" class="button primary is-outline lowercase hdxh-bt" style="border-radius:99px;"> <span>Xem thêm chính sách Quỹ nhân ái</span> <i class="icon-angle-right"></i></a>
                         </div>
                         <style>
                             #col-1973828722 > .col-inner {

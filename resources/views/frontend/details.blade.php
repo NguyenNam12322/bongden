@@ -464,26 +464,18 @@
                                             </div>
                                         </a> </div>
                                 </div>
+
+
+
                                 <div class="product_tab_content" id="tabs">
-                                    <div id="prodetails_tab1" class="prodetails_tab prodetails_tab_content">
-                                        <div class="">
-                                            <div class="description boxdesc" id="boxdesc">
-                                                <div id="box_conten_linfo">
-                                                    <div class="box_conten_linfo_inner" itemprop="description">
-                                                        <p><span style="color:#e74c3c"><span style="font-size:20px"><strong>Bộ video hướng dẫn sử dụng máy chiếu KAW KP950:&nbsp;</strong></span></span></p>
-                                                        <p><iframe align="middle" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" frameborder="0" height="315" scrolling="no" src="https://www.youtube.com/embed/videoseries?list=PLoSWjdBD5UwGBr2EBAhJFU0wenT0YhdrT" title="YouTube video player" width="560" data-loader="frame"></iframe></p>
-                                                        <p><img class="" alt="" data-upload-status="success" data-uploading="uploaded" src="https://cf.shopee.vn/file/vn-11134208-7qukw-lfyd3xja6naiac"></p>
-                                                        <p><img class="" alt="" data-upload-status="success" data-uploading="uploaded" src="https://cf.shopee.vn/file/vn-11134208-7qukw-lfyd3xja81uy00"><img class="" alt="" data-upload-status="success" data-uploading="uploaded" src="https://cf.shopee.vn/file/vn-11134208-7qukw-lfyd3xja9gfe26"><img class="" alt="" data-upload-status="success" data-uploading="uploaded" src="https://cf.shopee.vn/file/vn-11134208-7qukw-lfyd3xjaauzu10"><img class="" alt="" data-upload-status="success" data-uploading="uploaded" src="https://cf.shopee.vn/file/vn-11134208-7qukw-lfydbjatn2i23c"><img class="" alt="" data-upload-status="success" data-uploading="uploaded" src="https://cf.shopee.vn/file/vn-11134208-7qukw-lfyd3xjado4qc0"><img class="" alt="" data-upload-status="success" data-uploading="uploaded" src="https://cf.shopee.vn/file/vn-11134208-7qukw-lfyd3xjaf2p6d3"><img class="" alt="" data-upload-status="success" data-uploading="uploaded" src="https://cf.shopee.vn/file/vn-11134208-7qukw-lfyd3xjagh9m53"><img class="" alt="" data-upload-status="success" data-uploading="uploaded" src="https://cf.shopee.vn/file/vn-11134208-7qukw-lfyd3xjajaei89"><img class="" alt="" data-upload-status="success" data-uploading="uploaded" src="https://cf.shopee.vn/file/vn-11134208-7qukw-lfyd3xjakoyy8a"><img class="" alt="" data-upload-status="success" data-uploading="uploaded" src="https://cf.shopee.vn/file/vn-11134208-7qukw-lfz46apazxmfd6"><img class="" alt="" data-upload-status="success" data-uploading="uploaded" src="https://cf.shopee.vn/file/vn-11134208-7qukw-lfydbjatk9d634"></p>
-                                                        <p>&nbsp;</p>
-                                                        <p>&nbsp;</p>
-                                                    </div>
-                                                </div>
-                                                <div class="readmore " id="readmore_desc"><span class="closed">Xem thêm</span></div>
-                                                <div class="readmore hide" id="readany_desc"><span class="closed">Rút gọn</span></div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                        
+
+                                        {!!  $data->Detail  !!}    
                                 </div>
+
+
+
+
                                 <div class="rate-comment-plugin">
                                     <div class="tab-title cls">
                                         <div class="cat-title-main" id="prodetails_tab30"> <span>Đánh giá <span title="tt_main_color">sản phẩm</span></span> </div>
@@ -576,13 +568,13 @@
                                     <form action="#" name="buy_simple_form" method="post">
                                         <div class="price cls " itemprop="offers" itemscope="" itemtype="https://schema.org/AggregateOffer">
                                             <link itemprop="availability" href="https://schema.org/InStock">
-                                            <div class="price_current " id="price" content="3449000"> 3.449.000₫ </div>
+                                            <div class="price_current " id="price" content="3449000"> {{ str_replace(',' ,'.', number_format($data->Price)) }}₫ </div>
                                             <meta itemprop="lowPrice" content="3449000">
                                             <meta itemprop="highPrice" content="3449000">
                                             <meta itemprop="itemOffered" name="itemOffered" content="10">
                                             <meta itemprop="offerCount" name="offerCount" content="999">
                                             <meta itemprop="priceCurrency" content="VND">
-                                            <div class="price_old"> <span class="price_old_nb" id="price_old" content="4800000"> 4.800.000₫</span> </div> <span class="unit_data"> / Chiếc</span>
+                                            <!-- <div class="price_old"> <span class="price_old_nb" id="price_old" content="4800000"> 4.800.000₫</span> </div> <span class="unit_data"> / Chiếc</span> -->
                                             <div class="in_stock"> <i></i>Còn hàng </div>
                                         </div>
                                         <div class="clear"></div>
@@ -616,86 +608,9 @@
                                     <div class="tab_content_right">
                                         <div class="characteristic">
                                             <h2 class="tab-title"> <span>Thông tin sản phẩm</span> </h2>
-                                            <table class="charactestic_table" border="0" bordercolor="#EEE" cellpadding="7" width="100%">
-                                                <tbody>
-                                                    <tr class="tr-0">
-                                                        <td class="title_charactestic" width="40%"> Độ sáng máy chiếu </td>
-                                                        <td class="content_charactestic"> 8000 lumen </td>
-                                                    </tr>
-                                                    <tr class="tr-1">
-                                                        <td class="title_charactestic" width="40%"> Tỷ lệ tương phản động </td>
-                                                        <td class="content_charactestic"> 10000:1 </td>
-                                                    </tr>
-                                                    <tr class="tr-0">
-                                                        <td class="title_charactestic" width="40%"> Công nghệ hiển thị </td>
-                                                        <td class="content_charactestic"> độ phân giải lớn 1080P có hỗ trợ xem 4K </td>
-                                                    </tr>
-                                                    <tr class="tr-1">
-                                                        <td class="title_charactestic" width="40%"> Tuổi thọ đèn chiếu </td>
-                                                        <td class="content_charactestic"> Trên 30.000 giờ </td>
-                                                    </tr>
-                                                    <tr class="tr-0">
-                                                        <td class="title_charactestic" width="40%"> Công suất nguồn sáng </td>
-                                                        <td class="content_charactestic"> 125W </td>
-                                                    </tr>
-                                                    <tr class="tr-1">
-                                                        <td class="title_charactestic" width="40%"> Ngôn ngữ </td>
-                                                        <td class="content_charactestic"> 23 ngôn ngữ, có Tiếng Việt </td>
-                                                    </tr>
-                                                    <tr class="tr-0">
-                                                        <td class="title_charactestic" width="40%"> Kích thước thân máy </td>
-                                                        <td class="content_charactestic"> 210x190x150mm </td>
-                                                    </tr>
-                                                    <tr class="tr-1">
-                                                        <td class="title_charactestic" width="40%"> Trọng lượng </td>
-                                                        <td class="content_charactestic"> 3kg </td>
-                                                    </tr>
-                                                    <tr class="tr-0">
-                                                        <td class="title_charactestic" width="40%"> Hỗ trợ tỷ lệ khung hình </td>
-                                                        <td class="content_charactestic"> 4:3 16:9 </td>
-                                                    </tr>
-                                                    <tr class="tr-1">
-                                                        <td class="title_charactestic" width="40%"> Hệ số thu phóng </td>
-                                                        <td class="content_charactestic"> Lấy nét tự động </td>
-                                                    </tr>
-                                                    <tr class="tr-0">
-                                                        <td class="title_charactestic" width="40%"> Dung lượng bộ nhớ (ROM) </td>
-                                                        <td class="content_charactestic"> 32GB </td>
-                                                    </tr>
-                                                    <tr class="tr-1">
-                                                        <td class="title_charactestic" width="40%"> Bộ nhớ chạy (RAM) </td>
-                                                        <td class="content_charactestic"> 4GB </td>
-                                                    </tr>
-                                                    <tr class="tr-0">
-                                                        <td class="title_charactestic" width="40%"> Phạm vi màn hình được hỗ trợ </td>
-                                                        <td class="content_charactestic"> 20-200 inch - Hệ điều hành thông minh: Android 10 </td>
-                                                    </tr>
-                                                    <tr class="tr-1">
-                                                        <td class="title_charactestic" width="40%"> Phạm vi hiệu chỉnh Keystone </td>
-                                                        <td class="content_charactestic"> Hiệu chỉnh bốn chiều </td>
-                                                    </tr>
-                                                    <tr class="tr-0">
-                                                        <td class="title_charactestic" width="40%"> Bảo hành </td>
-                                                        <td class="content_charactestic"> 12 tháng </td>
-                                                    </tr>
-                                                    <tr class="tr-1">
-                                                        <td class="title_charactestic" width="40%"> HDMI </td>
-                                                        <td class="content_charactestic"> (1 cổng) </td>
-                                                    </tr>
-                                                    <tr class="tr-0">
-                                                        <td class="title_charactestic" width="40%"> USB </td>
-                                                        <td class="content_charactestic"> 2 USB, 1 Jack 3.5mm </td>
-                                                    </tr>
-                                                    <tr class="tr-1">
-                                                        <td class="title_charactestic" width="40%"> Wifi </td>
-                                                        <td class="content_charactestic"> Tần số kép 2.4/5GHz 802.11a/b/g/n </td>
-                                                    </tr>
-                                                    <tr class="tr-0">
-                                                        <td class="title_charactestic" width="40%"> Bluetooth </td>
-                                                        <td class="content_charactestic"> BT tiêu chuẩn 4.0 </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
+
+                                            {!! $data->Specifications  !!}
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -846,19 +761,15 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div id="prodetails_tab20" class="prodetails_tab">
+                                
+
+                                <!-- <div id="prodetails_tab20" class="prodetails_tab">
                                     <div class="tab_content_right">
-                                        <script>
-                                            function load_ajax_pagination($value){
-                                                $.get($value,{}, function(html){ 
-                                                    $('#_info_comment').html(html);
-                                                    $('html, body').animate({scrollTop:$('#_info_comment').position().top}, 'slow');
-                                                });
-                                            }
-                                        </script>
                                         <div class="full-screen-mobile"></div>
                                         <div class="comments">
-                                            <div class="tab_label"> <h3>Đánh giá <strong>về Máy chiếu mini Android Wifi thông minh KAW KP950 cân chỉnh 4 góc</strong></h3> </span></div>
+                                            <div class="tab_label">
+                                                <h3>Đánh giá <strong>về Máy chiếu mini Android Wifi thông minh KAW KP950 cân chỉnh 4 góc</strong></h3> </span>
+                                            </div>
                                             <form method="post" class="comment_keyword_wrapper" onsubmit="return search_comment();"> <input type="text" id="comment_keyword" name="comment_keyword" placeholder="Tìm theo nội dung, người gửi..."> <button type="submit" class="button-search button"> <svg aria-hidden="true" data-prefix="far" data-icon="search" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-search fa-w-16">
                                                         <path fill="currentColor" d="M508.5 468.9L387.1 347.5c-2.3-2.3-5.3-3.5-8.5-3.5h-13.2c31.5-36.5 50.6-84 50.6-136C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c52 0 99.5-19.1 136-50.6v13.2c0 3.2 1.3 6.2 3.5 8.5l121.4 121.4c4.7 4.7 12.3 4.7 17 0l22.6-22.6c4.7-4.7 4.7-12.3 0-17zM208 368c-88.4 0-160-71.6-160-160S119.6 48 208 48s160 71.6 160 160-71.6 160-160 160z" class=""></path>
                                                     </svg> </button> </form>
@@ -884,7 +795,7 @@
                                                                                 <aside class="_right"> <input required="" class="txt_input" name="name" id="cmt_name_1" type="text" placeholder="Họ tên (bắt buộc)" maxlength="50" autocomplete="off" value=""><input required="" class="txt_input" name="email" id="cmt_email_1" type="email" placeholder="Email (bắt buộc)" value=""></aside>
                                                                             </div>
                                                                             <div class="wrap_submit mbl"><input type="submit" class="_btn_comment" value="Gửi bình luận"></div>
-                                                                        </div><!-- .wrap_r --><input type="hidden" value="products" name="module" id="_cmt_module_1"><input type="hidden" value="product" name="view" id="_cmt_view_1"><input type="hidden" value="products" name="type" id="_cmt_type_1"><input type="hidden" value="save_reply" name="task"><input type="hidden" value="1" name="parent_id" id="cmt_parent_id_1"><input type="hidden" value="0" name="record_id" id="_cmt_record_id_1"><input type="hidden" value="" name="return" id="_cmt_return_1"><input type="hidden" value="/index.php?module=comments&amp;view=comments&amp;type=products&amp;task=save_reply&amp;raw=1" name="return" id="cmt_link_reply_form_1">
+                                                                        </div><input type="hidden" value="products" name="module" id="_cmt_module_1"><input type="hidden" value="product" name="view" id="_cmt_view_1"><input type="hidden" value="products" name="type" id="_cmt_type_1"><input type="hidden" value="save_reply" name="task"><input type="hidden" value="1" name="parent_id" id="cmt_parent_id_1"><input type="hidden" value="0" name="record_id" id="_cmt_record_id_1"><input type="hidden" value="" name="return" id="_cmt_return_1"><input type="hidden" value="/index.php?module=comments&amp;view=comments&amp;type=products&amp;task=save_reply&amp;raw=1" name="return" id="cmt_link_reply_form_1">
                                                                     </form>
                                                                 </div>
                                                             </div>
@@ -893,7 +804,7 @@
                                                 </div>
                                             </div>
                                             <form action="javascript:void(0);" method="post" name="comment_add_form" id="comment_add_form" class="form_comment cls" onsubmit="javascript: submit_comment();return false;">
-                                                <!-- <label class="label_form">Bình luận</label> -->
+                                               
                                                 <div class="tab-title"> <span>Bình luận <span>sản phẩm</span></span> </div>
                                                 <div class="_textarea"> <textarea name="content" id="cmt_content" placeholder="Viết bình luận của bạn..."></textarea> </div> <button type="button" class="btn-comment-mb">Gửi bình luận </button>
                                                 <div class="wrap_r cls">
@@ -911,11 +822,12 @@
                                                     <div class="wrap_submit mbl">
                                                         <div class="pull-right clearfix"> <input type="submit" class="_btn_comment" value="Gửi bình luận"> </div>
                                                     </div>
-                                                </div> <input type="hidden" value="comments" name="module"> <input type="hidden" value="comments" name="view"> <input type="hidden" value="products" name="type" id="_cmt_type"> <!-- <input type="hidden" value="5231" name='record_id' id="record_id" /> --> <input type="hidden" value="products" name="_cmt_module" id="_cmt_module"> <input type="hidden" value="product" name="_cmt_view" id="_cmt_view"> <input type="hidden" value="save_comment" name="task"> <input type="hidden" value="5231" name="record_id" id="_cmt_record_id"> <input type="hidden" value="" name="return" id="_cmt_return"> <input type="hidden" name="linkurlall" id="cmt_linkurlall" value="https://maychieuminikaw.com/may-chieu-mini/may-chieu-mini-android-wifi-thong-minh-kaw-kp950-can-chinh-4-goc-p5231.html?fbclid=IwAR2pIVs4UQ50uN36QzfVjVvvxlt1V_k46B3ULAG3dysTiDM_Nw8vBodZmoM"> <input type="hidden" value="/index.php?module=comments&amp;view=comments&amp;type=products&amp;task=save_comment&amp;raw=1" name="return" id="link_reply_form">
+                                                </div> <input type="hidden" value="comments" name="module"> <input type="hidden" value="comments" name="view"> <input type="hidden" value="products" name="type" id="_cmt_type">  <input type="hidden" value="products" name="_cmt_module" id="_cmt_module"> <input type="hidden" value="product" name="_cmt_view" id="_cmt_view"> <input type="hidden" value="save_comment" name="task"> <input type="hidden" value="5231" name="record_id" id="_cmt_record_id"> <input type="hidden" value="" name="return" id="_cmt_return"> <input type="hidden" name="linkurlall" id="cmt_linkurlall" value="https://maychieuminikaw.com/may-chieu-mini/may-chieu-mini-android-wifi-thong-minh-kaw-kp950-can-chinh-4-goc-p5231.html?fbclid=IwAR2pIVs4UQ50uN36QzfVjVvvxlt1V_k46B3ULAG3dysTiDM_Nw8vBodZmoM"> <input type="hidden" value="/index.php?module=comments&amp;view=comments&amp;type=products&amp;task=save_comment&amp;raw=1" name="return" id="link_reply_form">
                                             </form>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
+
                                 <div class="clear"></div>
                                 <div class="clear"></div>
                             </div>

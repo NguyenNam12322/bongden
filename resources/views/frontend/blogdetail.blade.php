@@ -1,109 +1,45 @@
+@extends('frontend.layouts.apps')
+@section('content')
+<main id="main" class="">
+    <div id="content" class="blog-wrapper blog-single page-wrapper">
+        <div class="row row-large ">
+            <div class="large-9 col">
+                <article id="post-11343" class="post-11343 post type-post status-publish format-standard has-post-thumbnail hentry category-tin-hoat-dong">
+                    <div class="article-inner ">
+                        <header class="entry-header">
+                            <div class="entry-header-text entry-header-text-bottom text-left">
+                                <h6 class="entry-category is-xsmall"> <a href="https://tlclighting.com.vn/category/tin-hoat-dong/" rel="category tag">{{ $name_cate }}</a></h6>
+                                <h1 class="entry-title">{{ strip_tags($data->title) }}</h1>
+                                <div class="entry-divider is-divider small"></div>
+                            </div>
+                        </header>
 
 
-    @extends('frontend.layouts.apps')
 
-    @section('content') 
+                        {!!   $data->content  !!}
 
-    <?php 
-        $content = preg_replace("/<a(.*?)>/", "<a$1 target=\"_blank\">",  $data->content);
-    ?>
 
-    <div class="body-content bg-page clearfix">
-        <div class="container">
-            <div class="wrap-product">
-                <div class="row">
-                    <div class="col-12">
-                        <nav>
-                            <ol class="breadcrumb" itemscope="" itemtype="https://schema.org/BreadcrumbList">
-                                <li class="breadcrumb-item" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
-                                    <a href="../index.htm" itemprop="item">
-                                        <h3 itemprop="name">Trang chủ</h3>
-                                        <meta itemprop="position" content="1">
-                                    </a>
-                                <li class="breadcrumb-item active">
-                                    <h1>Tin tức</h1>
-                                </li>
-                            </ol>
-                        </nav>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12 col-md-3 col-lg-3">
-                        <div class="nav-newscate-child">
-                            <h2 class="title">
-                                Dịch vụ nổi bật
-                            </h2>
-                            <ul class="navbar-nav">
-                                <li class="nav-item "><a href="../dich-vu/dich-vu-scba-674.html">Dịch Vụ SCBA</a></li>
-                                <li class="nav-item "><a href="../dich-vu/quan-ao-chong-ho-quang-dien-694.html">Quần Áo Chống Hồ Quang Điện</a></li>
-                            </ul>
-                        </div>
-                        <div class="nav-newscate-child">
-                            <h2 class="title">
-                                BẢO HỘ NGÀNH - LĨNH VỰC
-                            </h2>
-                            <?php 
 
-                                $field = App\Models\groupProduct::where('parent_id', 13)->select('link', 'name')->get()
-                            ?>
 
-                            @if(!empty($field) && $field->count()>0)
-                            <ul class="navbar-nav">
-                                @foreach($field as $value)
-                                <li class="nav-item "><a href="{{ route('details', $value->link) }}">{{ $value->name }}</a></li>
-                                @endforeach
-                               
-                               
-                            </ul>
-                            @endif
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-9 col-lg-9">
-                        <div class="news-detail row">
-                            <div class="col-12 col-md-12 col-lg-12">
-                                <div class="news-item-content-box">
-                                    <h1 class="news-title text-color">
-                                        {{ $data->title }}
-                                    </h1>
-                                    <div class="news-item-description">
-                                        {!!   $content  !!}
-                                    </div>
+                        <!-- <nav role="navigation" id="nav-below" class="navigation-post">
+                            <div class="flex-row next-prev-nav bt bb">
+                                <div class="flex-col flex-grow nav-prev text-left">
+                                    <div class="nav-previous"><a href="https://tlclighting.com.vn/team-building-tlc-2023-ket-noi-nhung-nguoi-thap-sang/" rel="prev"><span class="hide-for-small"><i class="icon-angle-left"></i></span> Team Building TLC 2023: Kết nối những người thắp sáng</a></div>
+                                </div>
+                                <div class="flex-col flex-grow nav-next text-right">
+                                    <div class="nav-next"><a href="https://tlclighting.com.vn/thap-sang-duong-que-noi-cua-ngo-vung-tay-bac/" rel="next">Thắp sáng đường quê nơi cửa ngõ vùng Tây Bắc <span class="hide-for-small"><i class="icon-angle-right"></i></span></a></div>
                                 </div>
                             </div>
-                        </div>
-                        <ul class="list-unstyled wrapbox-pNavCate wrapbox-pNavCates">
-                            <li class="wrapbox-getProducts active" data-w="3" data-cid="17">
-                                <h3>
-                                    <a href="" style="text-transform: uppercase; font-size: 13pt;">
-                                    TIn KHÁC</a>
-                                </h3>
-                            </li>
-                        </ul>
-                        <div style="padding-top :15px;">
-                            @if(isset($related_news))
-                            @foreach($related_news as $news)
-                            @if($news->id != $data->id)
-                            <div style="padding: 5px 0 0 5px; font-size: 11pt;">
-                                <img src="../icon/muitenn.png" alt="Icon">
-                                <a href="{{ route('details', $news->link) }}">
-                                    {{ $news->title }}
-                                </a>
-                            </div>
-
-                            @endif
-                            @endforeach
-                             @endif
-                            
-                        </div>
+                        </nav> -->
                     </div>
-                </div>
+                </article>
+                <div id="comments" class="comments-area"></div>
             </div>
+            @include('include.sizebar');
+            
+            
         </div>
     </div>
-    
-    @endsection
+</main>
 
-
-
-
-   
+@endsection

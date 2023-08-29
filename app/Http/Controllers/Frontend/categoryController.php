@@ -372,6 +372,7 @@ class categoryController extends Controller
 
         if(empty($findID)){
 
+
             return $this->blogDetailView($slug);
 
 

@@ -28,12 +28,8 @@
     {!! Form::select('button', $option, @$options, ['class' => 'form-control custom-select']) !!}
 </div>
 
-
-
-
 <?php  
 
-    
 
     $groupProducts = App\Models\groupProduct::select('id', 'name', 'group_product_id')->get()->toArray();
 

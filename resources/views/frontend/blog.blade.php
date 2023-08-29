@@ -4,114 +4,52 @@
 
     @section('content') 
 
-    
-    <div class="body-content bg-page clearfix">
-                <div class="container">
-                    <div class="wrap-product">
-                        <div class="row">
-                            <div class="col-12">
-                                <nav>
-                                    <ol class="breadcrumb" itemscope="" itemtype="https://schema.org/BreadcrumbList">
-                                        <li class="breadcrumb-item" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
-                                            <a href="index.htm" itemprop="item">
-                                                <h3 itemprop="name">Trang chủ</h3>
-                                                <meta itemprop="position" content="1">
-                                            </a>
-                                        <li class="breadcrumb-item active">
-                                            <h1>{{ $name_cates_cate??'Tin Tức' }}</h1>
-                                        </li>
-                                    </ol>
-                                </nav>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12 col-md-12">
-                                <ul class="list-unstyled wrapbox-pNavCate wrapbox-pNavCates">
-                                    <li class="wrapbox-getProducts active" data-w="3" data-cid="17">
-                                        <h3>
-                                            <a href="" style="text-transform: uppercase; font-size: 13pt;">
-                                            {{ $name_cates_cate??'Tin Tức' }}</a>
-                                        </h3>
-                                    </li>
-                                </ul>
-                                <div style="padding:5px 0;">
-                                </div>
-                            </div>
-                        </div>
+    <main id="main" class="">
+        <div id="content" class="blog-wrapper blog-archive page-wrapper">
+            <div class="row row-large ">
 
-                        <div class="clearfix pt-3">
-                        </div>
+                @include('include.sizebar')
 
-                        @if(!empty($show_more))
+                <div class="large-9 col medium-col-first">
+                    <div class="row large-columns-1 medium-columns- small-columns-1">
 
-                        <div class="row">
-                            <div class="col-12 col-md-12">
+                        @isset($data)
+                        @foreach($data as $value)
 
-                                {!!  $show_more   !!}
-                            </div>
-                        </div>        
-
-                        <div class="clearfix pt-3">
-                        </div>
-
-                        @endif
-
-                        <div class="row">
-                            <div class="col-12 col-md-12">
-                                <div class="row">
-                                    <div id="getproducts" class="col-12 col-md-12">
-                                        <div class="row product-list product-list-bycate">
-
-                                            @isset($data)
-                                            @foreach($data as $value)
-                                            <div class="newscate-grid-0 col-6 col-md-4 col-lg-3">
-                                                <div class="news-thumbnail-grid">
-                                                    <a href="{{ route('details', $value->link) }}" data-id="15625">
-                                                        <div class="thumbnail-grid">
-                                                            <picture>
-                                                                <source srcset="{{ asset($value->image) }}" type="image/webp">
-                                                                <source srcset="{{ asset($value->image) }}" type="image/jpeg">
-                                                                <img loading="lazy" src="{{ asset($value->image) }}" alt="{{ $value->title }}">
-                                                                <span class="product-item-view product-item-view-1752" style="display:none;"></span>
-                                                            </picture>
-                                                        </div>
-                                                        <div style="height:60px; padding:0 5px; color:#313131; font-weight:bold;">
-                                                            {{ $value->title }}
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                            </div>
-
-                                            @endforeach
-                                            @endif
-                                            
+                        <div class="col post-item">
+                            <div class="col-inner"> <a href="{{ route('details', $value->link) }}" class="plain">
+                                    <div class="box box-vertical box-text-bottom box-blog-post has-hover">
+                                        <div class="box-image" style="width:40%;">
+                                            <div class="image-cover" style="padding-top:56%;"> <img data-lazyloaded="1" src="{{ asset($value->image) }}"></div>
                                         </div>
-                                        {{ $data->links() }}
+                                        <div class="box-text text-left">
+                                            <div class="box-text-inner blog-post-inner">
+                                                <h3 class="post-title is-large ">{!! strip_tags($value->title) !!}</h3>
+                                                <div class="is-divider"></div>
+                                                <p class="from_the_blog_excerpt ">{{   _substrs(strip_tags($value->content), 250)   }}</p>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
+                                </a></div>
                         </div>
 
-
-                        <div class="clearfix pt-3">
-                        </div>
-                        <div class="row">
-                            <div class="category-viewed col-12 col-md-12">
-                            </div>
-                        </div>
-                        <div class="clearfix pt-3">
-                        </div>
-                        <div class="row">
-                            <div class="product-viewed col-12 col-md-12">
-                            </div>
-                        </div>
-                        <div class="clearfix pt-3">
-                        </div>
+                        @endforeach
+                        @endif
+                        
                     </div>
-                </div>
-                <div class="clearfix">
+                    <!-- <ul class="page-numbers nav-pagination links text-center">
+                        <li><span aria-current="page" class="page-number current">1</span></li>
+                        <li><a class="page-number" href="https://tlclighting.com.vn/category/tin-hoat-dong/page/2/">2</a></li>
+                        <li><a class="page-number" href="https://tlclighting.com.vn/category/tin-hoat-dong/page/3/">3</a></li>
+                        <li><a class="page-number" href="https://tlclighting.com.vn/category/tin-hoat-dong/page/4/">4</a></li>
+                        <li><span class="page-number dots">…</span></li>
+                        <li><a class="page-number" href="https://tlclighting.com.vn/category/tin-hoat-dong/page/7/">7</a></li>
+                        <li><a class="next page-number" href="https://tlclighting.com.vn/category/tin-hoat-dong/page/2/"><i class="icon-angle-right"></i></a></li>
+                    </ul> -->
                 </div>
             </div>
+        </div>
+    </main>
   
     @endsection
    
