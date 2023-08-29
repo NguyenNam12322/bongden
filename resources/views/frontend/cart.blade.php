@@ -84,7 +84,7 @@ ul.menu-bottom li.level0{float:left;width:50%;box-sizing:border-box}@media scree
                                             <div class="col-td"> <a class="name-item" title="{{ $data->name }}" href="{{ route('details', $infoProducts->Link) }}"> {{ $data->name }} </a>
                                                 <div class="string_info_extent"> Giá sản phẩm: {{ number_format($data->price , 0, ',', '.')}}đ </div>
                                             </div>
-                                            <div class="col-td col-td-number"> <span class="price"> {{ number_format($data->price , 0, ',', '.')}}đ </span> <span class="btn-minus" onclick="load_ajax_cart('5231_0_0_0_0_0','minus')">-</span> <input onkeyup="onchange_number('5231_0_0_0_0_0')" class="numbers-pro  " type="text" min="0" max="1000" value="1" name="quantity_5231_0_0_0_0_0" size="8px" id="quantity_5231_0_0_0_0_0"> <span class="btn-plus" onclick="load_ajax_cart('5231_0_0_0_0_0','plus')">+</span> <span class="error-number-item error_5231_0_0_0_0_0"></span> </div>
+                                            <div class="col-td col-td-number"> <span class="price"> {{ number_format($data->price , 0, ',', '.')}}đ </span> <span class="btn-minus" onclick="load_ajax_cart('5231_0_0_0_0_0','minus')">-</span> <input  class="numbers-pro  " type="text" min="0" max="1000" value="{{ $data->qty??0 }}" name="quantity_5231_0_0_0_0_0" size="8px" id="quantity_5231_0_0_0_0_0"> <span class="btn-plus" onclick="load_ajax_cart('5231_0_0_0_0_0','plus')">+</span> <span class="error-number-item error_5231_0_0_0_0_0"></span> </div>
                                         </div> 
                                         @endforeach
                                         @endif
@@ -306,6 +306,39 @@ ul.menu-bottom li.level0{float:left;width:50%;box-sizing:border-box}@media scree
             });
 
         }
+
+        function updateDataCart(key, dataId) {
+
+
+        const val_number = $('#'+key).val();
+        val_numbers =  parseInt(val_number);
+
+
+
+        if(val_numbers>=0){
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+            $.ajax({
+                type: 'POST',
+                url: "{{ route('addCartNumber') }}",
+                data: {
+                    rowId: dataId,
+                    number:val_numbers
+                },
+                success: function(result){
+
+                    window.location.reload();
+                }
+            });
+
+           
+        }
+
+    }
     </script>
 
     
