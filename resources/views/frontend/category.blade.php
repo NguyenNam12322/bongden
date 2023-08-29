@@ -9,7 +9,7 @@
         <div class="col large-9">
             <div class="shop-container">
                 <div class="term-description">
-                   {!!  $slogan !!} 
+                   {!!  @$slogan !!} 
                 </div>
                 <div class="woocommerce-notices-wrapper"></div>
                 <div class="products row row-small large-columns-4 medium-columns-3 small-columns-2">
