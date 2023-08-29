@@ -927,7 +927,7 @@
     </div>
     <div class="clear"></div>
 </div>
-@push('script')
+
 
         <script type="text/javascript">
             function addToCart(id) {
@@ -965,6 +965,6 @@
 
 </script>
 
-@endpush
+
 
 @endsection
