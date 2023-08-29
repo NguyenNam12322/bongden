@@ -143,8 +143,11 @@
 
 
         <div class="row large-columns-4 medium-columns-3 small-columns-2 row-xsmall has-shadow row-box-shadow-1-hover slider row-slider slider-nav-reveal slider-nav-push" data-flickity-options='{"imagesLoaded": true, "groupCells": "100%", "dragThreshold" : 5, "cellAlign": "left","wrapAround": true,"prevNextButtons": true,"percentPosition": true,"pageDots": false, "rightToLeft": false, "autoPlay" : false}'>
+
+
             <div class="product-category col">
-                <div class="col-inner"> <a href="danh-muc/den-led-am-tran/index.html">
+                <div class="col-inner"> 
+                    <a href="{{ route('details', 'den-led-am-tran-1')  }}">
                         <div class="box box-category has-hover box-default ">
                             <div class="box-image">
                                 <div class="image-cover" style="padding-top:100%;"> <img data-lazyloaded="1" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIiB2aWV3Qm94PSIwIDAgMzAwIDMwMCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2NmZDRkYiIvPjwvc3ZnPg==" data-src="https://tlclighting.com.vn/wp-content/uploads/2020/09/den-led-am-tran-tos-300x300.jpg" alt="Đèn LED âm trần" width="300" height="300" /></div>
@@ -155,10 +158,13 @@
                                 </div>
                             </div>
                         </div>
-                    </a></div>
+                    </a>
+                </div>
             </div>
+
+
             <div class="product-category col">
-                <div class="col-inner"> <a href="danh-muc/den-led-tuyp/index.html">
+                <div class="col-inner"> <a href="{{ route('details', 'den-led-tuyp-1')  }}">
                         <div class="box box-category has-hover box-default ">
                             <div class="box-image">
                                 <div class="image-cover" style="padding-top:100%;"> <img data-lazyloaded="1" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIiB2aWV3Qm94PSIwIDAgMzAwIDMwMCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2NmZDRkYiIvPjwvc3ZnPg==" data-src="https://tlclighting.com.vn/wp-content/uploads/2020/09/den-led-tuyp-thuy-tinh-20w-300x300.jpg" alt="Đèn LED Tuýp" width="300" height="300" /></div>
@@ -171,22 +177,9 @@
                         </div>
                     </a></div>
             </div>
+            
             <div class="product-category col">
-                <div class="col-inner"> <a href="danh-muc/den-led-bup/index.html">
-                        <div class="box box-category has-hover box-default ">
-                            <div class="box-image">
-                                <div class="image-cover" style="padding-top:100%;"> <img data-lazyloaded="1" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIiB2aWV3Qm94PSIwIDAgMzAwIDMwMCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2NmZDRkYiIvPjwvc3ZnPg==" data-src="https://tlclighting.com.vn/wp-content/uploads/2020/09/den-led-bup-tru-eco-300x300.jpg" alt="Đèn LED Búp" width="300" height="300" /></div>
-                            </div>
-                            <div class="box-text text-center dark" style="background-color:rgb(0, 81, 134);padding:0px 0px 9px 0px;">
-                                <div class="box-text-inner">
-                                    <h3 class="uppercase header-title"> Đèn LED Búp</h3>
-                                </div>
-                            </div>
-                        </div>
-                    </a></div>
-            </div>
-            <div class="product-category col">
-                <div class="col-inner"> <a href="danh-muc/den-led-op-tran/index.html">
+                <div class="col-inner"> <a href="{{ route('details', 'den-led-op-tran-1')  }}">
                         <div class="box box-category has-hover box-default ">
                             <div class="box-image">
                                 <div class="image-cover" style="padding-top:100%;"> <img data-lazyloaded="1" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIiB2aWV3Qm94PSIwIDAgMzAwIDMwMCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2NmZDRkYiIvPjwvc3ZnPg==" data-src="https://tlclighting.com.vn/wp-content/uploads/2020/09/den-led-op-tran-tlc-300x300.jpg" alt="Đèn LED ốp trần" width="300" height="300" /></div>
@@ -200,7 +193,7 @@
                     </a></div>
             </div>
             <div class="product-category col">
-                <div class="col-inner"> <a href="danh-muc/den-led-panel/index.html">
+                <div class="col-inner"> <a href="#">
                         <div class="box box-category has-hover box-default ">
                             <div class="box-image">
                                 <div class="image-cover" style="padding-top:100%;"> <img data-lazyloaded="1" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIiB2aWV3Qm94PSIwIDAgMzAwIDMwMCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2NmZDRkYiIvPjwvc3ZnPg==" data-src="https://tlclighting.com.vn/wp-content/uploads/2020/09/den-led-panel-tam-01-1-300x300.jpg" alt="Đèn LED panel tấm" width="300" height="300" /></div>
@@ -214,7 +207,7 @@
                     </a></div>
             </div>
             <div class="product-category col">
-                <div class="col-inner"> <a href="danh-muc/den-led-day/index.html">
+                <div class="col-inner"> <a href="#">
                         <div class="box box-category has-hover box-default ">
                             <div class="box-image">
                                 <div class="image-cover" style="padding-top:100%;"> <img data-lazyloaded="1" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIiB2aWV3Qm94PSIwIDAgMzAwIDMwMCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2NmZDRkYiIvPjwvc3ZnPg==" data-src="https://tlclighting.com.vn/wp-content/uploads/2020/09/den-led-day-01-300x300.jpg" alt="Đèn LED dây" width="300" height="300" /></div>
@@ -227,90 +220,7 @@
                         </div>
                     </a></div>
             </div>
-            <div class="product-category col">
-                <div class="col-inner"> <a href="danh-muc/den-led-roi/index.html">
-                        <div class="box box-category has-hover box-default ">
-                            <div class="box-image">
-                                <div class="image-cover" style="padding-top:100%;"> <img data-lazyloaded="1" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIiB2aWV3Qm94PSIwIDAgMzAwIDMwMCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2NmZDRkYiIvPjwvc3ZnPg==" data-src="https://tlclighting.com.vn/wp-content/uploads/2020/09/den-led-roi-ray-zoom-300x300.jpg" alt="Đèn LED rọi ray" width="300" height="300" /></div>
-                            </div>
-                            <div class="box-text text-center dark" style="background-color:rgb(0, 81, 134);padding:0px 0px 9px 0px;">
-                                <div class="box-text-inner">
-                                    <h3 class="uppercase header-title"> Đèn LED rọi ray</h3>
-                                </div>
-                            </div>
-                        </div>
-                    </a></div>
-            </div>
-            <div class="product-category col">
-                <div class="col-inner"> <a href="danh-muc/den-tuong/index.html">
-                        <div class="box box-category has-hover box-default ">
-                            <div class="box-image">
-                                <div class="image-cover" style="padding-top:100%;"> <img data-lazyloaded="1" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIiB2aWV3Qm94PSIwIDAgMzAwIDMwMCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2NmZDRkYiIvPjwvc3ZnPg==" data-src="https://tlclighting.com.vn/wp-content/uploads/2020/09/den-led-tuong-01-300x300.jpg" alt="Đèn LED tường" width="300" height="300" /></div>
-                            </div>
-                            <div class="box-text text-center dark" style="background-color:rgb(0, 81, 134);padding:0px 0px 9px 0px;">
-                                <div class="box-text-inner">
-                                    <h3 class="uppercase header-title"> Đèn LED tường</h3>
-                                </div>
-                            </div>
-                        </div>
-                    </a></div>
-            </div>
-            <div class="product-category col">
-                <div class="col-inner"> <a href="danh-muc/den-pha-led/index.html">
-                        <div class="box box-category has-hover box-default ">
-                            <div class="box-image">
-                                <div class="image-cover" style="padding-top:100%;"> <img data-lazyloaded="1" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIiB2aWV3Qm94PSIwIDAgMzAwIDMwMCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2NmZDRkYiIvPjwvc3ZnPg==" data-src="https://tlclighting.com.vn/wp-content/uploads/2020/09/den-led-pha-aeon-01-300x300.jpg" alt="Đèn pha LED" width="300" height="300" /></div>
-                            </div>
-                            <div class="box-text text-center dark" style="background-color:rgb(0, 81, 134);padding:0px 0px 9px 0px;">
-                                <div class="box-text-inner">
-                                    <h3 class="uppercase header-title"> Đèn pha LED</h3>
-                                </div>
-                            </div>
-                        </div>
-                    </a></div>
-            </div>
-            <div class="product-category col">
-                <div class="col-inner"> <a href="danh-muc/den-led-xuong/index.html">
-                        <div class="box box-category has-hover box-default ">
-                            <div class="box-image">
-                                <div class="image-cover" style="padding-top:100%;"> <img data-lazyloaded="1" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIiB2aWV3Qm94PSIwIDAgMzAwIDMwMCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2NmZDRkYiIvPjwvc3ZnPg==" data-src="https://tlclighting.com.vn/wp-content/uploads/2020/09/den-led-nha-xuong-01-300x300.jpg" alt="Đèn LED nhà xưởng" width="300" height="300" /></div>
-                            </div>
-                            <div class="box-text text-center dark" style="background-color:rgb(0, 81, 134);padding:0px 0px 9px 0px;">
-                                <div class="box-text-inner">
-                                    <h3 class="uppercase header-title"> Đèn LED nhà xưởng</h3>
-                                </div>
-                            </div>
-                        </div>
-                    </a></div>
-            </div>
-            <div class="product-category col">
-                <div class="col-inner"> <a href="danh-muc/den-nang-luong-mat-troi-max-eco/index.html">
-                        <div class="box box-category has-hover box-default ">
-                            <div class="box-image">
-                                <div class="image-cover" style="padding-top:100%;"> <img data-lazyloaded="1" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIiB2aWV3Qm94PSIwIDAgMzAwIDMwMCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2NmZDRkYiIvPjwvc3ZnPg==" data-src="https://tlclighting.com.vn/wp-content/uploads/2020/09/den-led-pha-nang-luong-mat-troi-01-300x300.jpg" alt="Đèn LED năng lượng mặt trời" width="300" height="300" /></div>
-                            </div>
-                            <div class="box-text text-center dark" style="background-color:rgb(0, 81, 134);padding:0px 0px 9px 0px;">
-                                <div class="box-text-inner">
-                                    <h3 class="uppercase header-title"> Đèn LED năng lượng mặt trời</h3>
-                                </div>
-                            </div>
-                        </div>
-                    </a></div>
-            </div>
-            <div class="product-category col">
-                <div class="col-inner"> <a href="danh-muc/den-exit-den-chi-dan/index.html">
-                        <div class="box box-category has-hover box-default ">
-                            <div class="box-image">
-                                <div class="image-cover" style="padding-top:100%;"> <img data-lazyloaded="1" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIiB2aWV3Qm94PSIwIDAgMzAwIDMwMCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2NmZDRkYiIvPjwvc3ZnPg==" data-src="https://tlclighting.com.vn/wp-content/uploads/2020/09/den-led-exit-01-300x300.jpg" alt="Đèn LED exit, sự cố" width="300" height="300" /></div>
-                            </div>
-                            <div class="box-text text-center dark" style="background-color:rgb(0, 81, 134);padding:0px 0px 9px 0px;">
-                                <div class="box-text-inner">
-                                    <h3 class="uppercase header-title"> Đèn LED exit, sự cố</h3>
-                                </div>
-                            </div>
-                        </div>
-                    </a></div>
-            </div>
+           
         </div>
 
         <!-- tạm thời ẩn -->
@@ -632,7 +542,7 @@
                                 </div>
                                 <div id="col-216923647" class="col medium-3 small-8 large-3">
                                     <div class="col-inner">
-                                        <div class="img has-hover x md-x lg-x y md-y lg-y" id="image_1772942968"> <a class="" href="https://play.google.com/store/apps/details?id=com.icontechnic.tlclighting&amp;hl=vi" target="_blank" rel="noopener noreferrer">
+                                        <div class="img has-hover x md-x lg-x y md-y lg-y" id="image_1772942968"> <a class="" href="#" target="_blank" rel="noopener noreferrer">
                                                 <div class="img-inner dark"> <img data-lazyloaded="1" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1NzAiIGhlaWdodD0iMTcyIiB2aWV3Qm94PSIwIDAgNTcwIDE3MiI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2NmZDRkYiIvPjwvc3ZnPg==" width="570" height="172" data-src="https://tlclighting.com.vn/wp-content/uploads/2023/03/google-play-bt2-min.png" class="attachment-large size-large" alt="" data-srcset="https://tlclighting.com.vn/wp-content/uploads/2023/03/google-play-bt2-min.png 570w, https://tlclighting.com.vn/wp-content/uploads/2023/03/google-play-bt2-min-300x91.png 300w, https://tlclighting.com.vn/wp-content/uploads/2023/03/google-play-bt2-min-31x9.png 31w" data-sizes="(max-width: 570px) 100vw, 570px" /></div>
                                             </a>
                                             <style>
@@ -645,7 +555,7 @@
                                 </div>
                                 <div id="col-1719299921" class="col medium-3 small-8 large-3">
                                     <div class="col-inner">
-                                        <div class="img has-hover x md-x lg-x y md-y lg-y" id="image_168447717"> <a class="" href="https://apps.apple.com/us/app/" target="_blank" rel="noopener noreferrer">
+                                        <div class="img has-hover x md-x lg-x y md-y lg-y" id="image_168447717"> <a class="" href="#" target="_blank" rel="noopener noreferrer">
                                                 <div class="img-inner dark"> <img data-lazyloaded="1" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1NzAiIGhlaWdodD0iMTcyIiB2aWV3Qm94PSIwIDAgNTcwIDE3MiI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2NmZDRkYiIvPjwvc3ZnPg==" width="570" height="172" data-src="https://tlclighting.com.vn/wp-content/uploads/2023/03/apple-store-bt2-min.png" class="attachment-large size-large" alt="" data-srcset="https://tlclighting.com.vn/wp-content/uploads/2023/03/apple-store-bt2-min.png 570w, https://tlclighting.com.vn/wp-content/uploads/2023/03/apple-store-bt2-min-300x91.png 300w, https://tlclighting.com.vn/wp-content/uploads/2023/03/apple-store-bt2-min-31x9.png 31w" data-sizes="(max-width: 570px) 100vw, 570px" /></div>
                                             </a>
                                             <style>
