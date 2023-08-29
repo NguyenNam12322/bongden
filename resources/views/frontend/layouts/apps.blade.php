@@ -90,6 +90,7 @@
     <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="wp-includes/wlwmanifest.xml" />
     <meta name="generator" content="WordPress 5.5.12" />
     <meta name="generator" content="WooCommerce 4.5.5" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel='shortlink' href='index.html' />
     <link rel="alternate" type="application/json+oembed" href="wp-json/oembed/1.0/embedf446.json?url=https%3A%2F%2Ftlclighting.com.vn%2F" />
     <link rel="alternate" type="text/xml+oembed" href="wp-json/oembed/1.0/embed1945?url=https%3A%2F%2Ftlclighting.com.vn%2F&amp;format=xml" />
@@ -106,6 +107,8 @@
             .woocommerce-product-gallery{ opacity: 1 !important; }
         </style>
     </noscript>
+
+
     <link rel="icon" href="wp-content/uploads/2019/07/cropped-logo-tlc-Recovered-04-1-32x32.png" sizes="32x32" />
     <link rel="icon" href="wp-content/uploads/2019/07/cropped-logo-tlc-Recovered-04-1-192x192.png" sizes="192x192" />
     <link rel="apple-touch-icon" href="wp-content/uploads/2019/07/cropped-logo-tlc-Recovered-04-1-180x180.png" />
@@ -1061,6 +1064,51 @@
     <style>
         #button-contact-vr {transform: scale(0.9);}
     </style>
+
+    <script type="text/javascript">
+        
+
+        $(function() {
+            $("#woocommerce-product-search-field-0").autocomplete({
+
+                minLength: 1,
+                
+                source: function(request, response) {
+                    $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+
+
+                    });
+                    $.ajax({
+
+                        url: "{{  route('sugest-click')}}",
+                        type: "POST",
+                        data: {
+                            "_token": "{{ csrf_token() }}",
+                            product:$('#kws').val()
+                        },
+                        dataType: "json",
+                        success: function (data) {
+                            var items = data;
+
+                            response(items);
+
+                            $('#ui-id-1').html();
+
+                            $('#ui-id-1').html(data);
+                        
+                        }
+                    });
+                },
+                html:true,
+            });
+        });
+
+
+
+    </script>
     <script src="../ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script type="text/javascript" src="data:text/javascript;base64,JCgnLmR2bHMtc3VibWl0JykuY2xpY2soZnVuY3Rpb24oKXskKCIudHRiaDAyMyIpLmFkZENsYXNzKCJoaWRlYmgiKX0pOyQoJy5kdmxzX3Jlc3VsdF93cmFwJykuY2xpY2soZnVuY3Rpb24oKXskKCIudHRiaDAyMyIpLmFkZENsYXNzKCJoaWRlYmgyIil9KQ==" defer></script>
     <div id="login-form-popup" class="lightbox-content mfp-hide">
