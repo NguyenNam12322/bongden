@@ -49,6 +49,11 @@ ul.menu-bottom li.level0{float:left;width:50%;box-sizing:border-box}@media scree
                                 <form action="#" method="post" name="shopcart">
                                     <div class="table-wrap">
 
+                                        <?php 
+
+                                            $arrPrice = [];
+                                        ?>
+
                                         @if(!empty($data_cart) && count($data_cart)>0 )
 
                                         <?php 
@@ -74,7 +79,7 @@ ul.menu-bottom li.level0{float:left;width:50%;box-sizing:border-box}@media scree
                                                         <path d="m173.398438 154.703125c-5.523438 0-10 4.476563-10 10v189c0 5.519531 4.476562 10 10 10 5.523437 0 10-4.480469 10-10v-189c0-5.523437-4.476563-10-10-10zm0 0"></path>
                                                     </svg>Xóa </a> </div>
                                             <div class="col-td"> <a class="name-item" title="{{ $data->name }}" href="{{ route('details', $infoProducts->Link) }}"> {{ $data->name }} </a>
-                                                <div class="string_info_extent"> Giá sản phẩm: {{ number_format($data->price , 0, ',', '.')}} </div>
+                                                <div class="string_info_extent"> Giá sản phẩm: {{ number_format($data->price , 0, ',', '.')}}đ </div>
                                             </div>
                                             <div class="col-td col-td-number"> <span class="price"> {{ number_format($data->price , 0, ',', '.')}} </span> <span class="btn-minus" onclick="load_ajax_cart('5231_0_0_0_0_0','minus')">-</span> <input onkeyup="onchange_number('5231_0_0_0_0_0')" class="numbers-pro  " type="text" min="0" max="1000" value="1" name="quantity_5231_0_0_0_0_0" size="8px" id="quantity_5231_0_0_0_0_0"> <span class="btn-plus" onclick="load_ajax_cart('5231_0_0_0_0_0','plus')">+</span> <span class="error-number-item error_5231_0_0_0_0_0"></span> </div>
                                         </div> 
@@ -91,9 +96,14 @@ ul.menu-bottom li.level0{float:left;width:50%;box-sizing:border-box}@media scree
                                     <div id="massage_voucher"> </div>
                                     <div class="note"> Lưu ý: Mỗi giỏ hàng chỉ được áp dụng 1 mã giảm giá, và chỉ giảm trên tổng số tiền của sản phẩm ( không giảm cho phí ship ). </div>
                                 </div>
+
+                                <?php 
+
+                                    $totalPrice = array_sum($arrPrice);
+                                ?>
                                 <div class="ship-total">
                                     <div class="total-mn cls">
-                                        <font>Tổng cộng: </font> <span class="price_tongcong">3.449.000₫</span>
+                                        <font>Tổng cộng: </font> <span class="price_tongcong">{{ number_format($totalPrice , 0, ',', '.')}}₫</span>
                                     </div>
                                     <div class="cart-code-mn cls">
                                         <font>Mã giảm giá: </font> <span class="price-cart-code"></span>
@@ -267,4 +277,35 @@ ul.menu-bottom li.level0{float:left;width:50%;box-sizing:border-box}@media scree
     </div>
     <div class="clear"></div>
 </div>
+
+@push('script')
+
+    <script type="text/javascript">
+        function removeProductCart(id) {
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+            $.ajax({
+                type: 'POST',
+                url: "{{ route('removeCart') }}",
+                data: {
+                    product_id: id,
+                       
+                },
+                success: function(result){
+                  
+                    window.location.reload();
+                    
+                }
+            });
+
+        }
+    </script>
+
+    
+
+@endpush
 @endsection
