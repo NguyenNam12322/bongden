@@ -565,7 +565,7 @@
                             <div class="frame_center">
                                 <div class="product_base">
                                     <meta itemprop="brand" content="KAW">
-                                    <form action="#" name="buy_simple_form" method="post">
+                                    
                                         <div class="price cls " itemprop="offers" itemscope="" itemtype="https://schema.org/AggregateOffer">
                                             <link itemprop="availability" href="https://schema.org/InStock">
                                             <div class="price_current " id="price" content="3449000"> {{ str_replace(',' ,'.', number_format($data->Price)) }}₫ </div>
@@ -588,12 +588,14 @@
                                             <div class="gift_summary">
                                                
                                             </div>
-                                            <div class="wrap-btm-buy cls"> <button type="submit" class="btn-buy-222 fl" id="buy-now-222"> <span> Mua ngay </span> </button> <a href="javascript:void(0)" onclick="add_to_cart({{ $data->id }})" class="btn-dathang" data-toggle="modal">
+                                            <div class="wrap-btm-buy cls"> 
+                                                <button type="submit" class="btn-buy-222 fl" id="buy-now-222"> 
+                                                <span> Mua ngay </span> </button> <a href="javascript:void(0)" onclick="add_to_cart({{ $data->id }})" class="btn-dathang" data-toggle="modal">
                                                     <font>Thêm vào giỏ hàng </font>
                                                 </a> </div>
                                             <div class="clear"></div>
                                         </div> <input type="hidden" name="module" value="products"> <input type="hidden" name="view" value="cart"> <input type="hidden" name="task" value="ajax_buy_product"> <input type="hidden" name="product_id" value="5231"> <input type="hidden" name="Itemid" value="10">
-                                    </form>
+                                    
                                     <div class="buy_fast">
                                         <div class="title_buy_fast_bold">Đặt hàng nhanh</div>
                                         <div class="title_buy_fast">Để lại số điện thoại, chúng tôi sẽ gọi lại ngay </div>
