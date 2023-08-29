@@ -945,9 +945,6 @@
                     data: {
                         product_id: id,
                         gift_check:'',
-                        color:colors_selected[0],
-
-                        size:size_selected[0]
                            
                     },
                     beforeSend: function() {
