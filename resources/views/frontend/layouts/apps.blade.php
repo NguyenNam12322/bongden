@@ -618,9 +618,10 @@
                                 <li class="header-search-form search-form html relative has-icon">
                                     <div class="header-search-form-wrapper">
                                         <div class="searchform-wrapper ux-search-box relative is-normal">
-                                            <form role="search" method="get" class="searchform" action="https://tlclighting.com.vn/">
+                                            <form role="search" method="get" class="searchform" action="{{ route('search-product-frontend') }}">
                                                 <div class="flex-row relative">
-                                                    <div class="flex-col flex-grow"> <label class="screen-reader-text" for="woocommerce-product-search-field-0">Tìm kiếm:</label> <input type="search" id="woocommerce-product-search-field-0" class="search-field mb-0" placeholder="Tìm kiếm&hellip;" value="" name="s" /> <input type="hidden" name="post_type" value="product" /> </div>
+                                                    <div class="flex-col flex-grow"> <label class="screen-reader-text" for="woocommerce-product-search-field-0">Tìm kiếm:</label> <input type="search" id="kws" class="search-field mb-0" placeholder="Tìm kiếm&hellip;" value="" name="s" /> 
+                                                        <input type="hidden" name="post_type" value="product" /> </div>
                                                     <div class="flex-col"> <button type="submit" value="Tìm kiếm" class="ux-search-submit submit-button secondary button icon mb-0"> <i class="icon-search"></i> </button> </div>
                                                 </div>
                                                 <div class="live-search-results text-left z-top"> </div>
@@ -1069,7 +1070,7 @@
         
 
         $(function() {
-            $("#woocommerce-product-search-field-0").autocomplete({
+            $("#kws").autocomplete({
 
                 minLength: 1,
                 
@@ -1087,7 +1088,7 @@
                         type: "POST",
                         data: {
                             "_token": "{{ csrf_token() }}",
-                            product:$('#woocommerce-product-search-field-0').val()
+                            product:$('#kws').val()
                         },
                         dataType: "json",
                         success: function (data) {
