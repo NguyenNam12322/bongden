@@ -989,16 +989,17 @@
                         </li>
                         <li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-5469' id='mega-menu-item-5469'><a class="mega-menu-link" aria-haspopup="true" aria-expanded="false" tabindex="0">Bảo hành tại nhà<span class="mega-indicator" tabindex="0" role="button" aria-label="Bảo hành tại nhà submenu"></span></a>
                             <ul class="mega-sub-menu">
-                                <li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-9255' id='mega-menu-item-9255'><a class="mega-menu-link" href="trung-tam-bao-hanh/index.html">TRUNG TÂM BẢO HÀNH</a></li>
-                                <li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-5470' id='mega-menu-item-5470'><a class="mega-menu-link" href="chinh-sach-bao-hanh-den-led-tlc-lighting/index.html">Chính sách bảo hành</a></li>
+                                <li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-9255' id='mega-menu-item-9255'>
+                                    <a class="mega-menu-link" href="#">TRUNG TÂM BẢO HÀNH</a></li>
+                                <li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-5470' id='mega-menu-item-5470'><a class="mega-menu-link" href="#">Chính sách bảo hành</a></li>
                             </ul>
                         </li>
                         <li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-5856' id='mega-menu-item-5856'><a class="mega-menu-link" aria-haspopup="true" aria-expanded="false" tabindex="0">Liên hệ<span class="mega-indicator" tabindex="0" role="button" aria-label="Liên hệ submenu"></span></a>
                             <ul class="mega-sub-menu">
-                                <li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-5876' id='mega-menu-item-5876'><a class="mega-menu-link" href="dang-ky-dai-ly/index.html">Tuyển đại lý</a></li>
-                                <li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-5471' id='mega-menu-item-5471'><a class="mega-menu-link" href="chinh-sach-dai-ly/index.html">Chính sách đại lý</a></li>
-                                <li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-5855' id='mega-menu-item-5855'><a class="mega-menu-link" href="tuyen-nha-phan-phoi/index.html">Tuyển nhà phân phối</a></li>
-                                <li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-5473' id='mega-menu-item-5473'><a class="mega-menu-link" href="lien-he/index.html">Liên hệ</a></li>
+                                <li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-5876' id='mega-menu-item-5876'><a class="mega-menu-link" href="javascript:void(0)">Tuyển đại lý</a></li>
+                                <li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-5471' id='mega-menu-item-5471'><a class="mega-menu-link" href="javascript:void(0)">Chính sách đại lý</a></li>
+                                <li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-5855' id='mega-menu-item-5855'><a class="mega-menu-link" href="javascript:void(0)">Tuyển nhà phân phối</a></li>
+                                <li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-5473' id='mega-menu-item-5473'><a class="mega-menu-link" href="javascript:void(0)">Liên hệ</a></li>
                             </ul>
                         </li>
                     </ul>
