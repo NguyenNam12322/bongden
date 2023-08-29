@@ -590,9 +590,9 @@
                                             </div>
                                             <div class="wrap-btm-buy cls"> 
                                                 <a href="javascript:void(0)" onclick="add_to_cart({{ $data->id }})">
-                                                        <button type="submit" class="btn-buy-222 fl" id="buy-now-222"> 
+                                                        <div type="submit" class="btn-buy-222 fl" id="buy-now-222"> 
                                                                 <span> Mua ngay </span> 
-                                                        </button>
+                                                        </div>
                                                 </a>
                                                 
                                                  <a href="javascript:void(0)" onclick="add_to_cart({{ $data->id }})" class="btn-dathang" data-toggle="modal">
