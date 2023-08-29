@@ -622,7 +622,7 @@
                                                 <div class="flex-row relative">
                                                     <div class="flex-col flex-grow"> <label class="screen-reader-text" for="woocommerce-product-search-field-0">Tìm kiếm:</label> <input type="search" id="kws" class="search-field mb-0" placeholder="Tìm kiếm&hellip;" value="" name="s" /> 
                                                         <input type="hidden" name="post_type" value="product" /> </div>
-                                                    <div class="flex-col"> <button type="submit" value="Tìm kiếm" class="ux-search-submit submit-button secondary"> <i class="icon-search"></i> </button> </div>
+                                                    <div class="flex-col"> <button type="submit" value="Tìm kiếm" class="ux-search-submit  button icon mb-0"> <i class="icon-search"></i> </button> </div>
                                                 </div>
                                                 <div class="live-search-results text-left z-top"> </div>
                                             </form>
