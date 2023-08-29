@@ -864,65 +864,7 @@
                     <div class="video"> </div>
                 </div>
             </div>
-            <script type="text/javascript">
-                window.fbAsyncInit = function() {
-                    FB.init({
-                        appId      : '752023095723783',
-                        status     : true,
-                        xfbml      : true,
-                        logging    : true                                    
-                    });
-                
-                    $('.share-point').on('click',function(e) {
-                        var link_share =  "https://maychieuminikaw.com/may-chieu-mini/may-chieu-mini-android-wifi-thong-minh-kaw-kp950-can-chinh-4-goc-p5231.html";
-                        e.preventDefault();
-                        FB.ui(
-                        {
-                            method: 'feed',
-                            name: 'Title',
-                            link: link_share
-                        },
-                
-                        function(response){
-                            if(response) {
-                                   
-                                    var note = 'Cộng điểm chi sẻ bài viết';
-                                    var type = 'so_diem_chia_se_bai_viet';
-                                    $.ajax({
-                                        type: "POST",
-                                        url: "/index.php?module=users&view=users&task=plus_point&raw=1",
-                                        dataType: 'text',
-                                        data: {note:note,type:type,link_share:link_share},
-                                        success: function(data) {
-                                            if(data == 1){
-                                                alert('Chia sẻ thành công, bạn đã được cộng điểm chia sẻ !');
-                                            }else{
-                                                alert('Chia sẻ thành công !'); 
-                                                console.log("Có lỗi xảy ra");
-                                                // alert(data.message);
-                                            }
-                                        }
-                                    });
-                                }else {
-                                   alert('Chia sẻ thất bại, vui lòng chia sẻ lại !');
-                                }
-                            }
-                
-                            );      
-                    });
-                };
-                
-                    // Load the SDK
-                    setTimeout( function () {
-                        (function(d, s, id){
-                            var js, fjs = d.getElementsByTagName(s)[0];
-                            if (d.getElementById(id)) {return;}
-                            js = d.createElement(s); js.id = id;
-                            js.src = "//connect.facebook.net/en_US/all.js";
-                            fjs.parentNode.insertBefore(js, fjs);
-                        }(document, 'script', 'facebook-jssdk'))
-                    }, 1000);
-            </script>
+            
         </div>
     </div>
     <div class="clear"></div>
