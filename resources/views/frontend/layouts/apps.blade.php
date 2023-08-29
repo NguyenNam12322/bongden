@@ -1087,7 +1087,7 @@
                         type: "POST",
                         data: {
                             "_token": "{{ csrf_token() }}",
-                            product:$('#kws').val()
+                            product:$('#woocommerce-product-search-field-0').val()
                         },
                         dataType: "json",
                         success: function (data) {
