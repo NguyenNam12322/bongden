@@ -571,6 +571,8 @@ class productController extends AppBaseController
 
             }
 
+            dd(1);
+
             $page_search = 'filterFe';
 
            
