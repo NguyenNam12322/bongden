@@ -739,16 +739,24 @@
                                             <div class="cat-title-main" id="characteristic-label"> <span>Sản phẩm liên quan</span> </div>
                                         </div>
                                         <div class="product_grid">
+
+                                        @if(isset($other_product))
+                                        @foreach($other_product as  $value)
+                                        @if($value->active==1 && $value->id != $data->id)     
                                             <div class="item">
-                                                <figure class="product_image "> <a href="https://maychieuminikaw.com/may-chieu-mini/may-chieu-mini-sieu-net-kaw-k700-plus-cho-van-phong-gia-dinh-truong-hoc-va-giai-tri-p5202.html" title="Máy chiếu mini KAW K700 Plus cho văn phòng gia đình trường học và giải trí"> <img class="lazy after-lazy" alt="Máy chiếu mini KAW K700 Plus cho văn phòng gia đình trường học và giải trí" src="https://maychieuminikaw.com/images/products/2023/02/03/resized/may-chieu-mini-k700-plus_1675386463.jpg" data-srcset="https://maychieuminikaw.com/images/products/2023/02/03/resized/may-chieu-mini-k700-plus_1675386463.jpg.webp" style="opacity: 1;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </a> </figure>
-                                                <div> <a href="https://maychieuminikaw.com/may-chieu-mini/may-chieu-mini-sieu-net-kaw-k700-plus-cho-van-phong-gia-dinh-truong-hoc-va-giai-tri-p5202.html" title="Máy chiếu mini KAW K700 Plus cho văn phòng gia đình trường học và giải trí" class="name"> Máy chiếu mini KAW K700 Plus cho văn phòng gia đình trường học và giải... </a> </div>
+                                                <figure class="product_image "> <a href="{{ route('details', $value->Link) }}" title="{{ $value->Name }}"> <img class="lazy after-lazy" alt="{{ $value->Name }}" src="{{ asset($value->Image) }}" data-srcset="{{ asset($value->Image) }}"> </a> </figure>
+                                                <div> 
+                                                        <a href="{{ route('details', $value->Link) }}" title="{{ $value->Name }}" class="name"> {{ $value->Name }} </a> </div>
                                                 <div class="price_arae">
-                                                    <div class="price_current">4.500.000₫</div>
-                                                    <div class="price_old"><span>7.000.000₫</span></div>
+                                                    <div class="price_current">{{  str_replace(',' ,'.', number_format($value->Price))  }}₫</div>
+                                                    <!-- <div class="price_old"><span>7.000.000₫</span></div> -->
                                                 </div>
                                                 <div class="gift"> </div>
                                                 <div class="clear"></div>
                                             </div>
+                                        @endif
+                                        @endforeach
+                                        @endif    
                                             
                                         </div>
                                     </div>
