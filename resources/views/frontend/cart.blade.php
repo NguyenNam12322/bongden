@@ -46,7 +46,7 @@ ul.menu-bottom li.level0{float:left;width:50%;box-sizing:border-box}@media scree
                         <h1 class="page_title_cart"><span>Giỏ hàng của bạn</span></h1>
                         <div id="product_cart_load_ajax">
                             <div class="shopcart_product">
-                                <form action="#" method="post" name="shopcart">
+                               
                                     <div class="table-wrap">
 
                                         <?php 
@@ -84,14 +84,14 @@ ul.menu-bottom li.level0{float:left;width:50%;box-sizing:border-box}@media scree
                                             <div class="col-td"> <a class="name-item" title="{{ $data->name }}" href="{{ route('details', $infoProducts->Link) }}"> {{ $data->name }} </a>
                                                 <div class="string_info_extent"> Giá sản phẩm: {{ number_format($data->price , 0, ',', '.')}}đ </div>
                                             </div>
-                                            <div class="col-td col-td-number"> <span class="price"> {{ number_format($data->price , 0, ',', '.')}} </span> <span class="btn-minus" onclick="load_ajax_cart('5231_0_0_0_0_0','minus')">-</span> <input onkeyup="onchange_number('5231_0_0_0_0_0')" class="numbers-pro  " type="text" min="0" max="1000" value="1" name="quantity_5231_0_0_0_0_0" size="8px" id="quantity_5231_0_0_0_0_0"> <span class="btn-plus" onclick="load_ajax_cart('5231_0_0_0_0_0','plus')">+</span> <span class="error-number-item error_5231_0_0_0_0_0"></span> </div>
+                                            <div class="col-td col-td-number"> <span class="price"> {{ number_format($data->price , 0, ',', '.')}}đ </span> <span class="btn-minus" onclick="load_ajax_cart('5231_0_0_0_0_0','minus')">-</span> <input onkeyup="onchange_number('5231_0_0_0_0_0')" class="numbers-pro  " type="text" min="0" max="1000" value="1" name="quantity_5231_0_0_0_0_0" size="8px" id="quantity_5231_0_0_0_0_0"> <span class="btn-plus" onclick="load_ajax_cart('5231_0_0_0_0_0','plus')">+</span> <span class="error-number-item error_5231_0_0_0_0_0"></span> </div>
                                         </div> 
                                         @endforeach
                                         @endif
                                        
                                     </div> <input type="hidden" value="3449000" id="price_total">
                                     <div class="clearfix"></div> <input type="hidden" name="Itemid" value="11"> <input type="hidden" name="module" value="products"> <input type="hidden" name="view" value="cart"> <input type="hidden" name="task" value="recal" id="task">
-                                </form>
+                                
                             </div>
                             <div class="total-card-code cls">
                                 <div class="card_code cls"> <input placeholder="Nhập mã giảm giá" type="text" name="card_code" id="card_code" value="" class="input_text" size="30"> <button type="button" onclick="myFunction_code();" class="resubmit_form">Áp dụng </button>
@@ -115,7 +115,7 @@ ul.menu-bottom li.level0{float:left;width:50%;box-sizing:border-box}@media scree
                                         <font>Phí vận chuyển: </font> <span class="price_ship1"> Tính ngoài. </span>
                                     </div>
                                     <div class="total-price-inner cls">
-                                        <font>Thanh toán: </font> <span class="price_thanhtoan"> 3.449.000₫<div class="display-off" id="price_thanhtoan" price_thanhtoan="3449000"></div> </span>
+                                        <font>Thanh toán: </font> <span class="price_thanhtoan"> {{ number_format($totalPrice , 0, ',', '.')}}₫ <div class="display-off" id="price_thanhtoan" price_thanhtoan="3449000"></div> </span>
                                     </div>
                                     <div class="note-payment hide">
                                         <p>Xin cảm ơn quý khách đã đặt mua sản phẩm tạo hệ thống Hải Linh</p>
