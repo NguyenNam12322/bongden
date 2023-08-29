@@ -588,7 +588,7 @@
                                             <div class="gift_summary">
                                                
                                             </div>
-                                            <div class="wrap-btm-buy cls"> <button type="submit" class="btn-buy-222 fl" id="buy-now-222"> <span> Mua ngay </span> </button> <a href="javascript:void(0)" onclick="add_to_cart(5231)" class="btn-dathang" data-toggle="modal">
+                                            <div class="wrap-btm-buy cls"> <button type="submit" class="btn-buy-222 fl" id="buy-now-222"> <span> Mua ngay </span> </button> <a href="javascript:void(0)" onclick="add_to_cart({{ $data->id }})" class="btn-dathang" data-toggle="modal">
                                                     <font>Thêm vào giỏ hàng </font>
                                                 </a> </div>
                                             <div class="clear"></div>
@@ -920,5 +920,44 @@
     </div>
     <div class="clear"></div>
 </div>
+@push('script')
+
+        <script type="text/javascript">
+            function addToCart(id) {
+
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
+            
+                $.ajax({
+                    type: 'POST',
+                    url: "{{ route('cart') }}",
+                    data: {
+                        product_id: id,
+                        gift_check:'',
+                        color:colors_selected[0],
+
+                        size:size_selected[0]
+                           
+                    },
+                    beforeSend: function() {
+                       
+                        $('.loader').show();
+
+                    },
+                    success: function(result){
+            
+                        window.location.href = "{{ route('cart-details') }}";
+                    }
+
+                });
+                   
+            }
+
+</script>
+
+@endpush
 
 @endsection
