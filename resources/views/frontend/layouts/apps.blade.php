@@ -1109,7 +1109,10 @@
 
 
     </script>
-    <script src="../ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script
+  src="https://code.jquery.com/jquery-migrate-3.4.1.min.js"
+  integrity="sha256-UnTxHm+zKuDPLfufgEMnKGXDl6fEIjtM+n1Q6lL73ok="
+  crossorigin="anonymous"></script>
     <script type="text/javascript" src="data:text/javascript;base64,JCgnLmR2bHMtc3VibWl0JykuY2xpY2soZnVuY3Rpb24oKXskKCIudHRiaDAyMyIpLmFkZENsYXNzKCJoaWRlYmgiKX0pOyQoJy5kdmxzX3Jlc3VsdF93cmFwJykuY2xpY2soZnVuY3Rpb24oKXskKCIudHRiaDAyMyIpLmFkZENsYXNzKCJoaWRlYmgyIil9KQ==" defer></script>
     <div id="login-form-popup" class="lightbox-content mfp-hide">
         <div class="woocommerce-notices-wrapper"></div>
