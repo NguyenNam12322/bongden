@@ -394,7 +394,7 @@
 
 
                                                     <div class="owl-item active current" style="width: 84px; margin-right: 2px;">
-                                                        <div class="item"> <a href="javascript:void(0)" id="images/products/2023/06/28/original/k95003_1687943471.jpg" rel="image_large" class="selected" title="{{ $data->Name }}"> <img src="{{ asset($data->Images) }}" longdesc="{{ asset($data->Images) }}" alt="{{ $data->Name }}" itemprop="image"> </a> </div>
+                                                        <div class="item"> <a href="javascript:void(0)" id="{{ asset($data->Image) }}" rel="image_large" class="selected" title="{{ $data->Name }}"> <img src="{{ asset($data->Image) }}" longdesc="{{ asset($data->Image) }}" alt="{{ $data->Name }}" itemprop="image"> </a> </div>
                                                     </div>
                                                     
                                                 </div>
