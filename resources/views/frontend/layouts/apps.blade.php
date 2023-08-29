@@ -593,6 +593,8 @@
                     }
         }
     </style>
+
+    @stack('style')
     <style type="text/css">
         /** Mega Menu CSS: fs **/
     </style>

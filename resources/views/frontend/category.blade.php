@@ -21,7 +21,7 @@
                             <div class="badge-container absolute left top z-1"></div>
                             <div class="product-small box ">
                                 <div class="box-image">
-                                    <div class="image-none"> <a href="{{ route('details', $value->Link) }}"> <img data-lazyloaded="1" src="{{ asset($value->Image) }}" width="300" height="300" data-src="{{ asset($value->Image) }}" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail entered litespeed-loaded" alt=""  data-sizes="(max-width: 300px) 100vw, 300px" data-ll-status="loaded" sizes="(max-width: 300px) 100vw, 300px" srcset="https://tlclighting.com.vn/wp-content/uploads/2021/03/15W-1-300x300.png 300w, https://tlclighting.com.vn/wp-content/uploads/2021/03/15W-1-800x800.png 800w, https://tlclighting.com.vn/wp-content/uploads/2021/03/15W-1-150x150.png 150w, https://tlclighting.com.vn/wp-content/uploads/2021/03/15W-1-768x768.png 768w, https://tlclighting.com.vn/wp-content/uploads/2021/03/15W-1-31x31.png 31w, https://tlclighting.com.vn/wp-content/uploads/2021/03/15W-1-100x100.png 100w, https://tlclighting.com.vn/wp-content/uploads/2021/03/15W-1.png 900w"> </a></div>
+                                    <div class="image-none"> <a href="{{ route('details', $value->Link) }}"> <img data-lazyloaded="1" src="{{ asset($value->Image) }}" width="300" height="300" data-src="{{ asset($value->Image) }}" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail entered litespeed-loaded" alt="{{ $value->Name  }}"> </a></div>
                                     <div class="image-tools is-small top right show-on-hover"></div>
                                     <div class="image-tools is-small hide-for-small bottom left show-on-hover"></div>
                                     <div class="image-tools grid-tools text-center hide-for-small bottom hover-slide-in show-on-hover"></div>
@@ -29,7 +29,7 @@
                                 <div class="box-text box-text-products text-center grid-style-2">
                                     <div class="title-wrapper">
                                         <p class="name product-title woocommerce-loop-product__title">
-                                            <a href="../../san-pham/bong-den-led-bulb-15w/index.html">{{ $value->Name  }}</a></p>
+                                            <a href="{{ route('details', $value->Link) }}">{{ $value->Name  }}</a></p>
                                     </div>
                                     <div class="price-wrapper"> <span class="price"><span class="woocommerce-Price-amount amount"><bdi>{{ str_replace(',' ,'.', number_format($value->Price)) }}&nbsp;<span class="woocommerce-Price-currencySymbol">₫</span></bdi></span></span></div>
                                 </div>
