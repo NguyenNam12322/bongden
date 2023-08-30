@@ -39,11 +39,7 @@
                     @endforeach
                     @endif
 
-
-                  
-                    
                 </div>
-
 
                <!--  <div class="container">
                     <nav class="woocommerce-pagination">
