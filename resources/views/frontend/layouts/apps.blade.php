@@ -509,24 +509,31 @@
                         display:none!important;
                     }
                     .medium-4.qna011 {
-                    max-width: 40%!important;
-                    -ms-flex-preferred-size: 40%!important;
-                    flex-basis: 40%!important;
-                }
+                        max-width: 40%!important;
+                        -ms-flex-preferred-size: 40%!important;
+                        flex-basis: 40%!important;
+                    }
                     .medium-6.qna012 {
-                    max-width: 60%!important;
-                    -ms-flex-preferred-size: 60%!important;
-                    flex-basis: 60%!important;
-                }
+                        max-width: 60%!important;
+                        -ms-flex-preferred-size: 60%!important;
+                        flex-basis: 60%!important;
+                    }
                     .qna01 .col{
-                    padding: 0 0px 10px!important;
+                        padding: 0 0px 10px!important;
+                        }
+                        .qna011:before, .qna012:before {
+                        left: -10px;
+                        }
+                        .qna01 .conso1 span {
+                        font-size: 38px!important;
                     }
-                    .qna011:before, .qna012:before {
-                    left: -10px;
+
+                    .buttons{
+                        color: #fff;
+                       
+                      
+                        border-color: rgba(0,0,0,.05);
                     }
-                    .qna01 .conso1 span {
-                    font-size: 38px!important;
-                }
                 }
                 @media screen and (max-width: 567px){
                     .child{
@@ -926,7 +933,7 @@
                                 @csrf
                                 <div class="flex-row relative">
                                     <div class="flex-col flex-grow"> <label class="screen-reader-text" for="woocommerce-product-search-field-2">Tìm kiếm:</label> <input type="search" id="woocommerce-product-search-field-2" class="search-field mb-0" placeholder="Tìm kiếm&hellip;" value="" name="s" /> <input type="hidden" name="key" value="" /></div>
-                                    <div class="flex-col"> <button type="submit" value="Tìm kiếm" class="ux-search-submit submit-button  button icon mb-0"> <i class="icon-search"></i> </button></div>
+                                    <div class="flex-col"> <button type="submit" value="Tìm kiếm" class="ux-search-submit submit-button buttons icon mb-0"> <i class="icon-search"></i> </button></div>
                                 </div>
                                 <div class="live-search-results text-left z-top"></div>
                             </form>
