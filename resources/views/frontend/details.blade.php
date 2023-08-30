@@ -293,12 +293,17 @@
                 <div class="container">
                     <div class="breadcrumbs_wrapper" itemscope="" itemtype="http://schema.org/WebPage">
                         <ul class="breadcrumb" itemscope="itemscope" itemtype="https://schema.org/BreadcrumbList">
-                            <li class="breadcrumb__item" itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem"> <a title="Máy chiếu mini KAW" href="https://maychieuminikaw.com/" itemprop="item"> <span itemprop="name">Trang chủ</span>
+                            <li class="breadcrumb__item" itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem"> 
+                                <a title="Máy chiếu mini KAW" href="{{ route('homeFe') }}" itemprop="item"> <span itemprop="name">Trang chủ</span>
                                     <meta content="1" itemprop="position">
                                 </a> </li>
-                            <li class="breadcrumb__item" itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem"> <a title="Máy chiếu mini" href="https://maychieuminikaw.com/may-chieu-mini-pc38.html" itemprop="item"> <span itemprop="name">Máy chiếu mini</span>
+        
+                                @if(!empty($groupLink))    
+                                <li class="breadcrumb__item" itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem"> <a title="Máy chiếu mini" href="{{ route('details', $groupLink??'') }}" itemprop="item"> <span itemprop="name">{{ @$groupName }}</span>
                                     <meta content="2" itemprop="position">
                                 </a> </li>
+
+                                @endif     
                         </ul>
                     </div>
                 </div>
