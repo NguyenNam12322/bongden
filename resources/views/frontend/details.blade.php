@@ -611,9 +611,9 @@
                                         <div class="title_buy_fast_bold">Đặt hàng nhanh</div>
                                         <div class="title_buy_fast">Để lại số điện thoại, chúng tôi sẽ gọi lại ngay </div>
                                         <div class="clear"></div>
-                                        <form action="" name="buy_fast_form" id="buy_fast_form" method="post" onsubmit="javascript: return submit_form_buy_fast();">
-                                            <div class="cls"> <input type="tel" required="" value="" placeholder="Nhập số điện thoại" id="telephone_buy_fast" name="telephone_buy_fast" class="keyword input-text"> <button type="submit" class="button-buy-fast button">Gửi</button> </div> <input type="hidden" name="module" value="products"> <input type="hidden" name="view" value="cart"> <input type="hidden" name="task" value="buy_fast_save"> <input type="hidden" name="id" value="5231"> <input type="hidden" name="Itemid" value="10"> <input type="hidden" value="L21heS1jaGlldS1taW5pL21heS1jaGlldS1taW5pLWFuZHJvaWQtd2lmaS10aG9uZy1taW5oLWthdy1rcDk1MC1jYW4tY2hpbmgtNC1nb2MtcDUyMzEuaHRtbD9mYmNsaWQ9SXdBUjJwSVZzNFVRNTB1TjM2UXpmVmpWdnZ4bHQxVl9rNDZCM1VMQUczZHlzVGlETV9Odzh2Qm9kWm1vTQ==" name="return">
-                                        </form>
+                                        
+                                            <div class="cls"> <input type="tel" required="" value="" placeholder="Nhập số điện thoại" id="telephone_buy_fast" name="telephone_buy_fast" class="keyword input-text"> <button type="submit" class="button-buy-fast button" onclick="addCallPhone({{ $data->id }})">Gửi</button> </div> <input type="hidden" name="module" value="products"> <input type="hidden" name="view" value="cart"> <input type="hidden" name="task" value="buy_fast_save"> <input type="hidden" name="id" value="5231"> <input type="hidden" name="Itemid" value="10"> <input type="hidden" value="L21heS1jaGlldS1taW5pL21heS1jaGlldS1taW5pLWFuZHJvaWQtd2lmaS10aG9uZy1taW5oLWthdy1rcDk1MC1jYW4tY2hpbmgtNC1nb2MtcDUyMzEuaHRtbD9mYmNsaWQ9SXdBUjJwSVZzNFVRNTB1TjM2UXpmVmpWdnZ4bHQxVl9rNDZCM1VMQUczZHlzVGlETV9Odzh2Qm9kWm1vTQ==" name="return">
+                                       
                                     </div>
                                     <div class="time-word"> Gọi đặt mua: <a title="Gọi đặt mua" href="tel:0867935899">0867935899</a> </div> <!--    TAGS        --> <input type="hidden" name="record_alias" id="record_alias" value="may-chieu-mini-android-wifi-thong-minh-kaw-kp950-can-chinh-4-goc"> <input type="hidden" name="record_id" id="record_id" value="5231"> <input type="hidden" name="table_name" id="table_name" value="may_chieu">
                                 </div>
@@ -884,6 +884,9 @@
     <div class="clear"></div>
 </div>
 @push('script')
+
+
+
        
 
         <script type="text/javascript">
@@ -916,6 +919,51 @@
                 });
                    
             }
+
+             function isValid(p) {
+                var phoneRe = /(84|0[3|5|7|8|9])+([0-9]{8})\b/;
+                var digits = p.replace(/\D/g, "");
+                return phoneRe.test(digits);
+            }
+
+            function addCallPhone(id){
+
+                if($('#telephone_buy_fast').val()==''){
+                    alert('vui lòng nhập số điện thoại')
+                }
+                else if(!isValid($('#telephone_buy_fast').val())){
+                    alert('số điện thoại không đúng định dạng');
+                }
+                else{
+                    name = 'Khách đặt hàng bằng sđt';
+                    phone = $('#telephone_buy_fast').val();
+
+                    $.ajaxSetup({
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        }
+                    });
+
+                    $.ajax({
+                        type: 'POST',
+                        url: "{{ route('callphone') }}",
+                        data: {
+                            name: name,
+                            phone:phone,
+                            product_id:id,
+                               
+                        },
+                        success: function(result){
+                
+                           
+
+                            alert('Gửi thành công!')
+                            
+                        }
+                    });
+                }
+
+    }
 
 </script>
 
