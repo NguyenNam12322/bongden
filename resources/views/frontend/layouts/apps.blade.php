@@ -608,7 +608,7 @@
                 <div id="masthead" class="header-main ">
                     <div class="header-inner flex-row container logo-left medium-logo-center" role="navigation">
                         <div id="logo" class="flex-col logo"> <a href="{{ route('homeFe')  }}" title="Tập đoàn TLC Việt Nam - TLC LIGHTING" rel="home">
-                                <h1><img width="297" height="87" src="wp-content/uploads/2023/02/logo-chuan-TLC-06.jpg" class="header_logo header-logo" alt="Tập đoàn TLC Việt Nam" /><img width="297" height="87" src="wp-content/uploads/2023/02/logo-chuan-TLC-06.jpg" class="header-logo-dark" alt="Tập đoàn TLC Việt Nam" /></h1>
+                                <img  src="wp-content/uploads/2023/02/logo-chuan-TLC-06.jpg" class="header_logo header-logo" alt="Tập đoàn TLC Việt Nam" /><img width="297" height="87" src="wp-content/uploads/2023/02/logo-chuan-TLC-06.jpg" class="header-logo-dark" alt="Tập đoàn TLC Việt Nam" />
                             </a> </div>
                         <div class="flex-col show-for-medium flex-left">
                             <ul class="mobile-nav nav nav-left ">

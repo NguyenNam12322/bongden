@@ -752,11 +752,11 @@ tt {
   float: left;
   padding-top: 6px;
 }
-@media all and (max-width: 500px) {
+/*@media all and (max-width: 500px) {
   .header .logo img {
     width: 90px;
   }
-}
+}*/
 .address_header,
 .header .hotline {
   margin-top: 31px;
