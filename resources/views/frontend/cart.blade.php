@@ -180,98 +180,49 @@ ul.menu-bottom li.level0{float:left;width:50%;box-sizing:border-box}@media scree
                         <div class="buyer_info">
                             <div class="title-box-cart">Thông tin người mua hàng</div>
                             <div class="mb-2"><b class="fs-16">Thông tin người mua</b> (<span class="red">*</span>) <i>Thông tin bắt buộc</i></div>
-                            <form action="#" name="eshopcart_info" method="post" id="eshopcart_info">
-                                <div class="shadow">
-                                    <div class="sex"> <label> <span class="radio"> <input type="radio" value="Nam" name="sender_sex" checked=""> <span class="icon"></span> </span> Nam </label> <label> <span class="radio"> <input type="radio" name="sender_sex" value="Nữ"> <span class="icon"></span> </span> Nữ </label> </div>
-                                    <div class="box-input"> <input placeholder="Họ tên (*)" type="text" name="sender_name" id="name_user" value="" class="input_text input_text_50" size="30"> <input placeholder="Điện thoại (*)" type="text" name="sender_telephone" id="telephone_user" value="" class="input_text input_text_50" size="30"> <input placeholder="Email" type="text" name="sender_email" id="sender_email" value="" class="input_text" size="30"> <select name="city_id" id="city_id" class="input_text input_text_33">
-                                            <option value="">Chọn Tỉnh Thành</option>
-                                            <option warehouse="1" latitude_warehouse="21.059558" longitude_warehouse="105.764761" latitude="21.027764" longitude="105.83416" value="1">Hà Nội</option>
-                                            <option warehouse="1" latitude_warehouse="21.059558" longitude_warehouse="105.764761" latitude="22.7662056" longitude="104.9388853" value="2">Hà Giang</option>
-                                            <option warehouse="1" latitude_warehouse="21.059558" longitude_warehouse="105.764761" latitude="22.66694" longitude="106.26028" value="4">Cao Bằng</option>
-                                            <option warehouse="1" latitude_warehouse="21.059558" longitude_warehouse="105.764761" latitude="22.3032923" longitude="105.876004" value="6">Bắc Kạn</option>
-                                            <option warehouse="1" latitude_warehouse="21.059558" longitude_warehouse="105.764761" latitude="21.81861" longitude="105.21167" value="8">Tuyên Quang</option>
-                                            <option warehouse="1" latitude_warehouse="21.059558" longitude_warehouse="105.764761" latitude="22.44028" longitude="104.00278" value="10">Lào Cai</option>
-                                            <option warehouse="1" latitude_warehouse="21.059558" longitude_warehouse="105.764761" latitude="21.36667" longitude="103.00861" value="11">Điện Biên</option>
-                                            <option warehouse="1" latitude_warehouse="21.059558" longitude_warehouse="105.764761" latitude="22.3860763" longitude="103.4693761" value="12">Lai Châu</option>
-                                            <option warehouse="1" latitude_warehouse="21.059558" longitude_warehouse="105.764761" latitude="21.3320071" longitude="103.9089422" value="14">Sơn La</option>
-                                            <option warehouse="1" latitude_warehouse="21.059558" longitude_warehouse="105.764761" latitude="21.71667" longitude="104.89861" value="15">Yên Bái</option>
-                                            <option warehouse="1" latitude_warehouse="21.059558" longitude_warehouse="105.764761" latitude="20.816688" longitude="105.3425842" value="17">Hòa Bình</option>
-                                            <option warehouse="1" latitude_warehouse="21.059558" longitude_warehouse="105.764761" latitude="21.5675" longitude="105.82556" value="19">Thái Nguyên</option>
-                                            <option warehouse="1" latitude_warehouse="21.059558" longitude_warehouse="105.764761" latitude="21.85417" longitude="106.76167" value="20">Lạng Sơn</option>
-                                            <option warehouse="1" latitude_warehouse="21.059558" longitude_warehouse="105.764761" latitude="20.97194" longitude="107.04528" value="22">Quảng Ninh</option>
-                                            <option warehouse="1" latitude_warehouse="21.059558" longitude_warehouse="105.764761" latitude="21.29139" longitude="106.18694" value="24">Bắc Giang</option>
-                                            <option warehouse="1" latitude_warehouse="21.059558" longitude_warehouse="105.764761" latitude="21.3127148" longitude="105.3972141" value="25">Phú Thọ</option>
-                                            <option warehouse="1" latitude_warehouse="21.059558" longitude_warehouse="105.764761" latitude="21.29889" longitude="105.60611" value="26">Vĩnh Phúc</option>
-                                            <option warehouse="1" latitude_warehouse="21.059558" longitude_warehouse="105.764761" latitude="21.18528" longitude="106.05639" value="27">Bắc Ninh</option>
-                                            <option warehouse="1" latitude_warehouse="21.059558" longitude_warehouse="105.764761" latitude="20.93972" longitude="106.3125" value="30">Hải Dương</option>
-                                            <option warehouse="1" latitude_warehouse="21.059558" longitude_warehouse="105.764761" latitude="20.86194" longitude="106.68028" value="31">Hải Phòng</option>
-                                            <option warehouse="1" latitude_warehouse="21.059558" longitude_warehouse="105.764761" latitude="20.63667" longitude="106.05694" value="33">Hưng Yên</option>
-                                            <option warehouse="1" latitude_warehouse="21.059558" longitude_warehouse="105.764761" latitude="20.4475" longitude="106.3375" value="34">Thái Bình</option>
-                                            <option warehouse="1" latitude_warehouse="21.059558" longitude_warehouse="105.764761" latitude="20.5430094" longitude="105.9123685" value="35">Hà Nam</option>
-                                            <option warehouse="1" latitude_warehouse="21.059558" longitude_warehouse="105.764761" latitude="20.42" longitude="106.16833" value="36">Nam Định</option>
-                                            <option warehouse="1" latitude_warehouse="21.059558" longitude_warehouse="105.764761" latitude="20.25111" longitude="105.975" value="37">Ninh Bình</option>
-                                            <option warehouse="1" latitude_warehouse="21.059558" longitude_warehouse="105.764761" latitude="19.8075" longitude="105.77639" value="38">Thanh Hóa</option>
-                                            <option warehouse="1" latitude_warehouse="21.059558" longitude_warehouse="105.764761" latitude="18.68083" longitude="105.68167" value="40">Nghệ An</option>
-                                            <option warehouse="1" latitude_warehouse="21.059558" longitude_warehouse="105.764761" latitude="18.3397563" longitude="105.895225" value="42">Hà Tĩnh</option>
-                                            <option warehouse="1" latitude_warehouse="21.059558" longitude_warehouse="105.764761" latitude="17.46861" longitude="106.59944" value="44">Quảng Bình</option>
-                                            <option warehouse="1" latitude_warehouse="21.059558" longitude_warehouse="105.764761" latitude="16.74694" longitude="107.19389" value="45">Quảng Trị</option>
-                                            <option warehouse="1" latitude_warehouse="21.059558" longitude_warehouse="105.764761" latitude="16.467397" longitude="107.5905326" value="46">Thừa Thiên Huế</option>
-                                            <option warehouse="1" latitude_warehouse="21.059558" longitude_warehouse="105.764761" latitude="16.05194" longitude="108.21528" value="48">Đà Nẵng</option>
-                                            <option warehouse="1" latitude_warehouse="21.059558" longitude_warehouse="105.764761" latitude="15.5393538" longitude="108.019102" value="49">Quảng Nam</option>
-                                            <option warehouse="1" latitude_warehouse="21.059558" longitude_warehouse="105.764761" latitude="15.12389" longitude="108.81167" value="51">Quảng Ngãi</option>
-                                            <option warehouse="1" latitude_warehouse="21.059558" longitude_warehouse="105.764761" latitude="13.775" longitude="109.23333" value="52">Bình Định</option>
-                                            <option warehouse="1" latitude_warehouse="21.059558" longitude_warehouse="105.764761" latitude="13.08222" longitude="109.31611" value="54">Phú Yên</option>
-                                            <option warehouse="1" latitude_warehouse="21.059558" longitude_warehouse="105.764761" latitude="12.23889" longitude="109.19694" value="56">Khánh Hòa</option>
-                                            <option warehouse="1" latitude_warehouse="21.059558" longitude_warehouse="105.764761" latitude="11.56667" longitude="108.99167" value="58">Ninh Thuận</option>
-                                            <option warehouse="1" latitude_warehouse="21.059558" longitude_warehouse="105.764761" latitude="10.92222" longitude="108.10944" value="60">Bình Thuận</option>
-                                            <option warehouse="1" latitude_warehouse="21.059558" longitude_warehouse="105.764761" latitude="14.35" longitude="107.99861" value="62">Kon Tum</option>
-                                            <option warehouse="1" latitude_warehouse="21.059558" longitude_warehouse="105.764761" latitude="13.98361" longitude="1080" value="64">Gia Lai</option>
-                                            <option warehouse="1" latitude_warehouse="21.059558" longitude_warehouse="105.764761" latitude="12.66667" longitude="108.03889" value="66">Đắk Lắk</option>
-                                            <option warehouse="1" latitude_warehouse="21.059558" longitude_warehouse="105.764761" latitude="12.0073426" longitude="107.683687" value="67">Đắk Nông</option>
-                                            <option warehouse="1" latitude_warehouse="21.059558" longitude_warehouse="105.764761" latitude="11.5752791" longitude="108.1428669" value="68">Lâm Đồng</option>
-                                            <option warehouse="1" latitude_warehouse="21.059558" longitude_warehouse="105.764761" latitude="11.5378854" longitude="106.9006317" value="70">Bình Phước</option>
-                                            <option warehouse="1" latitude_warehouse="21.059558" longitude_warehouse="105.764761" latitude="11.36778" longitude="106.11917" value="72">Tây Ninh</option>
-                                            <option warehouse="1" latitude_warehouse="21.059558" longitude_warehouse="105.764761" latitude="10.99333" longitude="106.65611" value="74">Bình Dương</option>
-                                            <option warehouse="1" latitude_warehouse="21.059558" longitude_warehouse="105.764761" latitude="10.95694" longitude="106.84306" value="75">Đồng Nai</option>
-                                            <option warehouse="1" latitude_warehouse="21.059558" longitude_warehouse="105.764761" latitude="10.34583" longitude="107.08472" value="77">Bà Rịa - Vũng Tàu</option>
-                                            <option warehouse="1" latitude_warehouse="21.059558" longitude_warehouse="105.764761" latitude="10.823099" longitude="106.629664" value="79">Hồ Chí Minh</option>
-                                            <option warehouse="1" latitude_warehouse="21.059558" longitude_warehouse="105.764761" latitude="10.63194" longitude="106.49306" value="80">Long An</option>
-                                            <option warehouse="1" latitude_warehouse="21.059558" longitude_warehouse="105.764761" latitude="10.35417" longitude="106.36528" value="82">Tiền Giang</option>
-                                            <option warehouse="1" latitude_warehouse="21.059558" longitude_warehouse="105.764761" latitude="10.241361" longitude="106.3762601" value="83">Bến Tre</option>
-                                            <option warehouse="1" latitude_warehouse="21.059558" longitude_warehouse="105.764761" latitude="9.95139" longitude="106.33472" value="84">Trà Vinh</option>
-                                            <option warehouse="1" latitude_warehouse="21.059558" longitude_warehouse="105.764761" latitude="10.24583" longitude="105.95833" value="86">Vĩnh Long</option>
-                                            <option warehouse="1" latitude_warehouse="21.059558" longitude_warehouse="105.764761" latitude="10.2550873" longitude="105.9730645" value="87">Đồng Tháp</option>
-                                            <option warehouse="1" latitude_warehouse="21.059558" longitude_warehouse="105.764761" latitude="10.37528" longitude="105.41833" value="89">An Giang</option>
-                                            <option warehouse="1" latitude_warehouse="21.059558" longitude_warehouse="105.764761" latitude="10.02083" longitude="105.09028" value="91">Kiên Giang</option>
-                                            <option warehouse="1" latitude_warehouse="21.059558" longitude_warehouse="105.764761" latitude="10.03278" longitude="105.78389" value="92">Cần Thơ</option>
-                                            <option warehouse="1" latitude_warehouse="21.059558" longitude_warehouse="105.764761" latitude="9.7817821" longitude="105.4766698" value="93">Hậu Giang</option>
-                                            <option warehouse="1" latitude_warehouse="21.059558" longitude_warehouse="105.764761" latitude="9.60389" longitude="105.97417" value="94">Sóc Trăng</option>
-                                            <option warehouse="1" latitude_warehouse="21.059558" longitude_warehouse="105.764761" latitude="9.25889" longitude="105.75194" value="95">Bạc Liêu</option>
-                                            <option warehouse="1" latitude_warehouse="21.059558" longitude_warehouse="105.764761" latitude="9.18361" longitude="105.15" value="96">Cà Mau</option>
-                                        </select> <select name="district_id" id="district_id" class="input_text input_text_33">
-                                            <option value="">Chọn Quận huyện</option>
-                                        </select> <select name="ward_id" id="ward_id" class="input_text input_text_33">
-                                            <option value="">Chọn Xã phường</option>
-                                        </select> <input placeholder="Địa chỉ ( Nhập số nhà, ngõ...)" type="text" name="sender_address" id="address_user" value="" class="input_text" size="30"> <textarea placeholder="Ghi chú" name="sender_comments" id="sender_comments" class="input_text"></textarea> </div>
-                                </div>
-                                <div class="title-box-cart">Phương thức thanh toán</div>
-                                <div class="payment-type shadow">
-                                    <div class="mb-2 mt-3"><b class="fs-16">Chọn phương thức thanh toán</b></div> <label class="container-rd active" id="method-cod" data-pay-method="0"> <span class="radio"> <input onclick="pay_mothod(0)" type="radio" checked="checked" name="radio" value="0"> <span class="icon"></span> </span> Thanh toán tiền mặt khi nhận hàng (COD) </label> <label class="display-off container-rd " data-pay-method="2"> <span class="radio"> <input onclick="pay_mothod(2)" type="radio" name="radio" value="2"> <span class="icon"></span> </span> Thanh toán online Alepay (ATM,VNQR,Thẻ quốc tế...) </label> <!-- danh sách STK ngân hàng -->
-                                    <!-- end danh sách STK ngân hàng -->
-                                    <div class="pay_mothod_4_data"> </div>
-                                    <!-- <div class="pay_mothod_6_data">
-                Phí thanh toán: + <span></span>
-            </div> --> <label class="container-rd pay_method_3 " data-pay-method="3"> <span class="radio"> <input class="tra-gop-alepay" onclick="pay_mothod(3)" type="radio" name="radio" value="3"> <span class="icon"></span> </span> Thanh Toán Thẻ - Hỗ Trợ Trả Góp Thẻ Tín Dụng Online - Alepay (Xin phiền quý khách liên hệ hotline: 0867935899 trước khi thanh toán mục này) </label>
-                                    <div class="pay_mothod_3_data"> </div> <input type="hidden" id="pay_method" value="0">
-                                </div> <!-- end payment-type -->
-                                <div class="all-button-cart cls"> <a class="back-home" href="javascript:history.go(-1)"> <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
-                                            <g>
-                                                <g>
-                                                    <path d="M492,236H68.442l70.164-69.824c7.829-7.792,7.859-20.455,0.067-28.284c-7.792-7.83-20.456-7.859-28.285-0.068    l-104.504,104c-0.007,0.006-0.012,0.013-0.018,0.019c-7.809,7.792-7.834,20.496-0.002,28.314c0.007,0.006,0.012,0.013,0.018,0.019    l104.504,104c7.828,7.79,20.492,7.763,28.285-0.068c7.792-7.829,7.762-20.492-0.067-28.284L68.442,276H492    c11.046,0,20-8.954,20-20C512,244.954,503.046,236,492,236z"></path>
-                                                </g>
-                                            </g>
-                                        </svg> <span>Quay lại mua thêm sản phẩm khác</span> </a> <a class="button-submit" href="javascript:void(0);" onclick="javascript:submitForm();" title=""> Thanh toán </a> </div> <input type="hidden" name="module" value="products"> <input type="hidden" name="view" value="cart"> <!-- <input type="hidden" name="price_send" id="price_send" value=" '.$check_code-> money_dow.'"> --> <input type="hidden" name="price_send_h" id="price_send_h" value="0"> <input type="hidden" name="code_card_send_h" id="code_card_send_h" value="0"> <input type="hidden" name="type_down_h" id="type_down_h" value="0"> <input type="hidden" name="task" value="" id="task_buyer_form"> <input type="hidden" name="is_vnpay" value="0" id="is_vnpay"> <input type="hidden" name="bank_code" value="0" id="bank_code_ip"> <input type="hidden" name="code_sale" value="" id="code-sale"> <input type="hidden" name="vpc_ItaBank_one_pay" value="" id="vpc_ItaBank_one_pay"> <input type="hidden" name="vpc_ItaFeeAmount_one_pay" value="" id="vpc_ItaFeeAmount_one_pay"> <input type="hidden" name="vpc_ItaTime_one_pay" value="" id="vpc_ItaTime_one_pay"> <input type="hidden" name="vpc_CardList_one_pay" value="" id="vpc_CardList_one_pay"> <input type="hidden" name="vpc_ItaBank_alepay" value="" id="vpc_ItaBank_alepay"> <input type="hidden" name="vpc_ItaFeeAmount_alepay" value="" id="vpc_ItaFeeAmount_alepay"> <input type="hidden" name="vpc_ItaTime_alepay" value="" id="vpc_ItaTime_alepay"> <input type="hidden" name="vpc_CardList_alepay" value="" id="vpc_CardList_alepay"> <input type="hidden" name="vpc_prmonth_alepay" value="" id="vpc_prmonth_alepay"> <input type="hidden" name="vpc_total_alepay" value="" id="vpc_total_alepay">
-                            </form>
+                            <form action="{{ route('order') }}" name="eshopcart_info" method="post" id="eshopcart_info">
+                            	@csrf
+							    <div class="shadow">
+							        <div class="sex"> 
+							        	<label> 
+							        		<span class="radio"> 
+							        			<input type="radio" value="Nam" name="sender_sex" checked=""> 
+							        			<span class="icon"></span> 
+							        		</span> Nam 
+							        	</label> 
+							        	<label> 
+							        		<span class="radio"> 
+							        			<input type="radio" name="sender_sex" value="Nữ"> 
+							        		<span class="icon"></span> </span> Nữ 
+							        	</label> 
+							        </div>
+							        <div class="box-input"> 
+							        	<input placeholder="Họ tên (*)" type="text" name="name" id="name_user" value="" class="input_text input_text_50" size="30" required> 
+							        	<input placeholder="Điện thoại (*)" type="text" name="phone_number" id="telephone_user" value="" class="input_text input_text_50" size="30" required> 
+							        	<input placeholder="Email" type="text" name="mail" id="sender_email" value="" class="input_text" size="30" required> 
+
+							        	<input placeholder="Địa chỉ ( Nhập số nhà, ngõ...)" type="text" name="address" id="address_user" value="" class="input_text" size="30" required> 
+
+							        	<textarea placeholder="Ghi chú" name="sender_comments" id="sender_comments" class="input_text"></textarea> 
+							        </div>
+							    </div>
+							    <div class="title-box-cart">Phương thức thanh toán</div>
+							    <div class="payment-type shadow">
+							        <div class="mb-2 mt-3"><b class="fs-16">Chọn phương thức thanh toán</b></div> <label class="container-rd active" id="method-cod" data-pay-method="0"> <span class="radio"> <input onclick="pay_mothod(0)" type="radio" checked="checked" name="radio" value="0"> <span class="icon"></span> </span> Thanh toán tiền mặt khi nhận hàng (COD) </label> <label class="display-off container-rd " data-pay-method="2"> <span class="radio"> <input onclick="pay_mothod(2)" type="radio" name="radio" value="2"> <span class="icon"></span> </span> Thanh toán online Alepay (ATM,VNQR,Thẻ quốc tế...) </label> <!-- danh sách STK ngân hàng -->
+							        <!-- end danh sách STK ngân hàng -->
+							        <div class="pay_mothod_4_data"> </div>
+
+							        <div class="pay_mothod_3_data"> </div> <input type="hidden" id="pay_method" value="0">
+							    </div> <!-- end payment-type -->
+							    <div class="all-button-cart cls"> <a class="back-home" href="javascript:history.go(-1)"> <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+							                <g>
+							                    <g>
+							                        <path d="M492,236H68.442l70.164-69.824c7.829-7.792,7.859-20.455,0.067-28.284c-7.792-7.83-20.456-7.859-28.285-0.068    l-104.504,104c-0.007,0.006-0.012,0.013-0.018,0.019c-7.809,7.792-7.834,20.496-0.002,28.314c0.007,0.006,0.012,0.013,0.018,0.019    l104.504,104c7.828,7.79,20.492,7.763,28.285-0.068c7.792-7.829,7.762-20.492-0.067-28.284L68.442,276H492    c11.046,0,20-8.954,20-20C512,244.954,503.046,236,492,236z"></path>
+							                    </g>
+							                </g>
+							            </svg> <span>Quay lại mua thêm sản phẩm khác</span> </a> 
+							            <button type="submit" class="button-submit" href="javascript:void(0);" title=""> Thanh toán </button> </div> <input type="hidden" name="module" value="products"> <input type="hidden" name="view" value="cart"> <!-- <input type="hidden" name="price_send" id="price_send" value=" '.$check_code-> money_dow.'"> --> <input type="hidden" name="price_send_h" id="price_send_h" value="0"> <input type="hidden" name="code_card_send_h" id="code_card_send_h" value="0"> <input type="hidden" name="type_down_h" id="type_down_h" value="0"> <input type="hidden" name="task" value="" id="task_buyer_form"> <input type="hidden" name="is_vnpay" value="0" id="is_vnpay"> <input type="hidden" name="bank_code" value="0" id="bank_code_ip"> <input type="hidden" name="code_sale" value="" id="code-sale"> <input type="hidden" name="vpc_ItaBank_one_pay" value="" id="vpc_ItaBank_one_pay"> <input type="hidden" name="vpc_ItaFeeAmount_one_pay" value="" id="vpc_ItaFeeAmount_one_pay"> <input type="hidden" name="vpc_ItaTime_one_pay" value="" id="vpc_ItaTime_one_pay"> <input type="hidden" name="vpc_CardList_one_pay" value="" id="vpc_CardList_one_pay"> <input type="hidden" name="vpc_ItaBank_alepay" value="" id="vpc_ItaBank_alepay"> <input type="hidden" name="vpc_ItaFeeAmount_alepay" value="" id="vpc_ItaFeeAmount_alepay"> <input type="hidden" name="vpc_ItaTime_alepay" value="" id="vpc_ItaTime_alepay"> <input type="hidden" name="vpc_CardList_alepay" value="" id="vpc_CardList_alepay"> <input type="hidden" name="vpc_prmonth_alepay" value="" id="vpc_prmonth_alepay"> <input type="hidden" name="vpc_total_alepay" value="" id="vpc_total_alepay">
+							</form>
                         </div> <!-- end info -->
                     </div>
                 </div>
