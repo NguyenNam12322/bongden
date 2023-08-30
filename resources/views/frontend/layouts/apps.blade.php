@@ -650,7 +650,7 @@
                                         <li class="header-search-form search-form html relative has-icon">
                                             <div class="header-search-form-wrapper">
                                                 <div class="searchform-wrapper ux-search-box relative is-normal">
-                                                    <form role="search" method="get" class="searchform" action="https://tlclighting.com.vn/">
+                                                    <form role="search" method="get" class="searchform" action="{{ route('search-product-frontend') }}">
                                                         <div class="flex-row relative">
                                                             <div class="flex-col flex-grow"> <label class="screen-reader-text" for="woocommerce-product-search-field-1">Tìm kiếm:</label> <input type="search" id="woocommerce-product-search-field-1" class="search-field mb-0" placeholder="Tìm kiếm&hellip;" value="" name="s" /> <input type="hidden" name="post_type" value="product" /></div>
                                                             <div class="flex-col"> <button type="submit" value="Tìm kiếm" class="ux-search-submit submit-button secondary button icon mb-0"> <i class="icon-search"></i> </button></div>
@@ -922,10 +922,11 @@
                 <li class="header-search-form search-form html relative has-icon">
                     <div class="header-search-form-wrapper">
                         <div class="searchform-wrapper ux-search-box relative is-normal">
-                            <form role="search" method="get" class="searchform" action="https://tlclighting.com.vn/">
+                            <form role="search" method="get" class="searchform" action="">
+                                @csrf
                                 <div class="flex-row relative">
-                                    <div class="flex-col flex-grow"> <label class="screen-reader-text" for="woocommerce-product-search-field-2">Tìm kiếm:</label> <input type="search" id="woocommerce-product-search-field-2" class="search-field mb-0" placeholder="Tìm kiếm&hellip;" value="" name="s" /> <input type="hidden" name="post_type" value="product" /></div>
-                                    <div class="flex-col"> <button type="submit" value="Tìm kiếm" class="ux-search-submit submit-button secondary button icon mb-0"> <i class="icon-search"></i> </button></div>
+                                    <div class="flex-col flex-grow"> <label class="screen-reader-text" for="woocommerce-product-search-field-2">Tìm kiếm:</label> <input type="search" id="woocommerce-product-search-field-2" class="search-field mb-0" placeholder="Tìm kiếm&hellip;" value="" name="s" /> <input type="hidden" name="key" value="" /></div>
+                                    <div class="flex-col"> <button type="submit" value="Tìm kiếm" class="ux-search-submit submit-button  button icon mb-0"> <i class="icon-search"></i> </button></div>
                                 </div>
                                 <div class="live-search-results text-left z-top"></div>
                             </form>
