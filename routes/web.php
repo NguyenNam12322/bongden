@@ -12,6 +12,9 @@
 */
 
 
+
+Route::get('export', 'exportController@exportPD');
+
 Route::get('show-filter', 'Frontend\categoryController@showFilter')->name('show-filter');
 
 Route::get('crawl-product-details', 'crawlController@getProductDetails');
