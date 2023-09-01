@@ -49,4 +49,12 @@ class productExport implements FromCollection,WithHeadings,ShouldAutoSize
 
         ];
     }
+
+    public function registerEvents(): array
+    {
+        $spreadsheet = \PhpOffice\PhpSpreadsheet\IOFactory::load('test.xlsx');
+        
+        
+        $spreadsheet->getActiveSheet()->getStyle('A3:O3')->getFill()->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)->getStartColor()->setARGB('FFFF0000');
+    }    
 }
