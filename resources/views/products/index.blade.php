@@ -20,12 +20,21 @@
                     <!-- Search form -->
                     
                 </div>
+
+
+
                 <div class="col-sm-6">
                     <a class="btn btn-primary float-right"
                        href="{{ route('products.create') }}">
                         Add New
                     </a>
                 </div>
+
+
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary showmodalmechant" >
+                  show merchant pd
+                </button>
 
                 <div class="btn btn-red"><a href="{{ route('deal') }}">deal sản phẩm</a></div>
 

@@ -13,8 +13,6 @@
 
 
 
-Route::get('export', 'exportController@exportPD');
-
 Route::get('show-filter', 'Frontend\categoryController@showFilter')->name('show-filter');
 
 Route::get('crawl-product-details', 'crawlController@getProductDetails');
@@ -82,9 +80,6 @@ Route::post('add-lienhe','lienheController@addLienhe')->name('addlienhe');
 
 
 Route::get('/result.php', 'mainController@resultAlepay');
-
-
-
 
 Route::post('alepay-pay','payController@payAlepay')->name('alepay');
 
@@ -212,7 +207,7 @@ Route::group(['prefix' => 'admins','middleware' => 'auth'], function() {
 
     Route::get('addTimeDealBefore', 'flashdealController@addTimeDealBefore');
 
-    
+    Route::get('export', 'exportController@exportPD')->name('exportPDMC');
 
     Route::get('update-call-phone/{id}', 'lienheController@updateCall')->name('updateCall');
 
@@ -257,6 +252,8 @@ Route::group(['prefix' => 'admins','middleware' => 'auth'], function() {
     Route::post('productContentImage', 'imageController@productContentImage')->name('imagecontents');
 
     Route::post('/addUser', 'customnUserController@addUser')->name('adduser');
+
+    Route::get('show-ajax-pd-merchant', 'AjaxController@showPDMerchant')->name('show-pd-merchant');
 
 
     Route::post('/add-limit', 'AjaxController@addLimitProduct')->name('add-limit-product');
@@ -350,6 +347,8 @@ Route::group(['prefix' => 'admins','middleware' => 'auth'], function() {
     Route::resource('metaSeos', 'metaSeoController');
 
     Route::resource('menus', 'menuController');
+
+    Route::resource('import', 'importController');
 
     Route::resource('posts', 'postController');
 

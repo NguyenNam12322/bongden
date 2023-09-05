@@ -602,6 +602,19 @@ class AjaxController extends Controller
         }    
     }
 
+    public function showPDMerchant(Request $request)
+    {
+        if($request->ajax()){
+
+            $pd_limit = product::where('limits', 1)->get();
+
+            return view('ajax.merchantpd', compact('pd_limit'));
+        }
+        else{
+            return abort('404');
+        }
+    }
+
     
 
     public function addProductToCart(Request $request)

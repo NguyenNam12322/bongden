@@ -496,8 +496,7 @@ class categoryController extends Controller
                 'page'=>$page??1,
 
             ];
-
-
+            
             return $data;
         }    
 
