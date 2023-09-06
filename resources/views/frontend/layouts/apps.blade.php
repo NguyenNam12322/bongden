@@ -124,6 +124,21 @@
                  strong strong strong {
                     font-weight: 600;
                 }
+
+                .shopcart_simples .buy_icon .quality {
+                    color: #ff2244;
+                    font-size: 12px;
+                    display: inline-block;
+                    width: 16px;
+                    height: 16px;
+                    text-align: center;
+                    border-radius: 50%;
+                    transition: 0.5s;
+                    position: absolute;
+                    top: -8px;
+                    left: 10px;
+                    background: #ffeb3b;
+                }
                 .khbh01 input{
                     white-space: break-spaces;
                     line-height: 1.5;
@@ -180,6 +195,11 @@
                     display: table-cell;
                     vertical-align: middle;
                     padding: 20px;
+                }
+
+                .text-c{
+                    font-size: 14px;
+                    color:#1e73be !important;
                 }
                 .thanhcong01 br {
                     margin: 10px;
@@ -391,10 +411,7 @@
                 #menu-menu-doc li button:first-child{
                     display:none!important;
                 }
-                .top01 a:hover{
-                    color: #ffffff!important;
-                    background: #00427e!important;
-                }
+               
                 .top01 a, .top01 a:hover{
                     transition: all .3s ease-in-out;
                 }
@@ -643,10 +660,52 @@
                         <div class="flex-col hide-for-medium flex-right">
                             <ul class="header-nav header-nav-main nav nav-right  nav-divided nav-uppercase">
                                 <li class="html custom html_topbar_right">
+
+
                                     <div class="top01">
-                                        <div class="top011" style=" display: inline-block; "> <img data-lazyloaded="1" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-src="https://tlclighting.com.vn/wp-content/uploads/2021/12/icon-01.svg" style="width: 35px;height: 35px;border-radius: 50%;background: #00427e;padding: 5px;position: relative;z-index: 1;    display: inline-block;" alt="tlclighting"> <a style="font-family: Montserrat, sans-serif!important; border: solid 2px #00427e; border-radius: 15px; padding: 5px 15px 5px 25px; margin-left: -20px; color: #fd0b0b; font-weight: 600; position: relative; z-index: 0; " href="cham-soc-khach-hang-tlc/index.html"> TRA CỨU BẢO HÀNH<a> </div>
-                                        <div class="top012" style=" display: inline-block;    margin-left: 10px; "> <img data-lazyloaded="1" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-src="https://tlclighting.com.vn/wp-content/uploads/2021/12/icon-02.svg" style="width: 35px;height: 35px;border-radius: 50%;background: #00427e;padding: 7px;position: relative;z-index: 1;    display: inline-block;" alt="tlclighting"> <a style="font-family: Montserrat, sans-serif!important; border: solid 2px #00427e; border-radius: 15px; padding: 5px 15px 5px 25px; margin-left: -20px; color: #fd0b0b; font-weight: 600; position: relative; z-index: 0; " href="tel:18006192"> 1800 6192<a></div>
+                                        <div class="top011" style=" display: inline-block; ">  
+                                            <div class="shopcart">
+                                                <div class="shopcart_simples block_content">
+                                                    <a class="buy_icon" href="{{ route('cart-details') }}" title="Giỏ hàng" rel="nofollow">
+                                                        <svg width="20px" height="20px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                                                            <g>
+                                                                <g>
+                                                                    <circle cx="181.333" cy="437.333" r="53.333"></circle>
+                                                                </g>
+                                                            </g>
+                                                            <g>
+                                                                <g>
+                                                                    <path
+                                                                        d="M509.867,89.6c-2.133-2.133-4.267-4.267-8.533-4.267H96L85.333,29.867c-2.133-4.267-6.4-8.533-10.667-8.533h-64    C4.267,21.333,0,25.6,0,32s4.267,10.667,10.667,10.667h55.467l51.2,260.267c8.533,34.133,38.4,59.733,74.667,59.733h245.333    c6.4,0,10.667-4.267,10.667-10.667c0-6.4-4.267-10.667-10.667-10.667H192c-17.067,0-34.133-8.533-42.667-23.467L460.8,275.2    c4.267,0,8.533-4.267,8.533-8.533L512,96C512,96,512,91.733,509.867,89.6z"
+                                                                    ></path>
+                                                                </g>
+                                                            </g>
+                                                            <g>
+                                                                <g>
+                                                                    <circle cx="394.667" cy="437.333" r="53.333"></circle>
+                                                                </g>
+                                                            </g>
+                                                        </svg>
+
+                                                        <?php
+
+                                                            $cart = Gloudemans\Shoppingcart\Facades\Cart::content();
+
+                                                            $number_cart = count($cart);
+
+                                                        ?>
+                                                        <span class="text-c">Giỏ hàng</span>
+                                                        <!-- <span class="text-mn"> </span> -->
+                                                        <span class="quality">{{ $number_cart }}</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="top012" style=" display: inline-block;    margin-left: 10px; "> 
+                                            <img data-lazyloaded="1" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-src="https://tlclighting.com.vn/wp-content/uploads/2021/12/icon-02.svg" style="width: 35px;height: 35px;border-radius: 50%;background: #00427e;padding: 7px;position: relative;z-index: 1;    display: inline-block;" alt="tlclighting"> <a style="font-family: Montserrat, sans-serif!important; border: solid 2px #00427e; border-radius: 15px; padding: 5px 15px 5px 25px; margin-left: -20px; color: #fd0b0b; font-weight: 600; position: relative; z-index: 0; " href="tel:18006192"> 1800 6192<a></div>
                                     </div>
+
+
                                 </li>
                             </ul>
                         </div>

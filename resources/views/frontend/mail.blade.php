@@ -56,7 +56,7 @@
                 @foreach($product as $key =>$value)
                 <tr>
                     <td align="center"> <strong>{{ $key }}</strong><br> </td>
-                    <td> <a href="https://maychieuminikaw.com/may-chieu-mini/may-chieu-mini-android-wifi-thong-minh-kaw-kp950-can-chinh-4-goc-p5231.html" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://maychieuminikaw.com/may-chieu-mini/may-chieu-mini-android-wifi-thong-minh-kaw-kp950-can-chinh-4-goc-p5231.html&amp;source=gmail&amp;ust=1694055567727000&amp;usg=AOvVaw02As7dULt2Tc9jRlWJCv1q">{{ @$value['name'] }}  </a> </td>
+                    <td> <a href="#" target="_blank" >{{ @$value['name'] }}  </a> </td>
                     <td> <strong>{{  @str_replace(',' ,'.', number_format($value['price']))  }}₫ </strong> </td>
                     <td> <strong>{{ @$value['qty'] }} </strong> </td>
                     <td> <span>{{  @str_replace(',' ,'.', number_format($value['price']))  }}₫ </span> </td>
