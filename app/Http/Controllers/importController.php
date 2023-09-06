@@ -21,6 +21,5 @@ class importController extends Controller
         return back()->with('success', 'User Imported Successfully.');
     }
 
-    
-    
+
 }

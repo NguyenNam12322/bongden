@@ -10,6 +10,7 @@ use Maatwebsite\Excel\Concerns\ToCollection;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
 use Illuminate\Support\Facades\Validator;
 use Maatwebsite\Excel\Concerns\WithValidation;
+use Carbon\Carbon;
 
 class ProductImport implements  ToModel
 {
@@ -22,30 +23,33 @@ class ProductImport implements  ToModel
 
     public function model(array $row)
     {
-
-        dd($row[2]);
+        $date = '';
         product::create([
-            'Name' => $row[0],
-            'Image' => $row[1]??'/wp-content/uploads/2019/11/IMG_2556-800x800.jpg',
-            'ProductSku' => $row[2],
-            'Price'=>$row[3],
-            'manuPrice'=>$row[4],
-            'GiftPrice'=>$row[5],
-            'limits'=>$row[6],
-            'InputPrice'=>$row[7],
-            'id_group_product'=>$row[8],
-            'Link'=>$row[9],
-            'LinkRedirect'=>$row[10],
-            'Detail'=>$row[11],
-            'Quantily'=>$row[12],
-            'promotion'=>$row[13],
-            'Maker'=>$row[14],
-            'Meta_id'=>$row[15],
-            'view'=>$row[16],
-            'group_id'=>$row[17],
-            'orders_hot'=>$row[18],
-            'active'=>$row[19],
-            'user_id'=>$row[20],
+            'Name' => $row[1],
+            'Image' => $row[2],
+            'ProductSku' => $row[3],
+            'Price'=>$row[4],
+            'manuPrice'=>$row[5],
+            'GiftPrice'=>$row[6],
+            'limits'=>$row[7],
+            'InputPrice'=>$row[8],
+            'id_group_product'=>$row[9],
+            'Link'=>$row[10],
+            'LinkRedirect'=>$row[11],
+            'Detail'=>$row[12],
+            'Salient_Features'=>$row[13],
+            'Specifications'=>$row[14],
+            'Quantily'=>1,
+            'promotion'=>$row[16],
+            'Maker'=>$row[17],
+            'Meta_id'=>1,
+            'view'=>$row[19],
+            'Group_id'=>$row[20],
+            'orders_hot'=>$row[21],
+            'active'=>$row[22],
+            'user_id'=>$row[23],
+            'updated_at'=>$date??'',
+            'created_at'=>$row[25]??''
         ]);
     }
 
