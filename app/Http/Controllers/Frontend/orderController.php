@@ -70,6 +70,8 @@ class orderController extends Controller
 
         $input['total_price'] = array_sum($totalPrice);
 
+        $totalPrice = array_sum($totalPrice);
+
         $mail =  $input["mail"];
 
         $order = new Order();

@@ -53,9 +53,9 @@
             </thead>
             <tbody>
                 @if(isset($product))
-                @foreach($product as $value)
+                @foreach($product as $key =>$value)
                 <tr>
-                    <td align="center"> <strong>1</strong><br> </td>
+                    <td align="center"> <strong>{{ $key }}</strong><br> </td>
                     <td> <a href="https://maychieuminikaw.com/may-chieu-mini/may-chieu-mini-android-wifi-thong-minh-kaw-kp950-can-chinh-4-goc-p5231.html" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://maychieuminikaw.com/may-chieu-mini/may-chieu-mini-android-wifi-thong-minh-kaw-kp950-can-chinh-4-goc-p5231.html&amp;source=gmail&amp;ust=1694055567727000&amp;usg=AOvVaw02As7dULt2Tc9jRlWJCv1q">{{ @$value['name'] }}  </a> </td>
                     <td> <strong>{{  @str_replace(',' ,'.', number_format($value['price']))  }}₫ </strong> </td>
                     <td> <strong>{{ @$value['qty'] }} </strong> </td>
@@ -67,7 +67,7 @@
 
                 <tr>
                     <td colspan="4" align="right"><strong>Tạm tính:</strong></td>
-                    <td><strong>{{  @str_replace(',' ,'.', number_format($value['price']))  }}₫</strong> </td>
+                    <td><strong>{{  @str_replace(',' ,'.', number_format($total_price))  }}₫</strong> </td>
                 </tr>
                 <tr>
                     <td colspan="4" align="right"><strong>Mã giảm giá:</strong></td>
@@ -78,8 +78,8 @@
                     <td><strong>0(Chưa tính được trọng lượng của sản phẩm, liên hệ lại.)</strong> </td>
                 </tr>
                 <tr>
-                    <td colspan="4" align="right"><strong>Thanh toán:{{  @str_replace(',' ,'.', number_format($total_price[0]))  }}</strong></td>
-                    <td><strong>₫</strong></td>
+                    <td colspan="4" align="right"><strong>Thanh toán:</strong></td>
+                    <td><strong>{{  @str_replace(',' ,'.', number_format($total_price))  }}₫</strong></td>
                 </tr>
 
 
