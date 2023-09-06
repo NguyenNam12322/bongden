@@ -47,59 +47,28 @@
     </style>
     <!-- tabs -->
     <ul id="tabnav">
-        <li id="tab_1"><a href="?opt=system&amp;view=store-design&amp;section=header">Phần header</a></li>
+      <!--   <li id="tab_1"><a href="?opt=system&amp;view=store-design&amp;section=header">Phần header</a></li>
         <li id="tab_2" class="tab-select"><a href="?opt=system&amp;view=store-design&amp;section=popup">Banner Pop-Up</a></li>
-        <li id="tab_3"><a href="#" onclick="imageCss()">Hình nền website</a></li>
-        <li id="tab_4"><a href="javascript:void(0)" onclick="muchSearch()">Tìm kiếm nhiều</a></li>
-        <li id="tab_5"><a href="javascript:void(0)" onclick="meta()">Thẻ Meta trang Home</a></li>
+        <li id="tab_3"><a href="#" onclick="imageCss()">Hình nền website</a></li> -->
+        <li id="tab_4"><a href="javascript:void(0)" onclick="muchSearch()">Cài đặt Email</a></li>
+        <!-- <li id="tab_5"><a href="javascript:void(0)" onclick="meta()">Thẻ Meta trang Home</a></li> -->
         
     </ul>
     <form method="post" enctype="multipart/form-data" action="{{route('add-popup')}}">
         @csrf
         <table class="tb-setup">
             <tbody>
-                <tr>
-                    <td>Link nhảy đến</td>
 
-                    <?php  
-
-                        $popup = App\Models\popup::find(4);
-
-                        
-                    ?>
-                    <td>
-                        <input type="text" size="50" name="link" value="{{ $popup->link }}">
-                    </td>
-                </tr>
+                <?php 
+                    $email = DB::table('muchsearch')->where('id', 1)->first();
+                ?>
                 <tr>
-                    <td>File ảnh</td>
-                    <td>
-                        <div style="max-height:600px; overflow:auto" id="show-image">
-                            
-
-                            <img border="0" src="{{ asset($popup->image) }}">
-                        </div>
-                        <br>
-                        <input type="file" name="file_image" size="50" id="file_image" onchange="encodeImageFileAsURL('file_image')">
-                        <!-- <input type="hidden" name="popup_file_old" value="/media/banner/popup_5913_popup-mua-he-xanh-2021.png"> -->
-                    </td>
+                    <td>Email nhân viên đang cài đặt: {{ @$email->title }}</td>
                 </tr>
-                <tr>
-                    <td>Lựa chọn hiển thị người dùng</td>
-                    <td>
-                        <label><input type="radio" name="popup_display" value="0" {{ $popup->option==0?'checked':'' }}> Theo session </label> |
-                        <label><input type="radio" name="popup_display" value="1" {{ $popup->option==1?'checked':'' }}> Trang chủ website</label>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Cho hiển thị</td>
-                    <td>
-                        <input type="checkbox" name="popup_activate" value="1" {{ $popup->active==1?'checked':'' }}> Tích chọn để hiển thị hoặc dừng hiển thị
-                    </td>
-                </tr>
+                
             </tbody>
         </table>
-        <div><button type="submit">xác nhận</button> </div>
+       
        
     </form>
 </div>
@@ -153,11 +122,19 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Link tìm kiếm nhiều</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Email </h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
+
+                
+                
                 </button>
+
+
+               
             </div>
+           
+
             <div class="modal-body">
                 <form method="post" action="{{ route('add-image-background') }}" id="form-search-link">
                     @csrf
@@ -166,18 +143,13 @@
                         <tbody>
 
                             <tr>
-                                <td>Title: </td>
+                                <td>Email: </td>
                                 <td>
                                     
-                                    <input type="text" class="color" name="background_color" id="title" required> 
+                                    <input type="text" class="color" name="email" id="title" required> 
                                 </td>
                             </tr>
-                            <tr>
-                                <td>Link</td>
-                                <td>
-                                    <input type="text" class="color" name="link" id="link" required> 
-                                </td>
-                            </tr>
+                           
                         </tbody>
                     </table>
 
@@ -192,13 +164,7 @@
 
                 <hr>
                 <div class="append-link">
-                    <?php $link = DB::table('muchsearch')->get();  ?>
-
-                    @if(isset($link))
-                        @foreach($link as $links)
-                            <a href="{{ $links->link }}">{{ $links->title }}</a>&nbsp &nbsp  <span class="delete" id="delete{{ $links->id }}" onclick="deleteLink('{{ $links->id }}')" style="cursor:pointer;">xóa</span> <br>
-                        @endforeach
-                    @endif
+                   
                 </div>
 
             </div>
@@ -263,12 +229,13 @@
             type: 'POST',
             url: "{{ route('muchSearch') }}",
             data: {
-                title: $('#title').val(),
-                link:$('#link').val()
+                email: $('#title').val(),
+               
                    
             },
             success: function(result){
-                $('.append-link').append(result);
+                
+                window.location.reload();
             }
         });
     }

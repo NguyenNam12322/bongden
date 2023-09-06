@@ -50,33 +50,17 @@ class showController extends Controller
 
     }
 
+    public function configMail($value='')
+    {
+        $email = DB::table('muchsearch')
+    }
+
 
     public function addBackgroundSite(Request $request)
     {
-        if ($request->hasFile('background_image')) {
+        $email = $request->email;
 
-            $file_upload = $request->file('background_image');
-
-            $name = time() . '_' . $file_upload->getClientOriginalName();
-
-            $filePath = $file_upload->storeAs('images/background-image', $name, 'ftp');
-
-            $input['background_image'] = $filePath;
-
-            $input['background_color'] = '';
-
-        }
-        else{
-
-            $input['background_color'] = $request->background_color;
-
-            $input['background_image'] = '';
-
-        }
-
-        $background = background::find(1);
-
-        $background->update($input);
+        $update = DB::table('muchsearch')->where('id', 1)->update(['email'=>$email]);
 
          return back()->with('status-background','sửa thành công');
 

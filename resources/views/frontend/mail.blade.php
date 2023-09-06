@@ -1,144 +1,101 @@
-<div marginwidth="0" marginheight="0" style="padding:0">
-    <div id="m_-6466602755413826958m_2352472156645643125wrapper" dir="ltr" style="background-color:#f7f7f7;margin:0;padding:70px 0;width:100%">
-        <table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%">
+<div id=":7d" class="a3s aiL ">
+    <div style="border:8px solid #00b8e0;line-height:21px;padding:2px">
+        <div class="adM">&nbsp; </div>
+        <div style="padding:10px">
+            <div class="adM">&nbsp; </div>
+            <div><strong>Chào Cuong!</strong></div>
+            <div>Cảm ơn Quý khách&nbsp;đã mua hàng của <a href="http://maychieuminikaw.com" target="_blank" data-saferedirecturl="https://www.google.com/url?q=http://maychieuminikaw.com&amp;source=gmail&amp;ust=1694055567727000&amp;usg=AOvVaw3wmqugW6hwh4koOcmcCYtL"><strong>maychieuminikaw.com</strong></a></div>
+        </div>
+        <div style="background:none repeat scroll 0 0 #00b8e0;color:#ffffff;font-weight:bold;line-height:25px;min-height:27px;padding-left:10px">Thông tin về đơn đặt hàng của Quý khách</div>
+        <div style="padding:10px">
+            <div>Mã đơn hàng: <strong>DH00000123</strong></div>
+            <table cellspacing="0" cellpadding="6" border="0" width="100%">
+                <tbody>
+                    <tr>
+                        <td width="173px">Tên người đặt hàng </td>
+                        <td width="5px">:</td>
+                        <td>{{  @$name }}</td>
+                    </tr>
+                    <tr>
+                        <td>Địa chỉ </td>
+                        <td width="5px">:</td>
+                        <td> {{ @$address  }}</td>
+                    </tr>
+                    <tr>
+                        <td>Email </td>
+                        <td width="5px">:</td>
+                        <td><a href="mailto:chiensi26045@gmail.com" target="_blank">{{  @$email }}m</a></td>
+                    </tr>
+                    <tr>
+                        <td>Điện thoại </td>
+                        <td width="5px">:</td>
+                        <td>{{ @$phone_number }}<strong style="color:red"> (Gọi lại ngay)</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Hình thức thanh toán </td>
+                        <td width="5px">:</td>
+                        <td>Thanh toán tiền mặt khi nhận hàng</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div style="background:none repeat scroll 0 0 #00b8e0;color:#ffffff;font-weight:bold;line-height:25px;min-height:27px;padding-left:10px">Chi tiết đơn hàng</div>
+        <p> </p>
+        <table width="964" cellspacing="0" cellpadding="6" border="1" align="center" style="border-style:solid;border-collapse:collapse;margin-top:2px">
+            <thead style="background:#e7e7e7;line-height:12px">
+                <tr>
+                    <th width="30">STT</th>
+                    <th>Tên sản phẩm</th>
+                    <th width="117">Giá</th>
+                    <th width="117">Số lượng</th>
+                    <th width="117">Tổng giá tiền</th>
+                </tr>
+            </thead>
             <tbody>
+                @if(isset($product))
+                @foreach($product as $value)
                 <tr>
-                    <td align="center" valign="top">
-                        <div id="m_-6466602755413826958m_2352472156645643125template_header_image">
-                        </div>
-                        <table border="0" cellpadding="0" cellspacing="0" width="600" id="m_-6466602755413826958m_2352472156645643125template_container" style="background-color:#ffffff;border:1px solid #dedede;border-radius:3px">
-                            <tbody>
-                                <tr>
-                                    <td align="center" valign="top">
-                                        <table border="0" cellpadding="0" cellspacing="0" width="100%" id="m_-6466602755413826958m_2352472156645643125template_header" style="background-color:#96588a;color:#ffffff;border-bottom:0;font-weight:bold;line-height:100%;vertical-align:middle;font-family:&quot;Helvetica Neue&quot;,Helvetica,Roboto,Arial,sans-serif;border-radius:3px 3px 0 0">
-                                            <tbody>
-                                                <tr>
-                                                    <td id="m_-6466602755413826958m_2352472156645643125header_wrapper" style="padding:36px 48px;display:block">
-                                                        <h1 style="font-family:&quot;Helvetica Neue&quot;,Helvetica,Roboto,Arial,sans-serif;font-size:30px;font-weight:300;line-height:150%;margin:0;text-align:left;color:#ffffff;background-color:inherit">Đơn hàng mới: {{ @$orderId }}</h1>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td align="center" valign="top">
-                                        <table border="0" cellpadding="0" cellspacing="0" width="600" id="m_-6466602755413826958m_2352472156645643125template_body">
-                                            <tbody>
-                                                <tr>
-                                                    <td valign="top" id="m_-6466602755413826958m_2352472156645643125body_content" style="background-color:#ffffff">
-                                                        <table border="0" cellpadding="20" cellspacing="0" width="100%">
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td valign="top" style="padding:48px 48px 32px">
-                                                                        <div id="m_-6466602755413826958m_2352472156645643125body_content_inner" style="color:#636363;font-family:&quot;Helvetica Neue&quot;,Helvetica,Roboto,Arial,sans-serif;font-size:14px;line-height:150%;text-align:left">
-                                                                            <p style="margin:0 0 16px">Bạn vừa order được đơn hàng từ dienmaynguoiviet.vn. Đơn hàng như sau:</p>
-                                                                            <h2 style="color:#96588a;display:block;font-family:&quot;Helvetica Neue&quot;,Helvetica,Roboto,Arial,sans-serif;font-size:18px;font-weight:bold;line-height:130%;margin:0 0 18px;text-align:left">
-                                                                                <a href="https://thegioimaygiat.vn/wp-admin/post.php?post=6240&amp;action=edit" style="font-weight:normal;text-decoration:underline;color:#96588a" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://thegioimaygiat.vn/wp-admin/post.php?post%3D6240%26action%3Dedit&amp;source=gmail&amp;ust=1645154028402000&amp;usg=AOvVaw2hEf1ZG2hjiCCjVfpR_etV">[Đơn hàng {{ @$orderId }}]</a> ({{ date("d/m/Y") }})
-                                                                            </h2>
-                                                                            <div style="margin-bottom:40px">
-                                                                                <table cellspacing="0" cellpadding="6" border="1" style="color:#636363;border:1px solid #e5e5e5;vertical-align:middle;width:100%;font-family:'Helvetica Neue',Helvetica,Roboto,Arial,sans-serif">
-                                                                                    <thead>
-                                                                                        <tr>
-                                                                                            <th scope="col" style="color:#636363;border:1px solid #e5e5e5;vertical-align:middle;padding:12px;text-align:left">Sản phẩm</th>
-                                                                                            <th scope="col" style="color:#636363;border:1px solid #e5e5e5;vertical-align:middle;padding:12px;text-align:left">Số lượng</th>
-                                                                                            <th scope="col" style="color:#636363;border:1px solid #e5e5e5;vertical-align:middle;padding:12px;text-align:left">Giá</th>
-                                                                                        </tr>
-                                                                                    </thead>
-                                                                                    <tbody>
-                                                                                        <tr>
-                                                                                            @if(isset($product))
-                                                                                            @foreach($product as $value)
-                                                                                            <td style="color:#636363;border:1px solid #e5e5e5;padding:12px;text-align:left;vertical-align:middle;font-family:'Helvetica Neue',Helvetica,Roboto,Arial,sans-serif;word-wrap:break-word">
-                                                                                               {{ @$value['name'] }}  
-                                                                                            </td>
-                                                                                            <td style="color:#636363;border:1px solid #e5e5e5;padding:12px;text-align:left;vertical-align:middle;font-family:'Helvetica Neue',Helvetica,Roboto,Arial,sans-serif">
-                                                                                                {{ @$value['qty'] }}     
-                                                                                            </td>
-                                                                                            <td style="color:#636363;border:1px solid #e5e5e5;padding:12px;text-align:left;vertical-align:middle;font-family:'Helvetica Neue',Helvetica,Roboto,Arial,sans-serif">
-                                                                                                <span>{{  @str_replace(',' ,'.', number_format($value['price']))  }}<span>₫</span></span>        
-                                                                                            </td>
-                                                                                            @endforeach
-                                                                                            @endif
-                                                                                            
-                                                                                        </tr>
-                                                                                    </tbody>
-                                                                                    <tfoot>
-                                                                                        <tr>
-                                                                                            <th scope="row" colspan="2" style="color:#636363;border:1px solid #e5e5e5;vertical-align:middle;padding:12px;text-align:left;border-top-width:4px">Tổng số phụ:</th>
-                                                                                            <td style="color:#636363;border:1px solid #e5e5e5;vertical-align:middle;padding:12px;text-align:left;border-top-width:4px"></span></span></td>
-                                                                                        </tr>
-                                                                                        <tr>
-                                                                                            <th scope="row" colspan="2" style="color:#636363;border:1px solid #e5e5e5;vertical-align:middle;padding:12px;text-align:left">Phương thức thanh toán:</th>
-                                                                                            <td style="color:#636363;border:1px solid #e5e5e5;vertical-align:middle;padding:12px;text-align:left">Trả tiền mặt khi nhận hàng</td>
-                                                                                        </tr>
-                                                                                        <tr>
-                                                                                            <th scope="row" colspan="2" style="color:#636363;border:1px solid #e5e5e5;vertical-align:middle;padding:12px;text-align:left">Tổng cộng:</th>
-                                                                                            <td style="color:#636363;border:1px solid #e5e5e5;vertical-align:middle;padding:12px;text-align:left"><span>{{  @str_replace(',' ,'.', number_format($total_price[0]))  }}<span>₫</span></span></td>
-                                                                                        </tr>
-                                                                                    </tfoot>
-                                                                                </table>
-                                                                            </div>
-                                                                            <table id="m_-6466602755413826958m_2352472156645643125addresses" cellspacing="0" cellpadding="0" border="0" style="width:100%;vertical-align:top;margin-bottom:40px;padding:0">
-                                                                                <tbody>
-                                                                                    <tr>
-                                                                                        <td valign="top" width="50%" style="text-align:left;font-family:'Helvetica Neue',Helvetica,Roboto,Arial,sans-serif;border:0;padding:0">
-                                                                                            <h2 style="color:#96588a;display:block;font-family:&quot;Helvetica Neue&quot;,Helvetica,Roboto,Arial,sans-serif;font-size:18px;font-weight:bold;line-height:130%;margin:0 0 18px;text-align:left">Địa chỉ thanh toán</h2>
-                                                                                            <address style="padding:12px;color:#636363;border:1px solid #e5e5e5">
+                    <td align="center"> <strong>1</strong><br> </td>
+                    <td> <a href="https://maychieuminikaw.com/may-chieu-mini/may-chieu-mini-android-wifi-thong-minh-kaw-kp950-can-chinh-4-goc-p5231.html" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://maychieuminikaw.com/may-chieu-mini/may-chieu-mini-android-wifi-thong-minh-kaw-kp950-can-chinh-4-goc-p5231.html&amp;source=gmail&amp;ust=1694055567727000&amp;usg=AOvVaw02As7dULt2Tc9jRlWJCv1q">{{ @$value['name'] }}  </a> </td>
+                    <td> <strong>{{  @str_replace(',' ,'.', number_format($value['price']))  }}₫ </strong> </td>
+                    <td> <strong>{{ @$value['qty'] }} </strong> </td>
+                    <td> <span>{{  @str_replace(',' ,'.', number_format($value['price']))  }}₫ </span> </td>
+                </tr>
 
-                                                                                                {{ @$address  }}
-                                                                                                <br>
-                                                                                                Số điện thoại: <a href="tel:{{ $phone_number }}" style="color:#96588a;font-weight:normal;text-decoration:underline" target="_blank">{{ @$phone_number }}</a>                                                  <br>
-                                                                                                Email:
-                                                                                                <a href="{{ @$email }}" target="_blank">{{ @$email }}</a>                            
-                                                                                            </address>
-                                                                                        </td>
-                                                                                    </tr>
-                                                                                </tbody>
-                                                                            </table>
-                                                                            
-                                                                        </div>
-                                                                    </td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </td>
+                @endforeach
+                @endif
+
+                <tr>
+                    <td colspan="4" align="right"><strong>Tạm tính:</strong></td>
+                    <td><strong>{{  @str_replace(',' ,'.', number_format($value['price']))  }}₫</strong> </td>
                 </tr>
                 <tr>
-                    <td align="center" valign="top">
-                        <table border="0" cellpadding="10" cellspacing="0" width="600" id="m_-6466602755413826958m_2352472156645643125template_footer">
-                            <tbody>
-                                <tr>
-                                    <td valign="top" style="padding:0;border-radius:6px">
-                                        <table border="0" cellpadding="10" cellspacing="0" width="100%">
-                                            <tbody>
-                                                <tr>
-                                                    <td colspan="2" valign="middle" id="m_-6466602755413826958m_2352472156645643125credit" style="border-radius:6px;border:0;color:#8a8a8a;font-family:&quot;Helvetica Neue&quot;,Helvetica,Roboto,Arial,sans-serif;font-size:12px;line-height:150%;text-align:center;padding:24px 0">
-                                                        <p style="margin:0 0 16px">Thế giới máy giặt — Built with <a href="https://woocommerce.com" style="color:#96588a;font-weight:normal;text-decoration:underline" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://woocommerce.com&amp;source=gmail&amp;ust=1645154028402000&amp;usg=AOvVaw0aNSa4lBwSVF8--jyUpnfz">WooCommerce</a></p>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </td>
+                    <td colspan="4" align="right"><strong>Mã giảm giá:</strong></td>
+                    <td><strong> -0 ()</strong> </td>
                 </tr>
+                <tr>
+                    <td colspan="4" align="right"><strong>Phí ship:</strong></td>
+                    <td><strong>0(Chưa tính được trọng lượng của sản phẩm, liên hệ lại.)</strong> </td>
+                </tr>
+                <tr>
+                    <td colspan="4" align="right"><strong>Thanh toán:{{  @str_replace(',' ,'.', number_format($total_price[0]))  }}</strong></td>
+                    <td><strong>₫</strong></td>
+                </tr>
+
+
+
+
             </tbody>
         </table>
-        <div class="yj6qo"></div>
-        <div class="adL">
+        <p></p>
+        <div style="padding:10px">
+            <p>Maychieuminikaw.com&nbsp;sẽ liên lạc với quý khách và xác nhận lại đơn hàng trong thời gian sớm nhất.<br> Cảm ơn Quý Khách !</p>
+            <p>&nbsp;</p>
         </div>
     </div>
-    <div class="adL">
-    </div>
+    <p><br> <br> &nbsp;</p>
+    <p><br> &nbsp;</p>
+    <p>&nbsp;</p>
+    <div class="yj6qo"></div>
+    <div class="adL"> </div>
 </div>

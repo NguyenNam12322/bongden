@@ -1037,16 +1037,10 @@ class AjaxController extends Controller
     {
         if($request->ajax()){
 
-            $input['link']       = $request->link;
+            $email = $request->email;
 
-            $input['title'] = $request->title;
-
-           
-
-            $result = DB::table('muchsearch')->insert($input);
-            
-            return response('<a href="'.$request->link.'">'.$request->title.'</a><br>');
-
+            $result = DB::table('muchsearch')->where('id', 1)->update(['title'=>$email]);
+        
         }    
     }
 

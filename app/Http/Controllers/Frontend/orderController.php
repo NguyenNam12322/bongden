@@ -11,7 +11,6 @@ use App\Models\product;
 use App\User;
 use DB;
 use Illuminate\Support\Facades\Cache;
-
 use Mail;
 use Session;
 
@@ -89,27 +88,26 @@ class orderController extends Controller
        
         $check = $order::create($input);
 
+        $staff_email = DB::table('muchsearch')->where('id', 1)->first()->title;
+
       
 
-        // if(!empty($mail)){
+        if(!empty($mail)){
+            
+            $emails = $input["mail"];
+            $success = Mail::send('frontend.mail', array('name'=>$input["name"],'email'=>$input["mail"], 'product'=>$carts_mail, 'address'=>$input['address'],
+            'phone_number'=>$input['phone_number'],
+                'orderId'=>$input['orderId'], 'total_price'=>$totalPrice), function($message) use($emails){
+                $message->to($emails, 'Xác nhận đơn hàng')->subject('Xác nhận đơn hàng');
+            });
 
-        //      $GLOBALS['mail'] = $input["mail"];
+        }
 
-        //     $success = Mail::send('frontend.mail', array('name'=>$input["name"],'email'=>$input["mail"], 'product'=>$carts_mail, 'address'=>$input['address'],
-        //     'phone_number'=>$input['phone_number'],
-        //         'orderId'=>$input['orderId'], 'total_price'=>$totalPrice), function($message){
-        //         $message->to($GLOBALS['mail'], 'Điện máy người việt')->subject('[Điện máy người việt] Đơn hàng mới ');
-        //     });
-
-        //     unset($GLOBALS['mail']);
-
-        // }
-
-        // $success = Mail::send('frontend.mail', array('name'=>$input["name"],'email'=>@$input["mail"], 'product'=>$carts_mail, 'address'=>$input['address'],
-        // 'phone_number'=>$input['phone_number'],
-        //     'orderId'=>$input['orderId'], 'total_price'=>$totalPrice), function($message){
-        //     $message->to('lienhe@dienmaynguoiviet.vn', 'Điện máy người việt')->subject('[Điện máy người việt] Đơn hàng mới ');
-        // });
+        $success = Mail::send('frontend.mail', array('name'=>$input["name"],'email'=>@$input["mail"], 'product'=>$carts_mail, 'address'=>$input['address'],
+        'phone_number'=>$input['phone_number'],
+            'orderId'=>$input['orderId'], 'total_price'=>$totalPrice), function($message) use($staff_email){
+            $message->to($staff_email, 'maychieuminikaw.com')->subject('Xác nhận đơn hàng');
+        });
 
         // khi mua thành công thì xóa giỏ hàng
         Cart::destroy();

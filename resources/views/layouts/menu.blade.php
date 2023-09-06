@@ -29,7 +29,7 @@
     <div style="display:flex;">
         <a href="{{ route('pop-up-show') }}"
            class="nav-link {{ Request::is('groupProducts*') ? 'active' : '' }}" style="width: 68%;">
-            <p>Hiển thị</p>
+            <p>Email</p>
             
         </a>
        
