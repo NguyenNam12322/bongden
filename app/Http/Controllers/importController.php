@@ -14,8 +14,11 @@ class importController extends Controller
     {
         return view('tool.import');
     }
-    public function store()
+    public function store(Request $request)
     {
+        $request->validate([
+            'file'=> 'required|mimes:xlsx, csv, xls'
+        ]);
         Excel::import(new ProductImport,request()->file('file'));
              
         return back()->with('success', 'User Imported Successfully.');
