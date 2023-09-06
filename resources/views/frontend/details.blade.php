@@ -414,7 +414,7 @@
                                     </div>
                                     <div class="slide_FT"></div>
                                 </div>
-                                <div class="strength_related">
+                               <!--  <div class="strength_related">
                                     <div class="strength_related_gid"> <a href="javascript:void(0)" title="Độ sáng lớn 8.000 Lumens" class="item cls">
                                             <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" fill="#000000" width="800px" height="800px" viewBox="-5.5 0 32 32" version="1.1">
                                                     <title>light</title>
@@ -450,7 +450,7 @@
                                                 <div class="text2"> Hỗ trợ lấy nét tự động </div>
                                             </div>
                                         </a> </div>
-                                </div>
+                                </div> -->
 
 
 
@@ -483,7 +483,7 @@
                                             <div class="full-screen-mobile"></div>
                                             <div id="rates_rate" class="rates_rate_product">
                                                 <div class="rates">
-                                                    <div class="tab_label"><span>Có <strong>0</strong> đánh giá</span> <strong>về Máy chiếu mini Android Wifi thông minh KAW KP950 cân chỉnh 4 góc</strong> </div>
+                                                    <div class="tab_label"><span>Có <strong>0</strong> đánh giá</span> <strong>về {{ $data->Name }}</strong> </div>
                                                     <div class="toprt">
                                                         <div class="crt">
                                                             <div class="rcrt">

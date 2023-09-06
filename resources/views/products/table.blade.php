@@ -268,7 +268,7 @@
             
                 <input type="checkbox" id="limit{{ $product->id }}" name="limit"  onclick="limit({{ $product->id }})" {{  $product->limits ==1?'checked':'' }}>
 
-                Select sản phẩm vào merchant
+                Select export sản phẩm
   
             </td>
             

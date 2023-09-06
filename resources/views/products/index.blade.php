@@ -10,9 +10,12 @@
 </style>
 
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#showmodal">
-    Sản phẩm show trang chủ
-    </button>
+    <a href="{{ route('import.index') }}">
+        <button type="button" class="btn btn-primary">
+            Import sản phẩm
+        </button>
+    </a>
+    
     <section class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
@@ -33,10 +36,9 @@
 
                 <!-- Button trigger modal -->
                 <button type="button" class="btn btn-primary showmodalmechant" >
-                  show merchant pd
+                  Export sản phẩm
                 </button>
 
-                <div class="btn btn-red"><a href="{{ route('deal') }}">deal sản phẩm</a></div>
 
                 <div class="bthongbao"></div>
             </div>

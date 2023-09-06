@@ -195,19 +195,6 @@
     </a>
 </li>
 
-<li class="nav-item">
-    <a href="{{ route('deal') }}"
-       class="nav-link {{ Request::is('deal') ? 'active' : '' }}">
-        <p>Deal</p>
-    </a>
-</li>
-
-<li class="nav-item">
-    <a href="{{ route('flashDeal') }}"
-       class="nav-link {{ Request::is('flashDeal') ? 'active' : '' }}">
-        <p>Flash Deal</p>
-    </a>
-</li>
 
 <li class="nav-item">
     <a href="{{ route('posts.index') }}"
@@ -216,12 +203,6 @@
     </a>
 </li>
 
-<li class="nav-item">
-    <a href="{{ route('landing') }}"
-       class="nav-link {{ Request::is('landing') ? 'active' : '' }}">
-        <p>Landing-page </p>
-    </a>
-</li>
 
 <li class="nav-item">
     <a href="{{ route('rate-client') }}"

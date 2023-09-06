@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Validator;
 use Maatwebsite\Excel\Concerns\WithValidation;
 use Carbon\Carbon;
 
-class ProductImport implements  ToModel
+class ProductImport implements  ToModel, WithHeadingRow
 {
     /**
     * @param array $row
@@ -23,33 +23,34 @@ class ProductImport implements  ToModel
 
     public function model(array $row)
     {
-        $date = '';
-        product::create([
-            'Name' => $row[1],
-            'Image' => $row[2],
-            'ProductSku' => $row[3],
-            'Price'=>$row[4],
-            'manuPrice'=>$row[5],
-            'GiftPrice'=>$row[6],
-            'limits'=>$row[7],
-            'InputPrice'=>$row[8],
-            'id_group_product'=>$row[9],
-            'Link'=>$row[10],
-            'LinkRedirect'=>$row[11],
-            'Detail'=>$row[12],
-            'Salient_Features'=>$row[13],
-            'Specifications'=>$row[14],
+        return new product([
+            'Name' => $row['tieu_de'],
+            'Image' => str_replace('https://maychieuminikaw.com/', '', $row['lien_ket_hinh_anh']),
+            'ProductSku' => $row['id']??'1',
+            'Price'=>$row['gia_uu_dai'],
+            'manuPrice'=>$row['gia'],
+            'GiftPrice'=>0,
+            'limits'=>0,
+            'InputPrice'=>'',
+            'id_group_product'=>'',
+            'Link'=>  basename($row['lien_ket']),
+            'LinkRedirect'=>'',
+
+
+            'Detail'=> $row['mo_ta'],
+            'Salient_Features'=>'',
+            'Specifications'=>'',
             'Quantily'=>1,
-            'promotion'=>$row[16],
-            'Maker'=>$row[17],
+            'promotion'=>0,
+            'Maker'=>0,
             'Meta_id'=>1,
-            'view'=>$row[19],
-            'Group_id'=>$row[20],
-            'orders_hot'=>$row[21],
-            'active'=>$row[22],
-            'user_id'=>$row[23],
-            'updated_at'=>$date??'',
-            'created_at'=>$row[25]??''
+            'view'=>0,
+            'Group_id'=>1,
+            'orders_hot'=>0,
+            'active'=>1,
+            'user_id'=>1,
+            'updated_at'=>'',
+            'created_at'=>''
         ]);
     }
 

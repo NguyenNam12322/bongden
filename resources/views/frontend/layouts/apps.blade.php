@@ -21,8 +21,10 @@
     <link rel="pingback" href="xmlrpc.html" />
     <script src="data:text/javascript;base64,KGZ1bmN0aW9uKGh0bWwpe2h0bWwuY2xhc3NOYW1lPWh0bWwuY2xhc3NOYW1lLnJlcGxhY2UoL1xibm8tanNcYi8sJ2pzJyl9KShkb2N1bWVudC5kb2N1bWVudEVsZW1lbnQp" defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <title>Công ty Cổ phần tập đoàn TLC Việt Nam</title>
+    <title>{{ !empty($data->Name)?$data->Name:'kaw.vn - Chuyên cung cấp máy chiếu và các thiết bị máy chiếu cao cấp'  }}</title>
+
     <meta name="description" content="TLC Lighting tự hào là đơn vị sản xuất, lắp ráp có tốc độ phát triển nhanh nhất trên thị trường đèn LED mang thương hiệu Việt" />
+
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <link rel="canonical" href="index.html" />
     <meta property="og:locale" content="vi_VN" />
@@ -631,7 +633,7 @@
             <div class="header-wrapper">
                 <div id="masthead" class="header-main ">
                     <div class="header-inner flex-row container logo-left medium-logo-center" role="navigation">
-                        <div id="logo" class="flex-col logo"> <a href="{{ route('homeFe')  }}" title="Tập đoàn TLC Việt Nam - TLC LIGHTING" rel="home">
+                        <div id="logo" class="flex-col logo"> <a href="{{ route('homeFe')  }}" title="kaw.vn - Chuyên cung cấp máy chiếu và các thiết bị máy chiếu cao cấp." rel="home">
                                 <img  src="wp-content/uploads/2023/02/logo-chuan-TLC-06.jpg" class="header_logo header-logo" alt="Tập đoàn TLC Việt Nam" /><img width="297" height="87" src="wp-content/uploads/2023/02/logo-chuan-TLC-06.jpg" class="header-logo-dark" alt="Tập đoàn TLC Việt Nam" />
                             </a> </div>
                         <div class="flex-col show-for-medium flex-left">

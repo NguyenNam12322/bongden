@@ -16,9 +16,9 @@ class importController extends Controller
     }
     public function store(Request $request)
     {
-        $request->validate([
-            'file'=> 'required|mimes:xlsx, csv, xls'
-        ]);
+        // $request->validate([
+        //     'file'=> 'required|file|mimes:ppt,pptx,doc,docx,pdf,xls,xlsx|max:204800'
+        // ]);
         Excel::import(new ProductImport,request()->file('file'));
              
         return back()->with('success', 'User Imported Successfully.');
