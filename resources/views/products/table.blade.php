@@ -177,48 +177,7 @@
                
                 @endif
 
-                @if(!empty($product->id))
-
-                <?php
-
-                    $check_deal =  Cache::get('deals')->where('product_id', $product->id);
-
-                    $now = \Carbon\Carbon::now();
-                   
-                    if(!empty($check_deal)){
-
-
-                        $check_deal =  $check_deal->all();
-
-                        if(!empty($check_deal)){
-                            $check_deal = reset($check_deal);
-                        }
-
-                        $deal_check_add = false;
-                        
-                        
-                    }
-
-                ?>
-
-               
-                @if(!empty($check_deal) && !empty($check_deal->deal_price) && $check_deal->active==1)
-
-
-                @if($now->between($check_deal->start, $check_deal->end))
-                        
-                <label>Giá Deal</label>
-
-                <div style="width: 100%;">
-                    <input type="" name="flashPrice" value="{{ @str_replace(',' ,'.', number_format($check_deal->deal_price))}} " class="edit_price_deal{{ $check_deal->id }}" style="width:100%">
-                </div>
-
-                <div class="btn-primary" onclick="edit_price_deal({{ $check_deal->id }})" style="width:100%">Sửa</div>
-
-                <br>
-                @endif
-                @endif
-                @endif
+                
 
             </td>
                   
