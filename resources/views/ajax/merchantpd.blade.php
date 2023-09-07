@@ -43,7 +43,6 @@
             },
             success: function(result){
                 $('#pd-'+id).remove();
-                alert(' xóa thành cong')
               
             }
            
