@@ -865,7 +865,7 @@
                    
             },
             success: function(result){
-                alert('thành công');
+                 window.location.reload();
               
             }
            
@@ -880,7 +880,7 @@
                    
             },
             success: function(result){
-                alert(' xóa thành cong')
+                window.location.reload();
               
             }
            

@@ -476,6 +476,23 @@ class AjaxController extends Controller
         
     }
 
+
+    public function comments(Request $request)
+    {
+        if($request->ajax()){
+        
+            $input['content'] = $request->content;
+            $input['product_id'] = $request->product_id;
+            $input['active'] = 0;
+            $input['created_at'] = date('Y-m-d H:i:s');
+            $input['updated_at'] = date('Y-m-d H:i:s');
+            $insert  = DB::table('comment')->insert($input);
+
+        
+        }
+        
+    }
+
     public function removeSaleProduct(Request $request)
     {
         $product_id = $request->product_id;

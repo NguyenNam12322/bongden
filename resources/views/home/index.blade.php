@@ -297,6 +297,62 @@
                         </table>
                     </div>
                     <!--End khach hang đánh giá-->
+
+
+
+                    <!--End khach hang-->
+                    <!--Start khach hang đánh giá-->
+                    <div>&nbsp;</div>
+                    <div class="pic icon_arrow left"></div>
+                    <div class="text_arrow left">Bình luận chưa duyệt</div>
+                    <div class="clear"></div>
+                    <div style="border:1px solid #6a8ab9 ">
+                        <table width="100%" class="table_public" border="1" bordercolor="#e0e0e0">
+                            <tbody>
+                                <tr class="table_public_tr">
+                                    <td width="40">STT</td>
+                                    <td width="180">Sản phẩm</td>    
+                                    <td>Nội dung</td>
+                                    <td>Active</td>
+                                    
+                                </tr>
+
+                                <?php  
+
+                                    $comment = DB::table('comment')->where('active', 0)->get();
+                                ?>
+
+                                @if(!empty($comment) && $comment->count()>0)
+                                @foreach($comment as $key => $comments)
+                                <tr onmouseover="this.className='row-hover'" onmouseout="this.className=''" class="">
+                                    <td class="stt">{{ $key+1 }}</td>
+                                    <td class="email">
+                                        <?php 
+                                            $products_info = App\Models\product::find($comments->product_id)
+
+                                        ?>
+
+                                        <a href="{{ route('details', $products_info->Link) }}" target="_blank">{{ $products_info->Name }}</a>
+                                                          
+                                    </td>
+                                    <td class="content">
+                                        {{ $comments->content }}
+                                                       
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                @endforeach
+                                @endif
+                               
+                            </tbody>
+                        </table>
+                    </div>
+                    <!--End khach hang đánh giá-->
+
+
+
+
+
                 </td>
                 <!--end cot trai-->
                 <!--start cot phai-->

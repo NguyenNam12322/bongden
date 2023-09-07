@@ -29,7 +29,7 @@ class productExport implements FromCollection,WithHeadings,ShouldAutoSize
 
                 $data_get[$key]['Id'] =  $value['ProductSku'];
                 $data_get[$key]['title'] =  $value['Name'];
-                $data_get[$key]['Detail'] = '';
+                $data_get[$key]['Detail'] = $value['Detail'];
                 $data_get[$key]['link'] = 'https://kaw.vn/'.$value['Link'];
                 $data_get[$key]['condition'] ='mới';
                 $data_get[$key]['price'] = $value['manuPrice'];
