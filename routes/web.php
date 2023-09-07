@@ -237,6 +237,8 @@ Route::group(['prefix' => 'admins','middleware' => 'auth'], function() {
 
     Route::get('view-history/{id}', 'productController@viewHistoryPD')->name('view-history');
 
+    Route::resource('comment', 'commentController');
+
     Route::get('readfile-css/{id}', 'mainController@readFileCss')->name('readCss');
 
     Route::post('save-css','mainController@saveCss')->name('saveCss');
@@ -259,6 +261,10 @@ Route::group(['prefix' => 'admins','middleware' => 'auth'], function() {
 
 
     Route::post('/add-limit', 'AjaxController@addLimitProduct')->name('add-limit-product');
+
+    Route::post('/add-mul-ti-limit', 'AjaxController@addLimitProducts')->name('add-multi-limit-product');
+
+    
 
     Route::post('/remove-limit', 'AjaxController@removeLimitProduct')->name('remove-limit-product');
 

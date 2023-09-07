@@ -44,9 +44,21 @@
             </div>
         </div>
 
-        
+        <?php 
 
+
+            $check_active = $products->filter(function ($value, $key) {
+                return $value->limits == 0;
+            });
+
+            
+
+
+
+        ?>
+        <input type="checkbox"  id="select-all-ex" name="limitss" onclick="selectAllExport()" {{ $check_active->count()===0?'checked':'' }}> select export all sản phẩm in page
     </section>
+    
 
     <div class="content px-3">
 

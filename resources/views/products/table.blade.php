@@ -34,6 +34,8 @@
     } 
 </style>
 
+
+
 <div class="table-responsive">
     <table class="table" id="products-table">
         <thead>
@@ -137,10 +139,14 @@
 
         <?php  
             $now = Carbon\Carbon::now(); 
+            $ar_pd_id = []; 
         ?>
 
         @foreach($products as $product)
+            <?php 
 
+                array_push($ar_pd_id, $product->id);
+            ?>
             <tr>
                 <td><img src="{{ asset($product->Image) }}" width="100px"></td>
             <td style="width: 500px;">
@@ -223,8 +229,8 @@
                 <input type="checkbox" id="hots{{ $product->id }}" name="hots"  onclick='hotClick({{ $product->id }});' data-id ="{{ get_Group_Product($product->id)[0]??'' }}" {{ in_array($product->id, $list_hots)?'checked':'' }}>
                   S/P Hot
                 <br>
-
             
+                
                 <input type="checkbox" id="limit{{ $product->id }}" name="limit"  onclick="limit({{ $product->id }})" {{  $product->limits ==1?'checked':'' }}>
 
                 Select export sản phẩm
@@ -495,6 +501,47 @@
         });
         
     }
+
+
+    function selectAllExport() {
+
+        var checked = $('#select-all-ex').is(':checked'); 
+
+        if(checked == true){
+
+            active =1;
+        } 
+        else{
+            active =0;
+        }   
+
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+       
+        $.ajax({
+           
+            type: 'POST',
+            url: "{{ route('add-multi-limit-product') }}",
+            data: {
+                active:active,
+                product_id: '{{ json_encode($ar_pd_id) }}',
+                    
+            },
+            success: function(result){
+
+                window.location.reload();
+                
+            }
+        });
+           
+
+    }
+
+
 
     $('.showmodalmechant').click(function() {
 
@@ -865,7 +912,7 @@
                    
             },
             success: function(result){
-                 window.location.reload();
+                 
               
             }
            
@@ -880,7 +927,7 @@
                    
             },
             success: function(result){
-                window.location.reload();
+               
               
             }
            

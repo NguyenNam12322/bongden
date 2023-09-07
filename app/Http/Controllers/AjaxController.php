@@ -554,6 +554,27 @@ class AjaxController extends Controller
        
     }
 
+    public function addLimitProducts(Request $request)
+    {
+        $product_id = json_decode($request->product_id);
+
+        $active  = $request->active;
+
+        if(isset($product_id) && count($product_id)>0){
+
+            foreach($product_id as $value){
+
+                $product = product::find($value);
+
+                $product->limits = $active;
+
+                $product->save();
+
+            }
+        }
+
+    }
+
     protected function checkActive(Request $request)
     {
         $id = $request->product_id;

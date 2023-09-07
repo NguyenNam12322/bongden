@@ -339,7 +339,9 @@
                                         {{ $comments->content }}
                                                        
                                     </td>
-                                    <td></td>
+                                    <td>
+                                        <a href="">Xóa</a>
+                                    </td>
                                 </tr>
                                 @endforeach
                                 @endif

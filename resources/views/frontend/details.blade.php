@@ -259,7 +259,71 @@
                                                             </div>
                                                         </form>
                                                     </div>
-                                                    <div id="_info_rate" class="cls"> </div>
+
+
+                                                    
+                                                    <?php 
+
+                                                        $comment = App\Models\rate::where('product_id', $data->id)->Where('active', 1)->get();
+                                                        $now = Carbon\Carbon::now();
+                                                        Carbon\Carbon::setLocale('vi');
+                                                    ?>
+                                                    @if(!empty($comment) && $comment->count()>0)
+
+
+                                                    @foreach($comment as $comments)
+                                                    <div id="_info_rate" class="cls">
+                                                        <div class="_contents">
+                                                            <div class="_item  rep_75082 _level_0 _sub_0">
+                                                                <article itemprop="review" itemscope="" itemtype="http://schema.org/Review">
+                                                                    <p class="clearfix cls" itemscope="" itemprop="author" itemtype="http://schema.org/Person"><span class="_name" itemprop="name">{{ $comments->name }}</span>
+                                                                        <label class="sttB"><i class="iconcom-checkbuy"></i>Đã mua tại kaw.vn</label>
+                                                                    </p>
+                                                                    <div class="wrap_rate">
+                                                                        <p class="_content " itemprop="description"><span><i class="iconcom-txtstar"></i><i class="iconcom-txtstar"></i><i class="iconcom-txtstar"></i><i class="iconcom-txtstar"></i><i class="iconcom-txtstar"></i></span>{!!  $comments->content  !!}</p>
+                                                                        <div class="_control ">
+                                                                            <a class="button_reply1" id="button_reply_75082" href="javascript:void(0)">Thảo luận</a>
+                                                                            <span class="dot"> • </span>
+
+
+                                                                            <time itemprop="datePublished">{{ $comments->created_at->diffForHumans($now)  }}</time>
+                                                                        </div>
+
+                                                                        <!-- <div class="reply_area hide">
+                                                                            <form action="javascript:void(0);" method="post" name="rate_reply_form_75082" id="rate_reply_form_75082" class="form_rate cls" onsubmit="javascript: submit_reply1(75082);return false;">
+                                                                                <div class="_textarea_rep"><textarea texid="txt_content_75082" id="rate_content_75082" class="rate_content" name="content" placeholder="Nhập thảo luận của bạn..."></textarea></div>
+                                                                                <input type="button" class="btn-rate-mb-rep" value="Gửi đánh giá">
+                                                                                <div class="full-screen-mobile"></div>
+                                                                                <div class="wrap_rate wrapper_messs cls">
+                                                                                    <div class="title-mb">
+                                                                                        Thông tin người gửi
+                                                                                        <span class="close-md-rate">
+                                                                                            <svg height="16px" viewBox="0 0 64 64" enable-background="new 0 0 64 64">
+                                                                                                <g>
+                                                                                                    <path fill="black" d="M28.941,31.786L0.613,60.114c-0.787,0.787-0.787,2.062,0,2.849c0.393,0.394,0.909,0.59,1.424,0.59   c0.516,0,1.031-0.196,1.424-0.59l28.541-28.541l28.541,28.541c0.394,0.394,0.909,0.59,1.424,0.59c0.515,0,1.031-0.196,1.424-0.59   c0.787-0.787,0.787-2.062,0-2.849L35.064,31.786L63.41,3.438c0.787-0.787,0.787-2.062,0-2.849c-0.787-0.786-2.062-0.786-2.848,0   L32.003,29.15L3.441,0.59c-0.787-0.786-2.061-0.786-2.848,0c-0.787,0.787-0.787,2.062,0,2.849L28.941,31.786z"></path>
+                                                                                                </g>
+                                                                                            </svg>
+                                                                                        </span>
+                                                                                    </div>
+                                                                                    <div class="wrap_loginpost mbl">
+                                                                                        <aside class="_right"> <input required="" class="txt_input" name="name" id="rate_name_75082" type="text" placeholder="Họ tên (bắt buộc)" maxlength="50" autocomplete="off" value=""><input class="txt_input" name="email" id="rate_email_75082" type="email" placeholder="Email (bắt buộc)" value=""></aside>
+                                                                                    </div>
+                                                                                    <div class="wrap_submit mbl"><input type="submit" class="_buttom_rate_rep" value="Gửi bình luận"></div>
+                                                                                </div>
+                                                                               <input type="hidden" value="products" name="module" id="_rate_module_75082"><input type="hidden" value="product" name="view" id="_rate_view_75082"><input type="hidden" value="products" name="type" id="_rate_type_75082"><input type="hidden" value="save_reply" name="task"><input type="hidden" value="75082" name="parent_id" id="parent_id_75082"><input type="hidden" value="3879" name="record_id" id="_rate_record_id_75082"><input type="hidden" value="" name="return" id="_rate_return_75082"><input type="hidden" value="/index.php?module=rates&amp;view=rates&amp;type=products&amp;task=save_reply&amp;raw=1" name="return" id="link_reply_form_75082">
+                                                                            </form>
+                                                                        </div> -->
+                                                                    </div>
+                                                                </article>
+                                                            </div>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                    @endforeach
+                                                    @endif
+
+
+
                                                 </div>
                                             </div>
                                         </div>
