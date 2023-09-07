@@ -78,9 +78,7 @@
         .div-box table { width:100%;}
     </style>
 
-    @if( Auth::user()->id ==1)
-    <div><a href="javascript:void(0)" onclick="testApi()"><button>testApi</button></a></div>
-    @endif
+   
     <table width="100%">
         <tbody>
             <tr>
