@@ -17,6 +17,10 @@
         height: auto !important;
     }
 
+    table td span{
+        padding: 7px;
+    }
+
 </style>
 
 <div class="main_wrapper   ">
@@ -367,13 +371,19 @@
                                     </div>
                                     <div class="time-word"> Gọi đặt mua: <a title="Gọi đặt mua" href="tel:0867935899">0867935899</a> </div> <!--    TAGS        --> <input type="hidden" name="record_alias" id="record_alias" value="may-chieu-mini-android-wifi-thong-minh-kaw-kp950-can-chinh-4-goc"> <input type="hidden" name="record_id" id="record_id" value="5231"> <input type="hidden" name="table_name" id="table_name" value="may_chieu">
                                 </div>
+
+
                                 <div class="default_characteristic_pc">
                                     <div class="tab_content_right">
                                         <div class="characteristic">
-                                            <h2 class="tab-title"> <span>Thông tin sản phẩm</span> </h2> {!! $data->Specifications !!}
+                                            <h2 class="tab-title"> <span>Thông tin sản phẩm</span> </h2> 
+                                            {!! $data->Specifications !!}
                                         </div>
                                     </div>
                                 </div>
+
+
+
                             </div>
                         </div>
                         <div class="popup_chose_other_compatables hide">
@@ -604,8 +614,21 @@
 @push('script') 
 
 <script type="text/javascript">
-    values = 5;
 
+    var tables = document.getElementsByTagName('table');
+    var rows = tables[0].getElementsByTagName('tr');
+    for(var i=1; i<rows.length; i +=2) {
+        // alert(rows[i]);
+        $(rows[i]).addClass("tr-1");
+    }
+
+    for(var i=0; i<rows.length; i +=2) {
+        // alert(rows[i]);
+        $(rows[i]).addClass("tr-0");
+    }
+
+    
+    values = 5;
     function submit_rate() {
 
 
