@@ -10,15 +10,10 @@
 </div>
 
 <div class="form-group col-sm-6">
-    {!! Form::label('slogan', 'slogan:') !!}
-    {!! Form::textarea('slogan', null, ['class' => 'form-control','maxlength' => 10000, 'id'=>'slogan']) !!}
+    {!! Form::label('max_number', 'Số sản phẩm hiển thị:') !!}
+    {!! Form::text('max_number', null, ['class' => 'form-control','maxlength' => 10000]) !!}
 </div>
 
-
-<div class="form-group col-sm-6">
-    {!! Form::label('Mô tả', 'Mô tả:') !!}
-    {!! Form::textarea('Detail', null, ['class' => 'form-control','maxlength' => 10000, 'id'=>'Detail']) !!}
-</div>
 
 <?php 
     $option  = ['tắt', 'bật'];
@@ -32,6 +27,20 @@
 <div class="form-group col-sm-6">
     {!! Form::label('button gọi để giảm thêm', 'button gọi để giảm thêm:') !!}
     {!! Form::select('button', $option, @$options, ['class' => 'form-control custom-select']) !!}
+</div>
+
+
+
+
+<div class="form-group col-sm-6">
+    {!! Form::label('slogan', 'slogan:') !!}
+    {!! Form::textarea('slogan', null, ['class' => 'form-control','maxlength' => 10000, 'id'=>'slogan']) !!}
+</div>
+
+
+<div class="form-group col-sm-6">
+    {!! Form::label('Mô tả', 'Mô tả:') !!}
+    {!! Form::textarea('Detail', null, ['class' => 'form-control','maxlength' => 10000, 'id'=>'Detail']) !!}
 </div>
 
 <?php  

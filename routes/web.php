@@ -352,6 +352,8 @@ Route::group(['prefix' => 'admins','middleware' => 'auth'], function() {
         '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@generateFromFile'
     )->name('io_generator_builder_generate_from_file');
 
+    Route::resource('menusfe', 'menusfeController');
+
     Route::resource('metaSeos', 'metaSeoController');
 
     Route::resource('menus', 'menuController');

@@ -748,21 +748,30 @@
                                     </div>
                                     <ul id="mega-menu-primary" class="mega-menu max-mega-menu mega-menu-horizontal mega-no-js" data-event="hover_intent" data-effect="fade_up" data-effect-speed="200" data-effect-mobile="disabled" data-effect-speed-mobile="0" data-mobile-force-width="false" data-second-click="go" data-document-click="collapse" data-vertical-behaviour="standard" data-breakpoint="768" data-unbind="true" data-mobile-state="collapse_all" data-hover-intent-timeout="300" data-hover-intent-interval="100">
 
-                                        <li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-current-menu-item mega-current_page_item mega-menu-item-home mega-align-bottom-left mega-menu-flyout mega-menu-item-5436' id='mega-menu-item-5436'><a class="mega-menu-link" href="{{ route('homeFe') }}" aria-current="page" tabindex="0">Trang chủ</a></li>
+                                        <?php 
 
+                                            $menu = App\Models\groupProduct::where('level', 0)->get();
+
+                                        ?>
+
+                                        
+                                        @if(!empty($menu) && $menu->count()>0)
+
+                                        @foreach($menu as $val)
                                         <li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-5437' id='mega-menu-item-5437'>
 
-                                            <a class="mega-menu-link" aria-haspopup="true" aria-expanded="false" tabindex="0">Giới thiệu<span class="mega-indicator" tabindex="0" role="button" aria-label="Giới thiệu submenu"></span></a>
+                                            <a class="mega-menu-link" aria-haspopup="true" aria-expanded="false" tabindex="0">{{ $val->name }}<span class="mega-indicator" tabindex="0" role="button" aria-label="Giới thiệu submenu"></span></a>
                                             <ul class="mega-sub-menu">
 
                                                 <?php 
                                                 
-                                                    $post = App\Models\post::where('category', 1)->select('title', 'link')->get();
+                                                    $parent_menu = App\Models\groupProduct::where('parent_id', $val->id)->select('name', 'link')->get();
                                                 ?>    
 
-                                                @if(!empty($post)  && $post->count()>0)
-                                                @foreach($post as $value) 
-                                                <li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-5439'><a class="mega-menu-link" href="{{ route('details', $value->link) }}">{{ $value->title }}</a></li>
+                                                @if(!empty($parent_menu)  && $parent_menu->count()>0)
+                                                @foreach($parent_menu as $value) 
+                                                
+                                                <li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-5439'><a class="mega-menu-link" href="{{ route('details', $value->link) }}">{{ $value->name }}</a></li>
 
                                                 @endforeach
                                                 @endif
@@ -770,106 +779,11 @@
                                             </ul>
 
                                         </li>
-
-                                        <li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-menu-megamenu mega-align-bottom-left mega-menu-megamenu mega-menu-item-10102' id='mega-menu-item-10102'><a class="mega-menu-link" href="#" aria-haspopup="true" aria-expanded="false" tabindex="0">SẢN PHẨM<span class="mega-indicator" tabindex="0" role="button" aria-label="SẢN PHẨM submenu"></span></a>
-                                            <ul class="mega-sub-menu">
-                                                <li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-collapse-children mega-menu-columns-2-of-6 mega-menu-item-5438' id='mega-menu-item-5438'><a class="mega-menu-link">SẢN PHẨM ĐÈN LED<span class="mega-indicator" tabindex="0" role="button" aria-label="SẢN PHẨM ĐÈN LED submenu"></span></a>
-
-
-                                                    <ul class="mega-sub-menu">
-
-
-                                                        <!-- <li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_cat mega-menu-item-5443' id='mega-menu-item-5443'><a class="menu-image-title-after menu-image-not-hovered mega-menu-link" href="{{ route('details', '') }}"><img data-lazyloaded="1" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMSIgaGVpZ2h0PSIzMSIgdmlld0JveD0iMCAwIDMxIDMxIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjY2ZkNGRiIi8+PC9zdmc+" width="31" height="31" data-src="https://tlclighting.com.vn/wp-content/uploads/2020/09/HOME-PAGE-18.png" class="menu-image menu-image-title-after" alt="" /><span class="menu-image-title-after menu-image-title">Đèn LED Búp</span></a></li> -->
-
-
-                                                        <li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_cat mega-menu-item-5442' id='mega-menu-item-5442'><a class="menu-image-title-after menu-image-not-hovered mega-menu-link" href="{{ route('details', 'den-led-am-tran-1') }}"><img data-lazyloaded="1" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMSIgaGVpZ2h0PSIzMSIgdmlld0JveD0iMCAwIDMxIDMxIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjY2ZkNGRiIi8+PC9zdmc+" width="31" height="31" data-src="https://tlclighting.com.vn/wp-content/uploads/2020/09/HOME-PAGE-19.png" class="menu-image menu-image-title-after" alt="" /><span class="menu-image-title-after menu-image-title">Đèn LED âm trần</span></a></li>
-
-
-                                                        <li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_cat mega-menu-item-5452' id='mega-menu-item-5452'><a class="menu-image-title-after menu-image-not-hovered mega-menu-link" href="{{ route('details', 'den-led-tuyp-1') }}"><img data-lazyloaded="1" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMSIgaGVpZ2h0PSIzMSIgdmlld0JveD0iMCAwIDMxIDMxIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjY2ZkNGRiIi8+PC9zdmc+" width="31" height="31" data-src="https://tlclighting.com.vn/wp-content/uploads/2020/09/HOME-PAGE-20.png" class="menu-image menu-image-title-after" alt="" /><span class="menu-image-title-after menu-image-title">Đèn LED Tuýp</span></a></li>
-
-
-                                                        <li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_cat mega-menu-item-5447' id='mega-menu-item-5447'><a class="menu-image-title-after menu-image-not-hovered mega-menu-link" href="{{ route('details', 'den-led-op-tran-1') }}"><img data-lazyloaded="1" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMSIgaGVpZ2h0PSIzMSIgdmlld0JveD0iMCAwIDMxIDMxIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjY2ZkNGRiIi8+PC9zdmc+" width="31" height="31" data-src="https://tlclighting.com.vn/wp-content/uploads/2020/09/HOME-PAGE-21.png" class="menu-image menu-image-title-after" alt="" /><span class="menu-image-title-after menu-image-title">Đèn LED ốp trần</span></a></li>
+                                        @endforeach
+                                        @endif
 
 
 
-                                                        <!-- <li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_cat mega-menu-item-5448' id='mega-menu-item-5448'><a class="menu-image-title-after menu-image-not-hovered mega-menu-link" href="{{ route('details', 'den-led-op-tran-1') }}"><img data-lazyloaded="1" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMSIgaGVpZ2h0PSIzMSIgdmlld0JveD0iMCAwIDMxIDMxIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjY2ZkNGRiIi8+PC9zdmc+" width="31" height="31" data-src="https://tlclighting.com.vn/wp-content/uploads/2020/09/HOME-PAGE-212.png" class="menu-image menu-image-title-after" alt="" /><span class="menu-image-title-after menu-image-title">Đèn LED panel tấm</span></a></li> -->
-
-
-
-                                                        <!-- <li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_cat mega-menu-item-5449' id='mega-menu-item-5449'><a class="menu-image-title-after menu-image-not-hovered mega-menu-link" href="danh-muc/den-pha-led/index.html"><img data-lazyloaded="1" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMSIgaGVpZ2h0PSIzMSIgdmlld0JveD0iMCAwIDMxIDMxIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjY2ZkNGRiIi8+PC9zdmc+" width="31" height="31" data-src="https://tlclighting.com.vn/wp-content/uploads/2020/09/HOME-PAGE-22.png" class="menu-image menu-image-title-after" alt="" /><span class="menu-image-title-after menu-image-title">Đèn pha LED</span></a></li>
-
-
-                                                        <li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_cat mega-menu-item-5450' id='mega-menu-item-5450'><a class="menu-image-title-after menu-image-not-hovered mega-menu-link" href="danh-muc/den-led-roi/index.html"><img data-lazyloaded="1" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMSIgaGVpZ2h0PSIzMSIgdmlld0JveD0iMCAwIDMxIDMxIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjY2ZkNGRiIi8+PC9zdmc+" width="31" height="31" data-src="https://tlclighting.com.vn/wp-content/uploads/2020/09/HOME-PAGE-23.png" class="menu-image menu-image-title-after" alt="" /><span class="menu-image-title-after menu-image-title">Đèn LED rọi ray</span></a></li>
-
-
-                                                        <li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_cat mega-menu-item-5451' id='mega-menu-item-5451'><a class="menu-image-title-after menu-image-not-hovered mega-menu-link" href="danh-muc/den-tuong/index.html"><img data-lazyloaded="1" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMSIgaGVpZ2h0PSIzMSIgdmlld0JveD0iMCAwIDMxIDMxIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjY2ZkNGRiIi8+PC9zdmc+" width="31" height="31" data-src="https://tlclighting.com.vn/wp-content/uploads/2020/09/HOME-PAGE-24.png" class="menu-image menu-image-title-after" alt="" /><span class="menu-image-title-after menu-image-title">Đèn LED tường</span></a></li>
-
-
-                                                        <li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_cat mega-menu-item-5444' id='mega-menu-item-5444'><a class="menu-image-title-after menu-image-not-hovered mega-menu-link" href="danh-muc/den-led-day/index.html"><img data-lazyloaded="1" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMSIgaGVpZ2h0PSIzMSIgdmlld0JveD0iMCAwIDMxIDMxIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjY2ZkNGRiIi8+PC9zdmc+" width="31" height="31" data-src="https://tlclighting.com.vn/wp-content/uploads/2020/09/HOME-PAGE-25.png" class="menu-image menu-image-title-after" alt="" /><span class="menu-image-title-after menu-image-title">Đèn LED dây</span></a></li>
-
-
-                                                        <li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_cat mega-has-description mega-menu-item-5446' id='mega-menu-item-5446'><a class="menu-image-title-after menu-image-not-hovered mega-menu-link" href="danh-muc/den-led-xuong/index.html"><span class="mega-description-group"><span class="mega-menu-title"><img data-lazyloaded="1" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMSIgaGVpZ2h0PSIzMSIgdmlld0JveD0iMCAwIDMxIDMxIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjY2ZkNGRiIi8+PC9zdmc+" width="31" height="31" data-src="https://tlclighting.com.vn/wp-content/uploads/2020/09/HOME-PAGE-28.png" class="menu-image menu-image-title-after" alt="" /><span class="menu-image-title-after menu-image-title">Đèn LED nhà xưởng</span></span><span class="mega-menu-description">Đèn LED nhà xưởng dùng chiếu sáng cho các công trình nhà máy sản xuất chế biến. Đèn LED xưởng được thay thế hầu hết cho đèn Hallogen do tiết kiệm điên 90%.</span></span></a></li>
-
-
-                                                        <li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_cat mega-menu-item-5445' id='mega-menu-item-5445'><a class="menu-image-title-after menu-image-not-hovered mega-menu-link" href="danh-muc/den-duong/index.html"><img data-lazyloaded="1" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMSIgaGVpZ2h0PSIzMSIgdmlld0JveD0iMCAwIDMxIDMxIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjY2ZkNGRiIi8+PC9zdmc+" width="31" height="31" data-src="https://tlclighting.com.vn/wp-content/uploads/2020/09/HOME-PAGE-16.png" class="menu-image menu-image-title-after" alt="" /><span class="menu-image-title-after menu-image-title">Đèn LED đường</span></a></li>
-
-                                                        <li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_cat mega-menu-item-5453' id='mega-menu-item-5453'><a class="menu-image-title-after menu-image-not-hovered mega-menu-link" href="danh-muc/den-nang-luong-mat-troi-max-eco/index.html"><img data-lazyloaded="1" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMSIgaGVpZ2h0PSIzMSIgdmlld0JveD0iMCAwIDMxIDMxIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjY2ZkNGRiIi8+PC9zdmc+" width="31" height="31" data-src="https://tlclighting.com.vn/wp-content/uploads/2020/09/HOME-PAGE-14.png" class="menu-image menu-image-title-after" alt="" /><span class="menu-image-title-after menu-image-title">Đèn LED năng lượng mặt trời</span></a></li>
-
-
-                                                        <li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_cat mega-menu-item-6203' id='mega-menu-item-6203'><a class="menu-image-title-after menu-image-not-hovered mega-menu-link" href="danh-muc/den-exit-den-chi-dan/index.html"><img data-lazyloaded="1" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMSIgaGVpZ2h0PSIzMSIgdmlld0JveD0iMCAwIDMxIDMxIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjY2ZkNGRiIi8+PC9zdmc+" width="31" height="31" data-src="https://tlclighting.com.vn/wp-content/uploads/2020/09/HOME-PAGE-26.png" class="menu-image menu-image-title-after" alt="" /><span class="menu-image-title-after menu-image-title">Đèn LED exit, sự cố</span></a></li>
-
-
-                                                        <li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_cat mega-menu-item-11268' id='mega-menu-item-11268'><a class="mega-menu-link" href="danh-muc/san-pham-du-an/index.html">SẢN PHẨM DỰ ÁN</a></li>
- -->
-                                                    </ul>
-                                                </li>
-                                               
-                                            </ul>
-                                        </li>
-                                        <li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-5454' id='mega-menu-item-5454'><a class="mega-menu-link" aria-haspopup="true" aria-expanded="false" tabindex="0">Giải pháp chiếu sáng<span class="mega-indicator" tabindex="0" role="button" aria-label="Giải pháp chiếu sáng submenu"></span></a>
-                                            <ul class="mega-sub-menu">
-                                                <?php 
-                                                
-                                                    $post = App\Models\post::where('category', 2)->select('title', 'link')->get();
-                                                ?>    
-
-                                                 @if(!empty($post)  && $post->count()>0)
-                                                @foreach($post as $value) 
-                                                <li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-5439'><a class="mega-menu-link" href="{{ route('details', $value->link) }}">{{ $value->title }}</a></li>
-
-                                                @endforeach
-                                                @endif
-                                               
-                                            </ul>
-                                        </li>
-
-                                        <li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-5896' id='mega-menu-item-5896'>
-                                            <a class="mega-menu-link" aria-haspopup="true" aria-expanded="false" tabindex="0">Tin tức và sự kiện
-                                                <span class="mega-indicator" tabindex="0" role="button" aria-label="Tin tức và sự kiện submenu"></span>
-                                            </a>
-
-                                            <ul class="mega-sub-menu">
-                                                <li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-category mega-menu-item-5464' id='mega-menu-item-5464'><a class="mega-menu-link" href="{{ route('details', 'tin-tuc') }}">Tin hoạt động</a></li>
-                                                
-                                               
-                                            </ul>
-                                        </li>
-
-
-                                        <li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-5469' id='mega-menu-item-5469'><a class="mega-menu-link" aria-haspopup="true" aria-expanded="false" tabindex="0">Bảo hành tại nhà<span class="mega-indicator" tabindex="0" role="button" aria-label="Bảo hành tại nhà submenu"></span></a>
-                                            <ul class="mega-sub-menu">
-                                                <li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-9255' id='mega-menu-item-9255'><a class="mega-menu-link" href="javascript:void(0)">TRUNG TÂM BẢO HÀNH</a></li>
-                                                <li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-5470' id='mega-menu-item-5470'><a class="mega-menu-link" href="javascript:void(0)">Chính sách bảo hành</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-5856' id='mega-menu-item-5856'><a class="mega-menu-link" aria-haspopup="true" aria-expanded="false" tabindex="0">Liên hệ<span class="mega-indicator" tabindex="0" role="button" aria-label="Liên hệ submenu"></span></a>
-                                            <ul class="mega-sub-menu">
-                                                <li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-5876' id='mega-menu-item-5876'><a class="mega-menu-link" href="javascript:void(0)">Tuyển đại lý</a></li>
-                                                <li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-5471' id='mega-menu-item-5471'><a class="mega-menu-link" href="javascript:void(0)">Chính sách đại lý</a></li>
-                                                <li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-5855' id='mega-menu-item-5855'><a class="mega-menu-link" href="javascript:void(0)">Tuyển nhà phân phối</a></li>
-                                                <li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-5473' id='mega-menu-item-5473'><a class="mega-menu-link" href="javascript:void(0)">Liên hệ</a></li>
-                                            </ul>
-                                        </li>
                                     </ul>
                                 </div>
                             </ul>

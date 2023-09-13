@@ -52,7 +52,13 @@ class showController extends Controller
 
     public function configMail($value='')
     {
-        $email = DB::table('muchsearch')
+        $email = DB::table('muchsearch');
+    }
+
+
+    public function showEditMenu()
+    {
+        return view('menus.shows_edit');
     }
 
 

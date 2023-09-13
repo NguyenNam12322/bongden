@@ -68,7 +68,7 @@
 
     <a href="{{ route('groupProducts.index') }}"
        class="nav-link {{ Request::is('groupProducts*') ? 'active' : '' }}" style="width: 68%;">
-        <p>Nhóm sản phẩm</p>
+        <p>Menu</p>
         
     </a>
 
