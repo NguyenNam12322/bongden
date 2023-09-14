@@ -218,6 +218,13 @@
     </a>
 </li>
 
+<li class="nav-item">
+    <a href="{{ route('config') }}"
+       class="nav-link {{ Request::is('order_list') ? 'active' : '' }}">
+        <p>Cấu hình site </p>
+    </a>
+</li>
+
 
 <style type="text/css">
     

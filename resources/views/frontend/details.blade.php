@@ -21,6 +21,22 @@
         padding: 7px;
     }
 
+    .fancybox-title-over{
+        width: auto !important;
+    }
+
+    @media only screen and (min-width: 600px) {
+        .mobile{
+            display: none;
+        }
+    }
+
+     @media only screen and (max-width: 600px) {
+        .desktop{
+            display: none;
+        }
+    }
+
 </style>
 
 <div class="main_wrapper   ">
@@ -79,32 +95,34 @@
                                     <div class="frame_img">
                                         <div class="frame_img_inner">
                                             <div class="hot_icon">-28%</div>
-                                            <div class="magic_zoom_area"> <a id="Zoomer" href="javascript:void(0)" data-image="{{ asset($data->Image) }}" class="MagicZoomPlus" title=""> <img onclick="gotoGallery(1,0,0);" src="{{ asset($data->Image) }}"> </a> </div>
+
+                                            <div class="magic_zoom_area">
+                                                <a id="Zoomer" href="javascript:void(0)" data-image="{{ asset($data->Image) }}" class="MagicZoomPlus" title="">
+                                                <img onclick="gotoGallery(1,0,0);" src="{{ asset($data->Image) }}">
+                                                </a>
+                                            </div>
+
                                             <div id="sync1_wrapper">
                                                 <div id="sync1" class="owl-carousel owl-theme owl-hidden owl-loaded">
                                                     <div class="owl-stage-outer owl-height" style="height: 0px;">
-                                                        <div class="owl-stage" style="width: 700px; transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s;">
+                                                        <div class="owl-stage" style="width: 700px; transform: translate3d(0px, 0px, 0px); transition: all 0.25s ease 0s;">
+
                                                             <div class="owl-item active" style="width: 100px; margin-right: 0px;">
-                                                                <div class="item"> <a href="javascript:void(0)" id="images/products/2023/06/28/original/k95003_1687943471.jpg" rel="image_large1" class="selected cboxElement cb-image-link" title="Máy chiếu mini Android Wifi thông minh KAW KP950 cân chỉnh 4 góc"> <img onclick="gotoGallery(1,0,0);" src="{{ asset($data->Image) }}" longdesc="https://maychieuminikaw.com/images/products/2023/06/28/large/k95003_1687943471.jpg" alt="Máy chiếu mini Android Wifi thông minh KAW KP950 cân chỉnh 4 góc" itemprop="image"> </a> </div>
+                                                                <div class="item">
+                                                                    <a href="javascript:void(0)" id="images/products/2023/06/28/original/k95003_1687943471.jpg" rel="image_large1" class="selected cboxElement cb-image-link" title="{{ $data->Name }}">
+                                                                    <img onclick="gotoGallery(1,0,0);" src="{{ asset($data->Image) }}" longdesc="{{ asset($data->Image) }}" alt="{{ $data->Name }}" itemprop="image">
+                                                                    </a>
+                                                                </div>
                                                             </div>
+
                                                             <div class="owl-item" style="width: 100px; margin-right: 0px;">
-                                                                <div class="item"> <a href="javascript:void(0)" class=" cboxElement cb-image-link " rel="image_large1" title="Máy chiếu mini Android Wifi thông minh KAW KP950 cân chỉnh 4 góc"> <img onclick="gotoGallery(1,0,0);" src="https://maychieuminikaw.com/images/products/2023/02/07/large/may-chieu-mini-k950p-m13_1675770727.jpg" longdesc="https://maychieuminikaw.com/images/products/2023/02/07/original/may-chieu-mini-k950p-m13_1675770727.jpg" alt="Máy chiếu mini Android Wifi thông minh KAW KP950 cân chỉnh 4 góc" class="image0" itemprop="image"> </a> </div>
+                                                                <div class="item">
+                                                                    <a href="javascript:void(0)" class=" cboxElement cb-image-link " rel="image_large1" title="{{ $data->Name }}">
+                                                                    <img onclick="gotoGallery(1,0,0);" src="{{ asset($data->Image) }}" longdesc="{{ asset($data->Image) }}" alt="{{ $data->Name }}" class="image0" itemprop="image">
+                                                                    </a>
+                                                                </div>
                                                             </div>
-                                                            <div class="owl-item" style="width: 100px; margin-right: 0px;">
-                                                                <div class="item"> <a href="javascript:void(0)" class=" cboxElement cb-image-link " rel="image_large1" title="Máy chiếu mini Android Wifi thông minh KAW KP950 cân chỉnh 4 góc"> <img onclick="gotoGallery(1,0,0);" src="https://maychieuminikaw.com/images/products/2023/02/07/large/may-chieu-mini-k950p-m14_1675770727.jpg" longdesc="https://maychieuminikaw.com/images/products/2023/02/07/original/may-chieu-mini-k950p-m14_1675770727.jpg" alt="Máy chiếu mini Android Wifi thông minh KAW KP950 cân chỉnh 4 góc" class="image1" itemprop="image"> </a> </div>
-                                                            </div>
-                                                            <div class="owl-item" style="width: 100px; margin-right: 0px;">
-                                                                <div class="item"> <a href="javascript:void(0)" class=" cboxElement cb-image-link " rel="image_large1" title="Máy chiếu mini Android Wifi thông minh KAW KP950 cân chỉnh 4 góc"> <img onclick="gotoGallery(1,0,0);" src="https://maychieuminikaw.com/images/products/2023/02/08/large/may-chieu-mini-4k_1675846782.jpg" longdesc="https://maychieuminikaw.com/images/products/2023/02/08/original/may-chieu-mini-4k_1675846782.jpg" alt="Máy chiếu mini Android Wifi thông minh KAW KP950 cân chỉnh 4 góc" class="image2" itemprop="image"> </a> </div>
-                                                            </div>
-                                                            <div class="owl-item" style="width: 100px; margin-right: 0px;">
-                                                                <div class="item"> <a href="javascript:void(0)" class=" cboxElement cb-image-link " rel="image_large1" title="Máy chiếu mini Android Wifi thông minh KAW KP950 cân chỉnh 4 góc"> <img onclick="gotoGallery(1,0,0);" src="https://maychieuminikaw.com/images/products/2023/01/28/large/2103_923734a80d13153892d516519486b8fb_463d904410234057b46aa9b03e90c70f_f36a47e8bb5346a28dfbf42942a5dc07_master-.jpg" longdesc="https://maychieuminikaw.com/images/products/2023/01/28/original/2103_923734a80d13153892d516519486b8fb_463d904410234057b46aa9b03e90c70f_f36a47e8bb5346a28dfbf42942a5dc07_master-.jpg" alt="Máy chiếu mini Android Wifi thông minh KAW KP950 cân chỉnh 4 góc" class="image3" itemprop="image"> </a> </div>
-                                                            </div>
-                                                            <div class="owl-item" style="width: 100px; margin-right: 0px;">
-                                                                <div class="item"> <a href="javascript:void(0)" class=" cboxElement cb-image-link " rel="image_large1" title="Máy chiếu mini Android Wifi thông minh KAW KP950 cân chỉnh 4 góc"> <img onclick="gotoGallery(1,0,0);" src="https://maychieuminikaw.com/images/products/2023/02/07/large/may-chieu-mini-k950p-mt7_1675770552.jpg" longdesc="https://maychieuminikaw.com/images/products/2023/02/07/original/may-chieu-mini-k950p-mt7_1675770552.jpg" alt="Máy chiếu mini Android Wifi thông minh KAW KP950 cân chỉnh 4 góc" class="image4" itemprop="image"> </a> </div>
-                                                            </div>
-                                                            <div class="owl-item" style="width: 100px; margin-right: 0px;">
-                                                                <div class="item"> <a href="javascript:void(0)" class=" cboxElement cb-image-link " rel="image_large1" title="Máy chiếu mini Android Wifi thông minh KAW KP950 cân chỉnh 4 góc"> <img onclick="gotoGallery(1,0,0);" src="https://maychieuminikaw.com/images/products/2023/02/07/large/may-chieu-mini-k950p-m10_1675770633.jpg" longdesc="https://maychieuminikaw.com/images/products/2023/02/07/original/may-chieu-mini-k950p-m10_1675770633.jpg" alt="Máy chiếu mini Android Wifi thông minh KAW KP950 cân chỉnh 4 góc" class="image5" itemprop="image"> </a> </div>
-                                                            </div>
+                                                            
                                                         </div>
                                                     </div>
                                                     <div class="owl-controls">
@@ -130,9 +148,33 @@
                                         <div id="sync2" class="owl-carousel owl-theme owl-loaded">
                                             <div class="owl-stage-outer">
                                                 <div class="owl-stage" style="width: 602px; transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s;">
-                                                    <div class="owl-item active current" style="width: 84px; margin-right: 2px;">
-                                                        <div class="item"> <a href="javascript:void(0)" id="{{ asset($data->Image) }}" rel="image_large" class="selected" title="{{ $data->Name }}"> <img src="{{ asset($data->Image) }}" longdesc="{{ asset($data->Image) }}" alt="{{ $data->Name }}" itemprop="image"> </a> </div>
+
+                                                    <div class="owl-item current active" style="width: 84px; margin-right: 2px;">
+                                                        <div class="item">
+                                                            <a href="javascript:void(0)" id="{Ơ" rel="image_large" class="selected" title="{{ $data->Name }}">
+                                                            <img src="{{ asset($data->Image) }}" longdesc="{{ asset($data->Image) }}" alt="{{ $data->Name }}" itemprop="image">
+                                                            </a>
+                                                        </div>
                                                     </div>
+                                                    <?php 
+
+                                                        $images_products = App\Models\image::where('product_id', $data->id)->select('image')->get();
+                                                    ?>
+                                                    @if(!empty($images_products) && $images_products->count()>0)
+                                                    @foreach($images_products as $image)
+                                                    <div class="owl-item active" style="width: 84px; margin-right: 2px;">
+                                                        
+                                                        <div class="item">
+                                                            <a href="{{ asset($image->image) }}" data_color_thump="" class="color_thump_item" data-order="1">
+                                                            <img src="{{ asset($image->image) }}" longdesc="{{ asset($image->image) }}" alt="{{ $data->Name }}" class="image0" itemprop="image">
+                                                            </a>
+                                                        </div>
+                                                       
+                                                    </div>
+                                                    @endforeach
+                                                    @endif
+                                                    
+
                                                 </div>
                                             </div>
                                             <div class="owl-controls">
@@ -147,6 +189,39 @@
                                         </div>
                                     </div>
                                     <div class="slide_FT"></div>
+                                </div>
+
+
+                                <div class="product_base mobile">
+                                    <meta itemprop="brand" content="KAW">
+                                    <div class="price cls " itemprop="offers" itemscope="" itemtype="https://schema.org/AggregateOffer">
+                                        <link itemprop="availability" href="https://schema.org/InStock">
+                                        <div class="price_current " id="price" content="3449000"> {{ str_replace(',' ,'.', number_format($data->Price)) }}₫ </div>
+                                        <meta itemprop="lowPrice" content="3449000">
+                                        <meta itemprop="highPrice" content="3449000">
+                                        <meta itemprop="itemOffered" name="itemOffered" content="10">
+                                        <meta itemprop="offerCount" name="offerCount" content="999">
+                                        <meta itemprop="priceCurrency" content="VND"> <!-- <div class="price_old"> <span class="price_old_nb" id="price_old" content="4800000"> 4.800.000₫</span> </div> <span class="unit_data"> / Chiếc</span> -->
+                                        <div class="in_stock"> <i></i>Còn hàng </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                    <div class="end-product-base-top"></div>
+                                    <div>
+                                        <meta itemprop="mpn" content="5231">
+                                        <meta itemprop="sku" content="5231">
+                                    </div>
+                                    <div class="_attributes"> </div>
+                                    <div class="detail_button product_detail_bt cls">
+                                        <div class="gift_summary"> </div>
+                                        <div class="wrap-btm-buy cls"> <a href="javascript:void(0)" onclick="addToCart({{ $data->id }})">
+                                                <div type="submit" class="btn-buy-222 fl" id="buy-now-222"> <span> Mua ngay </span> </div>
+                                            </a> <a href="javascript:void(0)" onclick="addCartFast({{ $data->id }})" class="btn-dathang" data-toggle="modal">
+                                                <font>Thêm vào giỏ hàng </font>
+                                            </a> </div>
+                                        <div class="clear"></div>
+                                    </div> <input type="hidden" name="module" value="products"> <input type="hidden" name="view" value="cart"> <input type="hidden" name="task" value="ajax_buy_product"> <input type="hidden" name="product_id" value="5231"> <input type="hidden" name="Itemid" value="10">
+                                    
+                                    <div class="time-word"> Gọi đặt mua: <a title="Gọi đặt mua" href="tel:0867935899">0867935899</a> </div> <!--    TAGS        --> <input type="hidden" name="record_alias" id="record_alias" value="may-chieu-mini-android-wifi-thong-minh-kaw-kp950-can-chinh-4-goc"> <input type="hidden" name="record_id" id="record_id" value="5231"> <input type="hidden" name="table_name" id="table_name" value="may_chieu">
                                 </div>
                                 <!--  <div class="strength_related">
                                     <div class="strength_related_gid"> <a href="javascript:void(0)" title="Độ sáng lớn 8.000 Lumens" class="item cls">
@@ -335,7 +410,7 @@
                                 </div>
                             </div>
                             <div class="frame_center">
-                                <div class="product_base">
+                                <div class="product_base desktop">
                                     <meta itemprop="brand" content="KAW">
                                     <div class="price cls " itemprop="offers" itemscope="" itemtype="https://schema.org/AggregateOffer">
                                         <link itemprop="availability" href="https://schema.org/InStock">

@@ -8,6 +8,8 @@ use App\Models\background;
 
 use App\Models\popup;
 
+use Illuminate\Support\Facades\Storage;
+
 use DB;
 
 class showController extends Controller
@@ -70,5 +72,48 @@ class showController extends Controller
 
          return back()->with('status-background','sửa thành công');
 
+    }
+
+    public function addSocial(Request $request)
+    {
+        $input  = $request->All();
+        DB::table('social')->insert($input);
+
+    }
+
+    public function addContact(Request $request)
+    {
+        $input  = $request->All();
+        DB::table('feedback')->insert($input);
+        
+    }
+
+    public function createInfo(Request $request)
+    {
+
+        $input['sitename'] = $request->sitename;
+
+        $input['title'] = $request->title;
+
+        $input['meta_des'] = $request->meta_des;
+
+        $input['logo'] = '';
+
+        if ($request->hasFile('logo_meta')) {
+
+            $file_upload = $request->file('logo_meta');
+
+            $name = time() . '_' . $file_upload->getClientOriginalName();
+
+            $filePath = $file_upload->storeAs('uploads/logo', $name, 'public');
+
+            Storage::disk('public')->put($filePath, fopen($file_upload, 'r+'));
+      
+            $input['logo'] = $filePath;
+        }
+
+        DB::table('contact')->insert($input);
+
+        return redirect()->back();
     }
 }

@@ -209,6 +209,18 @@ Route::group(['prefix' => 'admins','middleware' => 'auth'], function() {
 
     Route::get('addTimeDealBefore', 'flashdealController@addTimeDealBefore');
 
+    Route::post('insert-social', 'showController@addSocial')->name('add-Social');
+
+    Route::post('insert-contact', 'showController@addContact')->name('add-Contact');
+
+    Route::post('insert-info-site', 'showController@createInfo')->name('insert-info-site');
+
+    Route::get('config-site', function () {
+        return view('config.index');
+        
+    })->name('config');
+    
+
     Route::get('export', 'exportController@exportPD')->name('exportPDMC');
 
     Route::get('update-call-phone/{id}', 'lienheController@updateCall')->name('updateCall');

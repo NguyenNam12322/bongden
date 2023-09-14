@@ -31,13 +31,14 @@ class indexController extends Controller
 
         $details = $Group_product->Detail;
 
-       
+        $max_number = $Group_product->max_number??16;
 
+       
         $data = [];
 
         if(!empty($ar_id)){
 
-            $data = product::whereIn('id', $ar_id)->where('active', 1)->orderBy('id', 'desc')->get();
+            $data = product::whereIn('id', $ar_id)->where('active', 1)->orderBy('id', 'desc')->take($max_number)->get();
         }
 
         return view('frontend.index', compact('slogan', 'data', 'details'));
