@@ -70,14 +70,19 @@
         list-style: none;
     }
 
+    .title-home2{
+        width: 50%;
+        text-align: right;
+    }
+
 
 </style>
 
 <?php 
     $rate = App\Models\rate::Orderby('id', 'desc')->paginate(10);
-
-
 ?>
+
+
 
 <div class="paddings">
     <style type="text/css">
@@ -85,7 +90,21 @@
     </style>
     <table width="100%">
         <tbody>
-            <h1>Đánh giá sản phẩm của khách hàng</h1>
+            <div class="title-home" style="display:flex">
+                <div class="title-home1">
+                    <h1>Đánh giá sản phẩm của khách hàng</h1>
+
+                </div>
+                <div class="title-home2">
+                    <a href="{{ route('importRate.index') }}"> <button type="button" class="btn btn-primary">import đánh giá</button></a>
+                   
+                </div>
+                
+                
+            </div>
+            
+
+
             <tr>
                 <!--start cot trai-->
                 <td valign="top" width="55%">
@@ -173,6 +192,13 @@
             </tr>
         </tbody>
     </table>
+
+    <div>
+        <a href="{{ route('rate-export') }}">
+            <button class="btn-primary">export File đánh giá</button>
+        </a>
+        
+    </div>
     <script type="text/javascript">
 
         function accept(id) {

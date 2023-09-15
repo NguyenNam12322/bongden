@@ -30,8 +30,6 @@
 
         <li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="fragment-3" aria-labelledby="ui-id-2" aria-selected="false"><a href="#fragment-1" class="a_fragment_2 ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-2"><span>Thông tin liên hệ</span></a></li>
 
-
-        <li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="fragment-4" aria-labelledby="ui-id-5" aria-selected="false"><a href="#fragment-4" class="a_fragment_5 ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-5"><span>Các mẫu email</span></a></li>
         
     </ul>
 

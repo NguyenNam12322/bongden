@@ -4,6 +4,16 @@
 
 <link rel="stylesheet" type="text/css" href="{{ asset('css/details1.css') }}">
 
+
+<?php 
+
+    $comment = App\Models\rate::where('product_id', $data->id)->Where('active', 1)->get();
+    $count_comment = $comment->count();
+    $comment = $comment->take(10);
+    $now = Carbon\Carbon::now();
+    Carbon\Carbon::setLocale('vi');
+?>
+
 <style>
     
     #rate_add_form{
@@ -73,7 +83,7 @@
                                             <path fill="currentColor" d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z" class=""></path>
                                         </svg> </span> <span class="star-on star"> <svg aria-hidden="true" data-prefix="fas" data-icon="star" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="svg-inline--fa fa-star fa-w-18">
                                             <path fill="currentColor" d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z" class=""></path>
-                                        </svg> </span> <span itemprop="ratingValue" class="hide">5</span> <span itemprop="bestRating" class="hide">5</span> <a href="#prodetails_tab3" title="Đánh giá sản phẩm này" class=""> <span itemprop="ratingCount">1</span> đánh giá / 0 lượt mua </a> </span> </div>
+                                        </svg> </span> <span itemprop="ratingValue" class="hide">5</span> <span itemprop="bestRating" class="hide">5</span> <a href="#prodetails_tab3" title="Đánh giá sản phẩm này" class=""> <span itemprop="ratingCount">{{  $count_comment }}</span> đánh giá / 5 lượt mua </a> </span> </div>
                         </div>
                         <div class="hit_share">
                             <!-- Load Facebook SDK for JavaScript -->
@@ -341,12 +351,7 @@
 
 
                                                     
-                                                    <?php 
-
-                                                        $comment = App\Models\rate::where('product_id', $data->id)->Where('active', 1)->get();
-                                                        $now = Carbon\Carbon::now();
-                                                        Carbon\Carbon::setLocale('vi');
-                                                    ?>
+                                                    
                                                     @if(!empty($comment) && $comment->count()>0)
 
 
@@ -368,30 +373,7 @@
                                                                             <time itemprop="datePublished">{{ $comments->created_at->diffForHumans($now)  }}</time>
                                                                         </div>
 
-                                                                        <!-- <div class="reply_area hide">
-                                                                            <form action="javascript:void(0);" method="post" name="rate_reply_form_75082" id="rate_reply_form_75082" class="form_rate cls" onsubmit="javascript: submit_reply1(75082);return false;">
-                                                                                <div class="_textarea_rep"><textarea texid="txt_content_75082" id="rate_content_75082" class="rate_content" name="content" placeholder="Nhập thảo luận của bạn..."></textarea></div>
-                                                                                <input type="button" class="btn-rate-mb-rep" value="Gửi đánh giá">
-                                                                                <div class="full-screen-mobile"></div>
-                                                                                <div class="wrap_rate wrapper_messs cls">
-                                                                                    <div class="title-mb">
-                                                                                        Thông tin người gửi
-                                                                                        <span class="close-md-rate">
-                                                                                            <svg height="16px" viewBox="0 0 64 64" enable-background="new 0 0 64 64">
-                                                                                                <g>
-                                                                                                    <path fill="black" d="M28.941,31.786L0.613,60.114c-0.787,0.787-0.787,2.062,0,2.849c0.393,0.394,0.909,0.59,1.424,0.59   c0.516,0,1.031-0.196,1.424-0.59l28.541-28.541l28.541,28.541c0.394,0.394,0.909,0.59,1.424,0.59c0.515,0,1.031-0.196,1.424-0.59   c0.787-0.787,0.787-2.062,0-2.849L35.064,31.786L63.41,3.438c0.787-0.787,0.787-2.062,0-2.849c-0.787-0.786-2.062-0.786-2.848,0   L32.003,29.15L3.441,0.59c-0.787-0.786-2.061-0.786-2.848,0c-0.787,0.787-0.787,2.062,0,2.849L28.941,31.786z"></path>
-                                                                                                </g>
-                                                                                            </svg>
-                                                                                        </span>
-                                                                                    </div>
-                                                                                    <div class="wrap_loginpost mbl">
-                                                                                        <aside class="_right"> <input required="" class="txt_input" name="name" id="rate_name_75082" type="text" placeholder="Họ tên (bắt buộc)" maxlength="50" autocomplete="off" value=""><input class="txt_input" name="email" id="rate_email_75082" type="email" placeholder="Email (bắt buộc)" value=""></aside>
-                                                                                    </div>
-                                                                                    <div class="wrap_submit mbl"><input type="submit" class="_buttom_rate_rep" value="Gửi bình luận"></div>
-                                                                                </div>
-                                                                               <input type="hidden" value="products" name="module" id="_rate_module_75082"><input type="hidden" value="product" name="view" id="_rate_view_75082"><input type="hidden" value="products" name="type" id="_rate_type_75082"><input type="hidden" value="save_reply" name="task"><input type="hidden" value="75082" name="parent_id" id="parent_id_75082"><input type="hidden" value="3879" name="record_id" id="_rate_record_id_75082"><input type="hidden" value="" name="return" id="_rate_return_75082"><input type="hidden" value="/index.php?module=rates&amp;view=rates&amp;type=products&amp;task=save_reply&amp;raw=1" name="return" id="link_reply_form_75082">
-                                                                            </form>
-                                                                        </div> -->
+                                                                      
                                                                     </div>
                                                                 </article>
                                                             </div>
@@ -401,6 +383,54 @@
                                                     @endforeach
                                                     @endif
 
+
+                                                    <style type="text/css">
+                                                        
+                                                        .center {
+                                                            text-align: center;
+                                                            font-family: monospace;
+                                                        }
+
+                                                        .pagination {
+                                                            display: inline-block;
+                                                        }
+
+                                                        .pagination a {
+                                                            color: #000000;
+                                                            float: left;
+                                                            padding: 8px 16px;
+                                                            text-decoration: none;
+                                                            transition: background-color .5s;
+                                                            border: 1px solid #DDD;
+                                                            margin: 0 4px;
+                                                            font-size: 20px;
+                                                        }
+
+                                                        .pagination a.active {
+                                                            background-color: #0096FF;
+                                                            color: #FFFFFF;
+                                                            border: 1px solid #0096FF;
+                                                        }
+
+                                                        .pagination a:hover:not(.active) {
+                                                            background-color: #DDD;
+                                                        }
+                                                    </style>
+
+                                                    @if($count_comment>10)
+                                                    <div class="center">
+                                                        <div class="pagination">
+                                                            <a href="#">&laquo;</a>
+                                                            <a href="#" class="active">1</a>
+                                                            <a href="#">2</a>
+                                                            <a href="#">3</a>
+                                                            <a href="#">4</a>
+                                                            <a href="#">5</a>
+                                                            <a href="#">6</a>
+                                                            <a href="#">&raquo;</a>
+                                                        </div>
+                                                    </div>
+                                                    @endif
 
 
                                                 </div>

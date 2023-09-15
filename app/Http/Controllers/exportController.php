@@ -12,6 +12,8 @@ use Maatwebsite\Excel\Facades\Excel;
 
 use App\Models\groupProduct;
 
+use App\Exports\rateExport;
+
 class exportController extends Controller
 {
 
@@ -50,6 +52,14 @@ class exportController extends Controller
         $data = new productExport;
 
         return Excel::download($data, 'product.xlsx');
+    }
+
+    public function exportRate()
+    {
+        $data = new rateExport;
+
+        return Excel::download($data, 'rate.xlsx');
+
     }
     
 }

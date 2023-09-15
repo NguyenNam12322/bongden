@@ -372,6 +372,9 @@ Route::group(['prefix' => 'admins','middleware' => 'auth'], function() {
 
     Route::resource('import', 'importController');
 
+    Route::resource('importRate', 'importRateController');
+
+
     Route::resource('posts', 'postController');
 
     Route::resource('banners', 'bannerController');
@@ -450,6 +453,8 @@ Route::group(['prefix' => 'admins','middleware' => 'auth'], function() {
     //ajax
 
     Route::post('add-selected-value-filter', 'AjaxController@addValueSelectFilter')->name('add-value-selected-filter');
+
+    Route::get('rate-export', 'exportController@exportRate')->name('rate-export');
 
     
 
