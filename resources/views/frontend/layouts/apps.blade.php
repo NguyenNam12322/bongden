@@ -20,7 +20,14 @@
                 <div id="masthead" class="header-main ">
                     <div class="header-inner flex-row container logo-left medium-logo-center" role="navigation">
                         <div id="logo" class="flex-col logo"> <a href="{{ route('homeFe')  }}" title="kaw.vn - Chuyên cung cấp máy chiếu và các thiết bị máy chiếu cao cấp." rel="home">
-                                <img  src="{{ asset($meta_data->logo)??'wp-content/uploads/2023/02/logo-chuan-TLC-06.jpg' }}" class="header_logo header-logo" alt="" /><img width="297" height="87" src="wp-content/uploads/2023/02/logo-chuan-TLC-06.jpg" class="header-logo-dark" alt="" />
+
+                                @if(!empty($meta_data->logo))
+                                <img  src="{{ asset($meta_data->logo) }}" class="header_logo header-logo" alt="" /><img width="297" height="87" src="{{ asset($meta_data->logo) }}" class="header-logo-dark" alt="" />
+
+                                @else
+                                <img  src="wp-content/uploads/2023/02/logo-chuan-TLC-06.jpg" class="header_logo header-logo" alt="" /><img width="297" height="87" src="wp-content/uploads/2023/02/logo-chuan-TLC-06.jpg" class="header-logo-dark" alt="" />
+                                @endif
+
                             </a> </div>
                         <div class="flex-col show-for-medium flex-left">
                             <ul class="mobile-nav nav nav-left ">
