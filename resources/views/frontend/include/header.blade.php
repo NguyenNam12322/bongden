@@ -97,8 +97,8 @@
     </noscript>
 
 
-    <link rel="icon" href="wp-content/uploads/2019/07/cropped-logo-tlc-Recovered-04-1-32x32.png" sizes="32x32" />
-    <link rel="icon" href="wp-content/uploads/2019/07/cropped-logo-tlc-Recovered-04-1-192x192.png" sizes="192x192" />
+    <link rel="icon" href="{{ asset('uploads/logo/1694849639_1694684009_maychieuminikaw_1675414111_1675414687.png') }}" sizes="32x32" />
+
     <link rel="apple-touch-icon" href="wp-content/uploads/2019/07/cropped-logo-tlc-Recovered-04-1-180x180.png" />
     <link rel="stylesheet" type="text/css" href="{{ asset('css/main2.css') }}">
     <meta name="msapplication-TileImage" content="https://tlclighting.com.vn/wp-content/uploads/2019/07/cropped-logo-tlc-Recovered-04-1-270x270.png" />
