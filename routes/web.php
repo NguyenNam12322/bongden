@@ -221,6 +221,8 @@ Route::group(['prefix' => 'admins','middleware' => 'auth'], function() {
         return view('config.index');
         
     })->name('config');
+
+    Route::post('put-file-mail', 'showController@updateFile')->name('put-file-mail');
     
 
     Route::get('export', 'exportController@exportPD')->name('exportPDMC');

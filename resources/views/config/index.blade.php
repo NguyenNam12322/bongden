@@ -19,6 +19,10 @@
     #fragment-3{
         display: none;
     }
+
+    #fragment-4{
+        display: none;
+    }
 </style>
 <div id="tabs" class="ui-tabs ui-widget ui-widget-content ui-corner-all">
     <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist">
@@ -29,6 +33,8 @@
         <li class="ui-state-default ui-corner-top" role="tab" tabindex="0" aria-controls="fragment-2" aria-labelledby="ui-id-3" aria-selected="true"><a href="#fragment-2" class="a_fragment_3 ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-3"><span>Mạng xã hội</span></a></li>
 
         <li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="fragment-3" aria-labelledby="ui-id-2" aria-selected="false"><a href="#fragment-1" class="a_fragment_2 ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-2"><span>Thông tin liên hệ</span></a></li>
+
+        <li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="fragment-4" aria-labelledby="ui-id-2" aria-selected="false"><a href="#fragment-1" class="a_fragment_2 ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-4"><span>Form email</span></a></li>
 
         
     </ul>
@@ -188,13 +194,33 @@
             <button type="button" class="btn btn-primary update">Update</button>
         </div>
     </div>
+
+    <form method="post" action="{{ route('put-file-mail') }}">
+        @csrf
+        <div id="fragment-4" aria-labelledby="ui-id-3" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-expanded="true" aria-hidden="false" >
+            <div class="form-group">
+                <label class="col-sm-2 col-xs-12 control-label">Form email gửi khách</label>
+                <div class="col-sm-9 col-xs-12">
+                    <textarea name="content">{!! view('frontend.mail') !!}</textarea>
+                                            
+                </div>
+            </div>
+
+            
+           
+
+            <div class="button">
+                <button type="submit" class="btn btn-primary update">Update</button>
+            </div>
+        </div>
+    </form>
    
     
     
 </div>
 
 <script type="text/javascript">
-
+     CKEDITOR.replace('content')
     $('#fragment-2 .update').click(function(){
             
         $.ajaxSetup({

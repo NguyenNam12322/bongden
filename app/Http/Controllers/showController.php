@@ -12,9 +12,23 @@ use Illuminate\Support\Facades\Storage;
 
 use DB;
 
+use File;
+
 class showController extends Controller
 {
 
+    public function updateFile(Request $request)
+    {
+
+        Storage::disk('local')->delete('/frontend/mail.blade.php');
+
+        $content = $request->content;
+
+        Storage::disk('local')->put('/frontend/mail.blade.php',  $content);
+
+        return back();
+       
+    }
     protected function addPopup(Request $request)
     {
 
