@@ -140,6 +140,9 @@
                                         </div>
                                     </div>
                                     <ul id="mega-menu-primary" class="mega-menu max-mega-menu mega-menu-horizontal mega-no-js" data-event="hover_intent" data-effect="fade_up" data-effect-speed="200" data-effect-mobile="disabled" data-effect-speed-mobile="0" data-mobile-force-width="false" data-second-click="go" data-document-click="collapse" data-vertical-behaviour="standard" data-breakpoint="768" data-unbind="true" data-mobile-state="collapse_all" data-hover-intent-timeout="300" data-hover-intent-interval="100">
+                                        <li class='mega-menu-item mega-menu-item-type-custom mega-align-bottom-left mega-menu-flyout mega-menu-item-5437' id='mega-menu-item-5437'>
+                                            <a href="/" class="mega-menu-link" aria-haspopup="true" aria-expanded="false" tabindex="0">Trang chủ<span class="mega-indicator" tabindex="0" role="button" ></span></a>
+                                        </li>    
 
                                         <?php 
                                             $menu = App\Models\groupProduct::where('level', 0)->get();
@@ -148,15 +151,20 @@
                                         @if(!empty($menu) && $menu->count()>0)
 
                                         @foreach($menu as $val)
-                                        <li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-5437' id='mega-menu-item-5437'>
 
-                                            <a class="mega-menu-link" aria-haspopup="true" aria-expanded="false" tabindex="0">{{ $val->name }}<span class="mega-indicator" tabindex="0" role="button" aria-label="Giới thiệu submenu"></span></a>
+                                        @if($val->id != 7)
+
+                                        <?php 
+                                                
+                                            $parent_menu = App\Models\groupProduct::where('parent_id', $val->id)->select('name', 'link')->get();
+                                        ?>    
+                                        <li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom  {{ !empty($parent_menu) && $parent_menu->count()>0?'mega-menu-item-has-children':''  }}  mega-align-bottom-left mega-menu-flyout mega-menu-item-5437' id='mega-menu-item-5437'>
+
+                                            <a href="{{ route('details', $val->link) }}" class="mega-menu-link" aria-haspopup="true" aria-expanded="false" tabindex="0">{{ $val->name }}<span class="mega-indicator" tabindex="0" role="button" aria-label="Giới thiệu submenu"></span></a>
                                             <ul class="mega-sub-menu">
 
-                                                <?php 
+
                                                 
-                                                    $parent_menu = App\Models\groupProduct::where('parent_id', $val->id)->select('name', 'link')->get();
-                                                ?>    
 
                                                 @if(!empty($parent_menu)  && $parent_menu->count()>0)
                                                 @foreach($parent_menu as $value) 
@@ -169,6 +177,7 @@
                                             </ul>
 
                                         </li>
+                                        @endif
                                         @endforeach
                                         @endif                                        
                                     </ul>
@@ -300,15 +309,21 @@
                     </div>
                     <ul id="mega-menu-primary_mobile" class="mega-menu max-mega-menu mega-menu-horizontal mega-no-js" data-event="click" data-effect="slide" data-effect-speed="200" data-effect-mobile="slide" data-effect-speed-mobile="400" data-mobile-force-width="false" data-second-click="go" data-document-click="collapse" data-vertical-behaviour="standard" data-breakpoint="768" data-unbind="true" data-mobile-state="collapse_all" data-hover-intent-timeout="300" data-hover-intent-interval="100">
                         <li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-current-menu-item mega-current_page_item mega-menu-item-home mega-align-bottom-left mega-menu-flyout mega-menu-item-5436' id='mega-menu-item-5436'><a class="mega-menu-link" href="{{ route('homeFe') }}" aria-current="page" tabindex="0">Trang chủ</a></li>
-                        <li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-5437' id='mega-menu-item-5437'><a class="mega-menu-link" aria-haspopup="true" aria-expanded="false" tabindex="0">Giới thiệu<span class="mega-indicator" tabindex="0" role="button" aria-label="Giới thiệu submenu"></span></a>
+
+                        @if(!empty($menu) && $menu->count()>0)
+
+                        @foreach($menu as $val)
+
+                        @if($val->id != 7)
+                        <li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-menu-megamenu mega-align-bottom-left mega-menu-megamenu mega-menu-item-10102' id='mega-menu-item-10102'><a class="mega-menu-link" href="{{ route('details', $val->link) }}" aria-haspopup="true" aria-expanded="false" tabindex="0">{{ $val->name }}<span class="mega-indicator" tabindex="0" role="button" aria-label="SẢN PHẨM submenu"></span></a>
+                            @if(!empty($parent_menu)  && $parent_menu->count()>0)
+                            @foreach($parent_menu as $value) 
+                            <?php 
+                                                
+                                $parent_menu = App\Models\groupProduct::where('parent_id', $val->id)->select('name', 'link')->get();
+                            ?>  
                             <ul class="mega-sub-menu">
-                                <li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-5439' id='mega-menu-item-5439'><a class="mega-menu-link" href="{{ route('details', 'gioi-thieu-ve-cong-ty')  }}">Giới thiệu chung</a></li>
-                                
-                            </ul>
-                        </li>
-                        <li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-menu-megamenu mega-align-bottom-left mega-menu-megamenu mega-menu-item-10102' id='mega-menu-item-10102'><a class="mega-menu-link" href="#" aria-haspopup="true" aria-expanded="false" tabindex="0">SẢN PHẨM<span class="mega-indicator" tabindex="0" role="button" aria-label="SẢN PHẨM submenu"></span></a>
-                            <ul class="mega-sub-menu">
-                                <li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-collapse-children mega-menu-columns-2-of-6 mega-menu-item-5438' id='mega-menu-item-5438'><a class="mega-menu-link">SẢN PHẨM ĐÈN LED<span class="mega-indicator" tabindex="0" role="button" aria-label="SẢN PHẨM ĐÈN LED submenu"></span></a>
+                                <li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-collapse-children mega-menu-columns-2-of-6 mega-menu-item-5438' id='mega-menu-item-5438'><a href="{{ route('details', $value->link)  }}" class="mega-menu-link">{{ $value->name }}<span class="mega-indicator" tabindex="0" role="button" aria-label="SẢN PHẨM ĐÈN LED submenu"></span></a>
                                     <ul class="mega-sub-menu">
 
 
@@ -323,37 +338,15 @@
                                 </li>
                                
                             </ul>
+                            @endforeach
+                            @endif
                         </li>
-                        <li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-5454' id='mega-menu-item-5454'><a class="mega-menu-link" aria-haspopup="true" aria-expanded="false" tabindex="0">Giải pháp chiếu sáng<span class="mega-indicator" tabindex="0" role="button" aria-label="Giải pháp chiếu sáng submenu"></span></a>
+                        @endif
 
-                            <ul class="mega-sub-menu">
-                                <li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-post mega-menu-item-5995' id='mega-menu-item-5995'><a class="mega-menu-link" href="{{ route('details', 'giai-phap-chieu-sang-nha-o') }}">Giải pháp chiếu sáng nhà ở</a></li>
-                                <li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-post mega-menu-item-5994' id='mega-menu-item-5994'><a class="mega-menu-link" href="{{ route('details', 'giai-phap-chieu-sang-van-phong') }}">Giải pháp chiếu sáng văn phòng</a></li>
-                                <li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-post mega-menu-item-5939' id='mega-menu-item-5939'><a class="mega-menu-link" href="{{ route('details', 'giai-phap-chieu-sang-benh-vien') }}">Giải pháp chiếu sáng bệnh viện</a></li>
-                                
-                        </li>
-                        <li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-5896' id='mega-menu-item-5896'><a class="mega-menu-link" aria-haspopup="true" aria-expanded="false" tabindex="0">Tin tức và sự kiện<span class="mega-indicator" tabindex="0" role="button" aria-label="Tin tức và sự kiện submenu"></span></a>
-                            <ul class="mega-sub-menu">
+                        @endforeach
 
-                                <li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-category mega-menu-item-5464' id='mega-menu-item-5464'><a class="mega-menu-link" href="{{ route('details', 'tin-tuc')  }}">Tin hoạt động</a></li>
-                                
-                            </ul>
-                        </li>
-                        <li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-5469' id='mega-menu-item-5469'><a class="mega-menu-link" aria-haspopup="true" aria-expanded="false" tabindex="0">Bảo hành tại nhà<span class="mega-indicator" tabindex="0" role="button" aria-label="Bảo hành tại nhà submenu"></span></a>
-                            <ul class="mega-sub-menu">
-                                <li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-9255' id='mega-menu-item-9255'>
-                                    <a class="mega-menu-link" href="#">TRUNG TÂM BẢO HÀNH</a></li>
-                                <li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-5470' id='mega-menu-item-5470'><a class="mega-menu-link" href="#">Chính sách bảo hành</a></li>
-                            </ul>
-                        </li>
-                        <li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-5856' id='mega-menu-item-5856'><a class="mega-menu-link" aria-haspopup="true" aria-expanded="false" tabindex="0">Liên hệ<span class="mega-indicator" tabindex="0" role="button" aria-label="Liên hệ submenu"></span></a>
-                            <ul class="mega-sub-menu">
-                                <li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-5876' id='mega-menu-item-5876'><a class="mega-menu-link" href="javascript:void(0)">Tuyển đại lý</a></li>
-                                <li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-5471' id='mega-menu-item-5471'><a class="mega-menu-link" href="javascript:void(0)">Chính sách đại lý</a></li>
-                                <li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-5855' id='mega-menu-item-5855'><a class="mega-menu-link" href="javascript:void(0)">Tuyển nhà phân phối</a></li>
-                                <li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-5473' id='mega-menu-item-5473'><a class="mega-menu-link" href="javascript:void(0)">Liên hệ</a></li>
-                            </ul>
-                        </li>
+                        @endif
+                        
                     </ul>
                 </div>
                 

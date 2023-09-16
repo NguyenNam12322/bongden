@@ -72,6 +72,8 @@ Route::get('/deal', 'mainController@deal')->middleware('cache.headers:public;max
 
 Route::get('/lien-he', 'mainController@lienhe');
 
+Route::get('ajax-rate-paginate', 'AjaxController@ratePaginate')->name('get-comment-paginate');
+
 
 Route::get('/so-sanh-sp','productController@sosanh')->middleware('throttle:60')->name('so-sanh');
 

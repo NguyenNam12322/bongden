@@ -1082,6 +1082,25 @@ class AjaxController extends Controller
         }    
     }
 
+    public function ratePaginate(Request $request)
+    {
+        if($request->ajax()){
+
+            $product_id =  $request->product_id;
+            $page       =   $request->page;
+            $limit      = 10;
+
+            if( intval($page)>1 ){
+
+                $comment = rate::where('product_id', $product_id)->Where('active', 1)->OrderBy('id', 'desc')->limit(10)->offset(($page - 1) * $limit)->get();
+            }
+            else{
+                $comment    = rate::where('product_id', $product_id)->Where('active', 1)->OrderBy('id', 'desc')->take(10)->get();
+            }
+            return view('ajax.rate-paginate', compact('comment', 'page'));
+        }    
+    }
+
     public function getCompareProduct(Request $request)
     {
         $product = json_decode($request->ar_product_id);

@@ -7,8 +7,32 @@
 
 <?php 
 
-    $comment = App\Models\rate::where('product_id', $data->id)->Where('active', 1)->get();
+    $comment = App\Models\rate::where('product_id', $data->id)->Where('active', 1)->OrderBy('id', 'desc')->get();
+
     $count_comment = $comment->count();
+   
+    function countStar($star, $count_comment = 0, $product_id)
+    {
+
+        $count = App\Models\rate::where('star', $star)->Where('active', 1)->where('product_id', $product_id)->get()->count();
+
+        if($count_comment===0){
+
+            $percent = 0;
+        }
+        else{
+             $percent = ($count/$count_comment)*100;
+        }
+
+       
+
+        $result = ['percent'=>$percent, 'rate'=>$count];
+
+        return $result;
+    }
+
+
+   
     $comment = $comment->take(10);
     $now = Carbon\Carbon::now();
     Carbon\Carbon::setLocale('vi');
@@ -104,8 +128,7 @@
                                 <div class="wrap-magiczoom">
                                     <div class="frame_img">
                                         <div class="frame_img_inner">
-                                            <div class="hot_icon">-28%</div>
-
+                                           
                                             <div class="magic_zoom_area">
                                                 <a id="Zoomer" href="javascript:void(0)" data-image="{{ asset($data->Image) }}" class="MagicZoomPlus" title="">
                                                 <img onclick="gotoGallery(1,0,0);" src="{{ asset($data->Image) }}">
@@ -233,43 +256,7 @@
                                     
                                     <div class="time-word"> Gọi đặt mua: <a title="Gọi đặt mua" href="tel:0867935899">0867935899</a> </div> <!--    TAGS        --> <input type="hidden" name="record_alias" id="record_alias" value="may-chieu-mini-android-wifi-thong-minh-kaw-kp950-can-chinh-4-goc"> <input type="hidden" name="record_id" id="record_id" value="5231"> <input type="hidden" name="table_name" id="table_name" value="may_chieu">
                                 </div>
-                                <!--  <div class="strength_related">
-                                    <div class="strength_related_gid"> <a href="javascript:void(0)" title="Độ sáng lớn 8.000 Lumens" class="item cls">
-                                            <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" fill="#000000" width="800px" height="800px" viewBox="-5.5 0 32 32" version="1.1">
-                                                    <title>light</title>
-                                                    <path d="M11.875 6v2.469c0 0.844-0.375 1.25-1.156 1.25s-1.156-0.406-1.156-1.25v-2.469c0-0.813 0.375-1.219 1.156-1.219s1.156 0.406 1.156 1.219zM14.219 9.25l1.438-2.031c0.469-0.625 1.063-0.75 1.656-0.313s0.656 1 0.188 1.688l-1.438 2c-0.469 0.688-1.031 0.75-1.656 0.313-0.594-0.438-0.656-0.969-0.188-1.656zM5.781 7.25l1.469 2c0.469 0.688 0.406 1.219-0.219 1.656-0.594 0.469-1.156 0.375-1.625-0.313l-1.469-2c-0.469-0.688-0.406-1.219 0.219-1.656 0.594-0.469 1.156-0.375 1.625 0.313zM10.719 11.125c2.688 0 4.875 2.188 4.875 4.875 0 2.656-2.188 4.813-4.875 4.813s-4.875-2.156-4.875-4.813c0-2.688 2.188-4.875 4.875-4.875zM1.594 11.813l2.375 0.75c0.781 0.25 1.063 0.719 0.813 1.469-0.219 0.75-0.75 0.969-1.563 0.719l-2.313-0.75c-0.781-0.25-1.063-0.75-0.844-1.5 0.25-0.719 0.75-0.938 1.531-0.688zM17.5 12.563l2.344-0.75c0.813-0.25 1.313-0.031 1.531 0.688 0.25 0.75-0.031 1.25-0.844 1.469l-2.313 0.781c-0.781 0.25-1.281 0.031-1.531-0.719-0.219-0.75 0.031-1.219 0.813-1.469zM10.719 18.688c1.5 0 2.719-1.219 2.719-2.688 0-1.5-1.219-2.719-2.719-2.719s-2.688 1.219-2.688 2.719c0 1.469 1.188 2.688 2.688 2.688zM0.906 17.969l2.344-0.75c0.781-0.25 1.313-0.063 1.531 0.688 0.25 0.75-0.031 1.219-0.813 1.469l-2.375 0.781c-0.781 0.25-1.281 0.031-1.531-0.719-0.219-0.75 0.063-1.219 0.844-1.469zM18.219 17.219l2.344 0.75c0.781 0.25 1.063 0.719 0.813 1.469-0.219 0.75-0.719 0.969-1.531 0.719l-2.344-0.781c-0.813-0.25-1.031-0.719-0.813-1.469 0.25-0.75 0.75-0.938 1.531-0.688zM3.938 23.344l1.469-1.969c0.469-0.688 1.031-0.781 1.625-0.313 0.625 0.438 0.688 0.969 0.219 1.656l-1.469 1.969c-0.469 0.688-1.031 0.813-1.656 0.375-0.594-0.438-0.656-1.031-0.188-1.719zM16.063 21.375l1.438 1.969c0.469 0.688 0.406 1.281-0.188 1.719s-1.188 0.281-1.656-0.344l-1.438-2c-0.469-0.688-0.406-1.219 0.188-1.656 0.625-0.438 1.188-0.375 1.656 0.313zM11.875 23.469v2.469c0 0.844-0.375 1.25-1.156 1.25s-1.156-0.406-1.156-1.25v-2.469c0-0.844 0.375-1.25 1.156-1.25s1.156 0.406 1.156 1.25z"></path>
-                                                </svg></div>
-                                            <div class="cont-l">
-                                                <div class="text1"> Độ sáng lớn </div>
-                                                <div class="text2"> 8.000 Lumens </div>
-                                            </div>
-                                        </a> <a href="javascript:void(0)" title="Tuổi thọ đèn cao Trên 30.000 giờ" class="item cls">
-                                            <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="800px" height="800px" viewBox="0 0 24 24" fill="none">
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M2.5 12a9.5 9.5 0 1 1 19 0 9.5 9.5 0 0 1-19 0zM12 .5C5.649.5.5 5.649.5 12S5.649 23.5 12 23.5 23.5 18.351 23.5 12 18.351.5 12 .5zM11 7a1 1 0 1 1 2 0v5h4a1 1 0 1 1 0 2h-5a1 1 0 0 1-1-1V7z"></path>
-                                                </svg></div>
-                                            <div class="cont-l">
-                                                <div class="text1"> Tuổi thọ đèn cao </div>
-                                                <div class="text2"> Trên 30.000 giờ </div>
-                                            </div>
-                                        </a> <a href="javascript:void(0)" title="Độ phân giải lớn 1080P có hỗ trợ xem 4K" class="item cls">
-                                            <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="800px" height="800px" viewBox="0 0 24 24">
-                                                    <path d="M4,3H9A1,1,0,0,1,9,5H5V9A1,1,0,0,1,3,9V4A1,1,0,0,1,4,3ZM9,19H5V15a1,1,0,0,0-2,0v5a1,1,0,0,0,1,1H9a1,1,0,0,0,0-2Zm11-5a1,1,0,0,0-1,1v4H15a1,1,0,0,0,0,2h5a1,1,0,0,0,1-1V15A1,1,0,0,0,20,14ZM20,3H15a1,1,0,0,0,0,2h4V9a1,1,0,0,0,2,0V4A1,1,0,0,0,20,3ZM7,8v8a1,1,0,0,0,1,1h8a1,1,0,0,0,1-1V8a1,1,0,0,0-1-1H8A1,1,0,0,0,7,8Z"></path>
-                                                </svg></div>
-                                            <div class="cont-l">
-                                                <div class="text1"> Độ phân giải lớn </div>
-                                                <div class="text2"> 1080P có hỗ trợ xem 4K </div>
-                                            </div>
-                                        </a> <a href="javascript:void(0)" title="Hệ số thu phóng Hỗ trợ lấy nét tự động" class="item cls">
-                                            <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="800px" height="800px" viewBox="0 0 24 24" fill="none">
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 10V8.125C9.93125 8.125 8.25 9.80625 8.25 11.875C8.25 12.5062 8.40625 13.1062 8.6875 13.625L7.775 14.5375C7.2875 13.7687 7 12.8562 7 11.875C7 9.1125 9.2375 6.875 12 6.875V5L14.5 7.5L12 10ZM15.3125 10.125L16.225 9.21251C16.7125 9.98126 17 10.8938 17 11.875C17 14.6375 14.7625 16.875 12 16.875V18.75L9.5 16.25L12 13.75V15.625C14.0687 15.625 15.75 13.9438 15.75 11.875C15.75 11.2438 15.5875 10.65 15.3125 10.125Z"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22ZM12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20Z"></path>
-                                                </svg></div>
-                                            <div class="cont-l">
-                                                <div class="text1"> Hệ số thu phóng </div>
-                                                <div class="text2"> Hỗ trợ lấy nét tự động </div>
-                                            </div>
-                                        </a> </div>
-                                </div> -->
+                                
                                 <div class="product_tab_content" id="tabs"> {!! $data->Detail !!} </div>
                                 <div class="rate-comment-plugin">
                                     <div class="tab-title cls">
@@ -277,49 +264,26 @@
                                     </div>
                                     <div id="prodetails_tab3" class="prodetails_tab">
                                         <div class="tab_content_right">
-                                            <script src="https://connect.facebook.net/en_US/all.js?hash=66f5d8ca885fb31f073bb22d0932adb1" async="" crossorigin="anonymous"></script>
-                                            <script id="facebook-jssdk" src="//connect.facebook.net/en_US/all.js"></script>
-                                            <script>
-                                                function load_ajax_paginationrate($value){
-                                                    $.get($value,{}, function(html){ 
-                                                        $('#_info_rate').html(html);
-                                                        $('html, body').animate({scrollTop:$('#_info_rate').position().top}, 'slow');
-                                                    });
-                                                }
-                                                
-                                            </script>
+                                           
                                             <div class="full-screen-mobile"></div>
                                             <div id="rates_rate" class="rates_rate_product">
                                                 <div class="rates">
-                                                    <div class="tab_label"><span>Có <strong>0</strong> đánh giá</span> <strong>về {{ $data->Name }}</strong> </div>
+                                                    <div class="tab_label"><span>Có <strong>{{ $count_comment }}</strong> đánh giá</span> <strong>về {{ $data->Name }}</strong> </div>
                                                     <div class="toprt">
                                                         <div class="crt">
                                                             <div class="rcrt">
-                                                                <div class="r"> <span class="t">5 <i></i></span>
+
+                                                                @for($i=5; $i>=1; $i--)
+                                                                <div class="r"> 
+                                                                    <span class="t">{{ $i }}<i></i></span>
+
                                                                     <div class="bgb">
-                                                                        <div class="bgb-in" style="width: 0%"></div>
-                                                                    </div> <span class="n" onclick="" data-buy="2"><strong>0</strong> đánh giá</span>
+                                                                        <div class="bgb-in" style="width: {{ countStar($i, $count_comment, $data->id)['percent']  }}%"></div>
+                                                                    </div> 
+                                                                    <span class="n" onclick="" data-buy="2"><strong>{{ countStar($i, $count_comment, $data->id)['rate'] }}</strong> đánh giá</span>
                                                                 </div>
-                                                                <div class="r"> <span class="t">4 <i></i></span>
-                                                                    <div class="bgb">
-                                                                        <div class="bgb-in" style="width: 0%"></div>
-                                                                    </div> <span class="n" onclick="" data-buy="0"><strong>0</strong> đánh giá</span>
-                                                                </div>
-                                                                <div class="r"> <span class="t">3 <i></i></span>
-                                                                    <div class="bgb">
-                                                                        <div class="bgb-in" style="width: 0%"></div>
-                                                                    </div> <span class="n" onclick="" data-buy="0"><strong>0</strong> đánh giá</span>
-                                                                </div>
-                                                                <div class="r"> <span class="t">2 <i></i></span>
-                                                                    <div class="bgb">
-                                                                        <div class="bgb-in" style="width: 0%"></div>
-                                                                    </div> <span class="n" onclick="" data-buy="0"><strong>0</strong> đánh giá</span>
-                                                                </div>
-                                                                <div class="r"> <span class="t">1 <i></i></span>
-                                                                    <div class="bgb">
-                                                                        <div class="bgb-in" style="width: 0%"></div>
-                                                                    </div> <span class="n" onclick="" data-buy="0"><strong>0</strong> đánh giá</span>
-                                                                </div>
+                                                                @endfor
+                                                                
                                                             </div>
                                                             <div class="bcrt"> <a href="javascript:void(0)" class="show-rate-click">Gửi đánh giá của bạn</a> </div>
                                                         </div>
@@ -351,94 +315,105 @@
 
 
                                                     
-                                                    
+                                                   
                                                     @if(!empty($comment) && $comment->count()>0)
+                                                    <div class="rate-show-cmt">
+
+                                                        @foreach($comment as $comments)
+                                                        <div class="cls">
+                                                            <div class="_contents">
+                                                                <div class="_item  rep_75082 _level_0 _sub_0">
+                                                                    <article itemprop="review" itemscope="" itemtype="http://schema.org/Review">
+                                                                        <p class="clearfix cls" itemscope="" itemprop="author" itemtype="http://schema.org/Person"><span class="_name" itemprop="name">{{ $comments->name }}</span>
+                                                                            <label class="sttB"><i class="iconcom-checkbuy"></i>Đã mua tại kaw.vn</label>
+                                                                        </p>
+                                                                        <div class="wrap_rate">
+                                                                            <p class="_content " itemprop="description"><span><i class="iconcom-txtstar"></i><i class="iconcom-txtstar"></i><i class="iconcom-txtstar"></i><i class="iconcom-txtstar"></i><i class="iconcom-txtstar"></i></span>{!!  $comments->content  !!}</p>
+                                                                            <div class="_control ">
+                                                                                <a class="button_reply1" id="button_reply_75082" href="javascript:void(0)">Thảo luận</a>
+                                                                                <span class="dot"> • </span>
 
 
-                                                    @foreach($comment as $comments)
-                                                    <div id="_info_rate" class="cls">
-                                                        <div class="_contents">
-                                                            <div class="_item  rep_75082 _level_0 _sub_0">
-                                                                <article itemprop="review" itemscope="" itemtype="http://schema.org/Review">
-                                                                    <p class="clearfix cls" itemscope="" itemprop="author" itemtype="http://schema.org/Person"><span class="_name" itemprop="name">{{ $comments->name }}</span>
-                                                                        <label class="sttB"><i class="iconcom-checkbuy"></i>Đã mua tại kaw.vn</label>
-                                                                    </p>
-                                                                    <div class="wrap_rate">
-                                                                        <p class="_content " itemprop="description"><span><i class="iconcom-txtstar"></i><i class="iconcom-txtstar"></i><i class="iconcom-txtstar"></i><i class="iconcom-txtstar"></i><i class="iconcom-txtstar"></i></span>{!!  $comments->content  !!}</p>
-                                                                        <div class="_control ">
-                                                                            <a class="button_reply1" id="button_reply_75082" href="javascript:void(0)">Thảo luận</a>
-                                                                            <span class="dot"> • </span>
+                                                                                <time itemprop="datePublished">{{ $comments->created_at->diffForHumans($now)  }}</time>
+                                                                            </div>
 
-
-                                                                            <time itemprop="datePublished">{{ $comments->created_at->diffForHumans($now)  }}</time>
+                                                                          
                                                                         </div>
-
-                                                                      
-                                                                    </div>
-                                                                </article>
+                                                                    </article>
+                                                                </div>
+                                                                
                                                             </div>
-                                                            
                                                         </div>
-                                                    </div>
-                                                    @endforeach
-                                                    @endif
-
-
-                                                    <style type="text/css">
+                                                        @endforeach
                                                         
-                                                        .center {
-                                                            text-align: center;
-                                                            font-family: monospace;
-                                                        }
-
-                                                        .pagination {
-                                                            display: inline-block;
-                                                        }
-
-                                                        .pagination a {
-                                                            color: #000000;
-                                                            float: left;
-                                                            padding: 8px 16px;
-                                                            text-decoration: none;
-                                                            transition: background-color .5s;
-                                                            border: 1px solid #DDD;
-                                                            margin: 0 4px;
-                                                            font-size: 20px;
-                                                        }
-
-                                                        .pagination a.active {
-                                                            background-color: #0096FF;
-                                                            color: #FFFFFF;
-                                                            border: 1px solid #0096FF;
-                                                        }
-
-                                                        .pagination a:hover:not(.active) {
-                                                            background-color: #DDD;
-                                                        }
-                                                    </style>
-
-                                                    @if($count_comment>10)
-                                                    <div class="center">
-                                                        <div class="pagination">
-                                                            <a href="#">&laquo;</a>
-                                                            <a href="#" class="active">1</a>
-                                                            <a href="#">2</a>
-                                                            <a href="#">3</a>
-                                                            <a href="#">4</a>
-                                                            <a href="#">5</a>
-                                                            <a href="#">6</a>
-                                                            <a href="#">&raquo;</a>
-                                                        </div>
                                                     </div>
-                                                    @endif
+                                                     @endif
+                                                        <style type="text/css">
+                                                            
+                                                            .center {
+                                                                text-align: center;
+                                                                font-family: monospace;
+                                                            }
 
+                                                            .pagination {
+                                                                display: inline-block;
+                                                            }
+
+                                                            .pagination a {
+                                                                color: #000000;
+                                                                float: left;
+                                                                padding: 8px 16px;
+                                                                text-decoration: none;
+                                                                transition: background-color .5s;
+                                                                border: 1px solid #DDD;
+                                                                margin: 0 4px;
+                                                                font-size: 20px;
+                                                            }
+
+                                                            .pagination a.active {
+                                                                background-color: #0096FF;
+                                                                color: #FFFFFF;
+                                                                border: 1px solid #0096FF;
+                                                            }
+
+                                                            .pagination a:hover:not(.active) {
+                                                                background-color: #DDD;
+                                                            }
+                                                        </style>
+
+                                                        @if($count_comment>10)
+                                                        <?php 
+
+                                                            $page_limit = $count_comment/10>4?4:$count_comment/10;
+                                                        ?>
+                                                        <div class="center">
+                                                            <div class="pagination rate-comment">
+
+
+                                                                @for($i=1; $i<=$page_limit; $i++)
+
+                                                                <a href="javascript:void(0)"  class="{{ $i===1?'active':''  }}" id="rate-cmt{{ $i }}" onclick="rateCommentPage({{ $i }})">{{ $i }}</a>
+                                                                @endfor
+                                                                
+                                                            </div>
+                                                        </div>
+                                                        @endif
+                                                       
+
+                                                    
 
                                                 </div>
+                                              
+
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
+
+
+
                             <div class="frame_center">
                                 <div class="product_base desktop">
                                     <meta itemprop="brand" content="KAW">
@@ -486,9 +461,6 @@
                                         </div>
                                     </div>
                                 </div>
-
-
-
                             </div>
                         </div>
                         <div class="popup_chose_other_compatables hide">
@@ -736,7 +708,6 @@
     values = 5;
     function submit_rate() {
 
-
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -763,6 +734,26 @@
         });
         
        
+    }
+
+    function show_rate_click_paginate() {
+
+        $.ajax({
+            type: 'GET',
+            url: "{{ route('comment') }}",
+            data: {
+                product_id: {{ $data->id }},
+               
+                content:$('#cmt_content').val(),
+               
+            },
+            success: function(result){
+                $('#cmt_content').val('');
+               
+              alert('Gửi thành công, xin vui lòng chờ quản trị viên kiểm duyệt!');
+            }
+        });
+
     }
 
     function submit_comment() {
@@ -972,7 +963,38 @@
         }
        
     });
-    
+
+    function rateCommentPage(id) {
+        $('.rate-comment a').removeClass('active');
+        $('#rate-cmt'+id).addClass('active');
+        page_max  = {{  $count_comment }};
+        next_page = parseInt(id)+1;
+        if(next_page>=page_max){
+
+            next_page = page_max-1;
+        }
+        if(id>3){
+
+            $('.rate-comment').find('a').first().remove();
+
+            $('.rate-comment').append('<a href="javascript:void(0)" class="" id="rate-cmt'+next_page+'" onclick="rateCommentPage('+next_page+')">'+next_page+'</a>')
+        }
+        $.ajax({
+            type: 'GET',
+            url: "{{ route('get-comment-paginate') }}",
+            data: {
+                page: id,
+                product_id:'{{ $data->id }}'
+            },
+            success: function(result){
+                $('.rate-show-cmt').html('');
+                $('.rate-show-cmt').html(result);
+            }
+        });       
+
+    }
+
+
 </script> 
 @endpush
 
