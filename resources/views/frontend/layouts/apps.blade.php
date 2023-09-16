@@ -9,6 +9,7 @@
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <?php 
     $meta_data = DB::table('contact')->get()->last();
+    $contact = DB::table('feedback')->get()->last();
 ?>
 
 @include('frontend.include.header', ['meta_data'=>$meta_data])
@@ -353,31 +354,26 @@
             </ul>
         </div>
     </div>
-   
 
-    <?php 
-
-        $icon = DB::table('')
-    ?>   
 
     <div id="button-contact-vr" class="">
         <div id="gom-all-in-one">
             <div id="contact-vr" class="button-contact">
                 <div class="phone-vr">
                     <div class="phone-vr-circle-fill"></div>
-                    <div class="phone-vr-img-circle"> <a href="https://m.me/tlclighting.com.vn"> <img data-lazyloaded="1" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-src="wp-content/uploads/2022/04/messenger-icon-min.png" /> </a></div>
+                    <div class="phone-vr-img-circle"> <a href="{{ $contact->messenger??'#' }}"> <img data-lazyloaded="1" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-src="wp-content/uploads/2022/04/messenger-icon-min.png" /> </a></div>
                 </div>
             </div>
             <div id="zalo-vr" class="button-contact">
                 <div class="phone-vr">
                     <div class="phone-vr-circle-fill"></div>
-                    <div class="phone-vr-img-circle"> <a target="_blank" href="https://zalo.me/772500705857633552"> <img data-lazyloaded="1" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-src="wp-content/plugins/button-contact-vr/img/zalo.png" /> </a></div>
+                    <div class="phone-vr-img-circle"> <a target="_blank" href="{{ $contact->zalo??'#' }}"> <img data-lazyloaded="1" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-src="wp-content/plugins/button-contact-vr/img/zalo.png" /> </a></div>
                 </div>
             </div>
             <div id="phone-vr" class="button-contact">
                 <div class="phone-vr">
                     <div class="phone-vr-circle-fill"></div>
-                    <div class="phone-vr-img-circle"> <a href="tel:18006192"> <img data-lazyloaded="1" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-src="wp-content/plugins/button-contact-vr/img/phone.png" /> </a></div>
+                    <div class="phone-vr-img-circle"> <a href="tel:{{ $contact->hotline??'#' }}"> <img data-lazyloaded="1" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-src="wp-content/plugins/button-contact-vr/img/phone.png" /> </a></div>
                 </div>
             </div>
         </div>

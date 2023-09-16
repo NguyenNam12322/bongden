@@ -162,6 +162,13 @@
         </div>
 
         <div class="form-group">
+            <label class="col-sm-2 col-xs-12 control-label">Messenger</label>
+            <div class="col-sm-9 col-xs-12">
+                <input class="form-control" type="text" name="messenger" value="{{ @$contact->messenger }}" id="messenger" size="70" id="call">                             
+            </div>
+        </div>
+
+        <div class="form-group">
             <label class="col-sm-2 col-xs-12 control-label">Email</label>
             <div class="col-sm-9 col-xs-12">
                 <input class="form-control" type="text" name="email" value="{{ @$contact->email }}" id="email" size="70" id="call" required>                             
@@ -238,6 +245,7 @@
                 email:$('#email').val(),
                 zalo:$('#zalo').val(),
                 hotline:$('#hotline').val(),
+                messenger:$('#messenger').val(),
                
 
             },

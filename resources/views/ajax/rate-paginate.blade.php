@@ -4,6 +4,7 @@
 <?php 
 
     $now = Carbon\Carbon::now();
+    Carbon\Carbon::setLocale('vi');
 ?>
 
 <div class="cls">

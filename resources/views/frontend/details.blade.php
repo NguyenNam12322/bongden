@@ -63,6 +63,9 @@
         .mobile{
             display: none;
         }
+        #rates_rate .toprt{
+            height: auto !important;
+        }
     }
 
      @media only screen and (max-width: 600px) {
