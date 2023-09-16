@@ -458,6 +458,8 @@ Route::group(['prefix' => 'admins','middleware' => 'auth'], function() {
 
     Route::get('rate-export', 'exportController@exportRate')->name('rate-export');
 
+    Route::get('view-rate-export', 'exportController@exportRateView')->name('rate-export-view');
+
     
 
     Route::post('add-promotion', 'AjaxController@add_promotion')->name('add-promotion');

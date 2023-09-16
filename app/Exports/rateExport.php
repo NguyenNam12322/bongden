@@ -14,7 +14,16 @@ class rateExport implements FromCollection,ShouldAutoSize
     */
     public function collection()
     {
-        $data  = rate::paginate(200);
+
+        $page = $_GET['page']??1;
+
+        if($page>1){
+            
+            $data  = rate::Orderby('id', 'desc')->limit(400)->offset(($page - 1) *400)->get();
+        }
+        else{
+            $data  = rate::Orderby('id', 'desc')->take(400)->get();
+        }   
 
         return $data;
     }

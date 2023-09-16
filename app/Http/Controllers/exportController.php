@@ -61,5 +61,10 @@ class exportController extends Controller
         return Excel::download($data, 'rate.xlsx');
 
     }
+
+    public function exportRateView()
+    {
+        return view('export.rate');
+    }
     
 }
