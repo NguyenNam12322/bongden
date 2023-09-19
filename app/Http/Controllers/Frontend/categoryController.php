@@ -783,7 +783,7 @@ class categoryController extends Controller
 
     }    
 
-    public function details($slug)
+    public function details(Request $request, $slug)
     {
 
         if (!$request->secure() && env('APP_NAME') != 'local') {
