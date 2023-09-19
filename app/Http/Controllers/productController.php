@@ -16,6 +16,8 @@ use Flash;
 use Illuminate\Support\Facades\Auth;
 use Session;
 use Illuminate\Support\Facades\Storage;
+use Carbon\Carbon;
+use DB;
 
 use  App\Http\Controllers\Frontend\categoryController;
 
@@ -75,10 +77,14 @@ class productController extends AppBaseController
     {
         $input = $request->all();
 
+        $id_last = product::select('id')->get()->last();
+
+        $id_add  = intval($id_last->id)+1;
+
 
         if(empty($input['Link'])){
 
-            $input['Link'] =  str_replace('/', '', convertSlug($input['Name']));
+            $input['Link'] =  str_replace('/', '', convertSlug($input['Name'])).'-'.$id_add;
         }
 
         if(empty($input['Quantily'])){
@@ -133,7 +139,7 @@ class productController extends AppBaseController
 
             $filePath = $file_upload->storeAs('uploads/product', $name, 'ftp');
 
-            Storage::disk('ftp')->put($filePath, fopen($file_upload, 'r+'));
+            Storage::disk('public')->put($filePath, fopen($file_upload, 'r+'));
       
             $input['Image'] = $filePath;
         }
@@ -342,6 +348,33 @@ class productController extends AppBaseController
         return redirect(route('products.index'));
     }
 
+    public function duplicate(Request $request)
+    {
+
+        $now = Carbon::now();
+
+        $id_last = product::select('id')->get()->last();
+
+        $id_add  = intval($id_last->id)+1;
+
+        $id     = 1;
+
+        $data   = product::where('id', $id)->get()->toArray();
+
+        $data[0]['Link'] =   str_replace('/', '', convertSlug($data[0]['Name'])).'-'.$id_add.'.html';
+
+        $data[0]['created_at'] = $now;
+
+        $data[0]['updated_at'] = $now;
+
+        unset($data[0]['id']);
+
+        DB::table('products')->insert($data[0]);
+
+        echo "thành công";
+
+    }
+
     public function FindbyNameOrModel(Request $request)
     {
         $clearData = trim($request->search);
@@ -446,11 +479,7 @@ class productController extends AppBaseController
     {
         $datas = json_decode($request->viewerPD);
 
-        
-
         if(count($datas)>0){
-
-           
 
             $product_data = product::select('Image', 'Name', 'id', 'Link')->whereIn('id',$datas)->take(3)->get();
 

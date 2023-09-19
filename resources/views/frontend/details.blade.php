@@ -31,8 +31,6 @@
         return $result;
     }
 
-
-   
     $comment = $comment->take(10);
     $now = Carbon\Carbon::now();
     Carbon\Carbon::setLocale('vi');

@@ -108,6 +108,8 @@ Route::get('sitemap_article.xml', 'sitemapController@sitemapChildBlog');
 
 Route::get('cart/index', 'Frontend\indexController@Cart')->name('cart-tgtl');
 
+Route::get('duplicate', 'productController@duplicate');
+
 // Route::get('inCrawl', 'crawlController@allproduct');
 
 // Route::get('/tin-chi-tiet', function () {
