@@ -59,6 +59,11 @@
         width: auto !important;
     }
 
+    .characteristic table{
+        width: 100% !important;
+    }
+
+
     @media only screen and (min-width: 600px) {
         .mobile{
             display: none;
@@ -73,6 +78,8 @@
             display: none;
         }
     }
+
+
 
 </style>
 
