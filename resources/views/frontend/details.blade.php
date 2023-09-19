@@ -1,6 +1,6 @@
 @extends('frontend.layouts.apps')
 @section('content')
-<link rel="stylesheet" type="text/css" href="{{ asset('css/detail.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('css/detail.css') }}?ver=1">
 
 <link rel="stylesheet" type="text/css" href="{{ asset('css/details1.css') }}">
 
