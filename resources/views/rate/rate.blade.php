@@ -78,8 +78,21 @@
 
 </style>
 
+
+
 <?php 
-    $rate = App\Models\rate::Orderby('id', 'desc')->paginate(10);
+    $product_id  = $_GET['product_id_rate']??'';
+
+   
+
+    if(!empty($product_id)){
+
+        $rate = App\Models\rate::Orderby('id', 'desc')->where('product_id', $product_id)->paginate(10);
+    }
+    else{
+        $rate = App\Models\rate::Orderby('id', 'desc')->paginate(10);
+    }
+   
 ?>
 
 

@@ -225,6 +225,12 @@
     </a>
 </li>
 
+<li class="nav-item">
+    <a href="{{ route('comment.index') }}"
+       class="nav-link {{ Request::is('order_list') ? 'active' : '' }}">
+        <p>Nhận xét </p>
+    </a>
+</li>
 
 <style type="text/css">
     

@@ -101,9 +101,14 @@
                                 </tr>
                                
                                 @if(isset($comment))
+
+                                <?php 
+                                    $dem = 0;
+                                ?>
                                 @foreach($comment as $key => $comments)
 
                                 <?php 
+                                    $dem++;
 
                                     $link = App\Models\product::find($comments->product_id);
                                     
@@ -113,7 +118,7 @@
 
                                 @isset($link)
                                 <tr>
-                                    <td>{{$key}}</td>
+                                    <td>{{$dem}}</td>
                                    
                                   
                                     <td>{!! @$comments->content !!}</td>

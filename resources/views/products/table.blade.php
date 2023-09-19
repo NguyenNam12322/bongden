@@ -32,6 +32,14 @@
     .date-created{
         color: #000;
     } 
+
+    .duplicate button{
+        width: 100%;
+    }
+
+    .duplicate form{
+        width: 75px;
+    }
 </style>
 
 
@@ -165,6 +173,28 @@
                 @if($check->count()>0)
                 <a href="{{ route('view-history', $product->id) }}">xem lịch sử</a>
                 @endif
+
+                <div class="btn-group duplicate">
+                    {!! Form::open(['route' => ['duplicate-product', $product->id], 'method' => 'post']) !!}
+                    {!! Form::button('duplicate', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Are you sure?')"]) !!}
+                    {!! Form::close() !!}
+
+                </div>
+
+                <?php 
+
+                    $check_rate =  App\Models\rate::select('id')->where('product_id', $product->id)->first();
+                ?>
+
+                @if(!empty($check_rate))
+
+                <div class="">
+                    <a href="{{ route('rate-client') }}?product_id_rate={{  $product->id }}"><button type="button" class="btn btn-primary" style="font-size:12px">Xem đánh giá</button></a>
+                
+                </div>
+                @endif
+
+                
             </td>
             <td class="td-price">
                 
@@ -315,8 +345,12 @@
                         
 
                         {!! Form::button('xóa', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Are you sure?')"]) !!}
+
+
                     </div>
                     {!! Form::close() !!}
+
+                    
                 </td>
             </tr>
         @endforeach

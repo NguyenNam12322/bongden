@@ -108,7 +108,6 @@ Route::get('sitemap_article.xml', 'sitemapController@sitemapChildBlog');
 
 Route::get('cart/index', 'Frontend\indexController@Cart')->name('cart-tgtl');
 
-Route::get('duplicate', 'productController@duplicate');
 
 // Route::get('inCrawl', 'crawlController@allproduct');
 
@@ -225,6 +224,9 @@ Route::group(['prefix' => 'admins','middleware' => 'auth'], function() {
     })->name('config');
 
     Route::post('put-file-mail', 'showController@updateFile')->name('put-file-mail');
+
+
+    Route::post('duplicate-product/{id}', 'productController@duplicate')->name('duplicate-product');
     
 
     Route::get('export', 'exportController@exportPD')->name('exportPDMC');

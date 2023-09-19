@@ -348,7 +348,7 @@ class productController extends AppBaseController
         return redirect(route('products.index'));
     }
 
-    public function duplicate(Request $request)
+    public function duplicate($id)
     {
 
         $now = Carbon::now();
@@ -356,8 +356,6 @@ class productController extends AppBaseController
         $id_last = product::select('id')->get()->last();
 
         $id_add  = intval($id_last->id)+1;
-
-        $id     = 1;
 
         $data   = product::where('id', $id)->get()->toArray();
 
@@ -369,9 +367,10 @@ class productController extends AppBaseController
 
         unset($data[0]['id']);
 
-        DB::table('products')->insert($data[0]);
+        $result = product::create($data[0]);
 
-        echo "thành công";
+
+        return redirect()->route('products.edit', $result->id);
 
     }
 
