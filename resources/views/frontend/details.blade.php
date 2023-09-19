@@ -72,15 +72,17 @@
             height: auto !important;
         }
 
-        .wrap-magiczoom{
-            position: static;
-            
-        }
+
     }
 
      @media only screen and (max-width: 600px) {
         .desktop{
             display: none;
+        }
+
+         .wrap-magiczoom{
+            position: static;
+            
         }
     }
 
