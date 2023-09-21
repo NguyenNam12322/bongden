@@ -14,6 +14,12 @@
 
 @include('frontend.include.header', ['meta_data'=>$meta_data])
 
+<style type="text/css">
+    .mobile-add-cart{
+        width: 100%;
+    }
+</style>
+
 <body data-rsssl=1 class="home page-template page-template-page-blank page-template-page-blank-php page page-id-5433 theme-flatsome woocommerce-no-js mega-menu-primary mega-menu-primary-mobile header-shadow lightbox"><a class="skip-link screen-reader-text" href="#main">Skip to content</a>
     <div id="wrapper">
         <header id="header" class="header has-sticky sticky-jump">

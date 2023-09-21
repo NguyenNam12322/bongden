@@ -60,7 +60,7 @@
     <link data-optimized="1" data-asynced="1" as="style" onload="this.onload=null;this.rel='stylesheet'" rel='preload' id='fancybox-css' href='/wp-content/litespeed/css/a7b4ed0d427de9af6d7fd3852060c1d9558a.css?ver=0c1d9' type='text/css' media='screen' />
     <link data-optimized="1" data-asynced="1" as="style" onload="this.onload=null;this.rel='stylesheet'" rel='preload' id='flatsome-main-css' href='/wp-content/litespeed/css/a238aab39ed44969271f8433be129cecc98a.css?ver=29cec' type='text/css' media='all' />
     <link data-optimized="1" data-asynced="1" as="style" onload="this.onload=null;this.rel='stylesheet'" rel='preload' id='flatsome-shop-css' href='/wp-content/litespeed/css/a6624c29bf7463632de73467802df0ca0ed7.css?ver=df0ca' type='text/css' media='all' />
-    <link data-optimized="1" data-asynced="1" as="style" onload="this.onload=null;this.rel='stylesheet'" rel='preload' id='flatsome-style-css' href='/wp-content/litespeed/css/c48de1877b822d0c87fc3390a4dca0448863.css?ver=45' type='text/css' media='all' />
+    <link data-optimized="1" data-asynced="1" as="style" onload="this.onload=null;this.rel='stylesheet'" rel='preload' id='flatsome-style-css' href='/wp-content/litespeed/css/c48de1877b822d0c87fc3390a4dca0448863.css?ver=47' type='text/css' media='all' />
 
     <link rel="stylesheet" type="text/css" href="{{ asset('css/main1.css') }}">
     <script data-optimized="1" type='text/javascript' src='wp-content/litespeed/js/e7c2729c2ee340ec9234aa86765428a7e64d.js?ver=428a7' id='pgtermslist_front_script-js' defer data-deferred="1"> </script>

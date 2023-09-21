@@ -69,6 +69,9 @@
         #rates_rate .toprt{
             height: auto !important;
         }
+        .mobile-add-cart{
+            display: none;
+        }
 
     }
 
@@ -81,13 +84,21 @@
             position: static;
             
         }
+        .mobile-add-cart{
+           
+            position: fixed;
+            bottom: 1%;
+            padding: 10px 0;
+            background: #ddd;
+
+        }
     }
 
 
 
 </style>
 
-<div class="main_wrapper   ">
+<div class="main_wrapper ">
     <div class=" container_main_wrapper">
         <div class="main-area main-area-1col main-area-full">
             <div class="breadcrumbs breadcrumb_detail">
@@ -260,11 +271,14 @@
                                     <div class="_attributes"> </div>
                                     <div class="detail_button product_detail_bt cls">
                                         <div class="gift_summary"> </div>
-                                        <div class="wrap-btm-buy cls"> <a href="javascript:void(0)" onclick="addToCart({{ $data->id }})">
-                                                <div type="submit" class="btn-buy-222 fl" id="buy-now-222"> <span> Mua ngay </span> </div>
+
+                                        <!-- <div class="wrap-btm-buy cls"> <a href="javascript:void(0)" onclick="addToCart({{ $data->id }})">
+                                            <div type="submit" class="btn-buy-222 fl" id="buy-now-222"> <span> Mua ngay </span> </div>
                                             </a> <a href="javascript:void(0)" onclick="addCartFast({{ $data->id }})" class="btn-dathang" data-toggle="modal">
                                                 <font>Thêm vào giỏ hàng </font>
-                                            </a> </div>
+                                            </a> 
+                                        </div> -->
+
                                         <div class="clear"></div>
                                     </div> <input type="hidden" name="module" value="products"> <input type="hidden" name="view" value="cart"> <input type="hidden" name="task" value="ajax_buy_product"> <input type="hidden" name="product_id" value="5231"> <input type="hidden" name="Itemid" value="10">
                                     
@@ -698,8 +712,16 @@
         </div>
     </div>
     <div class="clear"></div>
+
 </div>
 
+
+<div class="wrap-btm-buy cls mobile-add-cart"> <a href="javascript:void(0)" onclick="addToCart({{ $data->id }})">
+    <div type="submit" class="btn-buy-222 fl" id="buy-now-222"> <span> Mua ngay </span> </div>
+    </a> <a href="javascript:void(0)" onclick="addCartFast({{ $data->id }})" class="btn-dathang" data-toggle="modal">
+        <font>Thêm vào giỏ hàng </font>
+    </a> 
+</div>
 
 
 @push('script') 
